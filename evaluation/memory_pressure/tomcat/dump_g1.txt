@@ -1,0 +1,91 @@
+[0.007s][info][gc] Using G1
+Class name: org.dacapo.harness.Tomcat
+Configurations:
+short     Tomcat servlet container
+long      Runs the tomcat sample web applications
+author    Apache Software Foundation
+license   Apache License, Version 2.0
+copyright Copyright (c) Apache Software Foundation
+url       http://tomcat.apache.org
+version   tomcat 10.1.11
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,512]
+Tomcat is using port 8080. Configure with -Ddacapo.tomcat.port.
+[0.203s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 24M->2M(512M) 2.186ms
+Version: tomcat 10.1.11
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    7  7/18    77 nominal average object size (bytes)
+AOL:    7  6/18    80 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    8  5/18  5128 nominal allocation rate (bytes / usec) (17515864152/3415100.0)
+BAL:    3 15/19     7 nominal aaload per usec
+BAS:    4 12/19     0 nominal aastore per usec
+BEF:    7  6/19    10 nominal execution focus / dominance of hot code
+BGF:    4 13/19   265 nominal getfield per usec
+BPF:    5 11/19    76 nominal putfield per usec
+BUB:    7  6/19   117 nominal thousands of unique bytecodes executed
+BUF:    7  6/19    17 nominal thousands of unique function calls
+GCA:    7  7/22   110 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (21/19)
+GCC:    9  4/22  7676 nominal GC count at 2X heap size (G1)
+GCM:    7  8/22   105 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (20/19)
+GCP:    7  8/22    10 nominal percentage of time spent in GC pauses at 2X heap size (G1) (4080/39743)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (19/19)
+GMD:    2 19/22    19 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    3 14/18    31 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    5 12/22    13 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 18/22    23 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:   10  2/22  1916 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (68848.7/3415.1)
+GTO:    9  3/18   879 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    7  7/22     4 nominal execution time (sec)
+PKP:    9  4/22    21 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:   10  1/22    91 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[0.691s][info][gc] GC(1) Pause Young (Concurrent Start) (Metadata GC Threshold) 67M->7M(512M) 5.557ms
+[0.691s][info][gc] GC(2) Concurrent Cycle
+[0.695s][info][gc] GC(2) Pause Remark 8M->8M(512M) 1.844ms
+[0.695s][info][gc] GC(2) Pause Cleanup 8M->8M(512M) 0.048ms
+[0.698s][info][gc] GC(2) Concurrent Cycle 6.501ms
+[1.004s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 88M->10M(512M) 9.820ms
+Server thread created
+[1.085s][info][gc] GC(4) Pause Full (System.gc()) 32M->9M(512M) 10.809ms
+===== DaCapo unknown tomcat starting =====
+Loading web application
+Starting 80000 requests...
+[1.449s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 116M->23M(512M) 4.771ms
+[2.469s][info][gc] GC(6) Pause Young (Concurrent Start) (Metadata GC Threshold) 199M->21M(512M) 3.558ms
+[2.469s][info][gc] GC(7) Concurrent Cycle
+[2.477s][info][gc] GC(7) Pause Remark 23M->22M(512M) 2.417ms
+[2.480s][info][gc] GC(7) Pause Cleanup 23M->23M(512M) 0.061ms
+[2.481s][info][gc] GC(7) Concurrent Cycle 12.501ms
+[3.455s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 316M->17M(512M) 3.641ms
+Completing requests: 5%[4.206s][info][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 316M->17M(512M) 4.745ms
+Completing requests: 10%[4.946s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 316M->16M(512M) 6.423ms
+Completing requests: 15%[5.660s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 315M->17M(512M) 2.606ms
+Completing requests: 20%[6.360s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 316M->17M(512M) 3.463ms
+Completing requests: 25%Completing requests: 30%[7.071s][info][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 316M->16M(512M) 4.121ms
+Completing requests: 35%[7.786s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 315M->16M(512M) 4.559ms
+Completing requests: 40%[8.494s][info][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 315M->16M(512M) 3.358ms
+Completing requests: 45%[9.195s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 315M->16M(512M) 3.303ms
+Completing requests: 50%[9.906s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 316M->16M(512M) 3.624ms
+Completing requests: 55%[10.609s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 315M->17M(512M) 3.479ms
+Completing requests: 60%[11.336s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 316M->16M(512M) 4.248ms
+Completing requests: 65%[12.040s][info][gc] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 315M->17M(512M) 3.625ms
+Completing requests: 70%[12.759s][info][gc] GC(21) Pause Young (Normal) (G1 Evacuation Pause) 316M->16M(512M) 5.071ms
+Completing requests: 75%Completing requests: 80%[13.498s][info][gc] GC(22) Pause Young (Normal) (G1 Evacuation Pause) 319M->16M(512M) 4.473ms
+Completing requests: 85%[14.231s][info][gc] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 321M->16M(512M) 3.773ms
+Completing requests: 90%[14.953s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 322M->16M(512M) 2.169ms
+Completing requests: 95%[15.689s][info][gc] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 322M->16M(512M) 2.263ms
+
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo unknown tomcat PASSED in 15020 msec =====
+===== DaCapo simple tail latency: 50% 1432 usec, 90% 1555 usec, 99% 11177 usec, 99.9% 54877 usec, 99.99% 553020 usec, max 553983 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 946449 usec, 90% 1761059 usec, 99% 1841041 usec, 99.9% 1846758 usec, 99.99% 1850357 usec, max 1853949 usec, measured over 80000 events =====
+runAgain
+Server stopped ... iteration complete

@@ -1,0 +1,95 @@
+[0.005s][info][gc] Using G1
+Class name: org.dacapo.harness.Lusearch
+Configurations:
+short     A text search tool
+long      Text search of keywords over a corpus of data comprising the works of Shakespeare and the King James bible
+author    Lucene Project Management Committee
+license   Apache License, Version 2.0
+copyright Apache Software Foundation, Apache license v2.0
+url       http://lucene.apache.org/
+version   lucene 9.7.0
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,2048]
+[2.850s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 50M->2M(1024M) 2.336ms
+Version: lucene 9.7.0
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    6  8/18    76 nominal average object size (bytes)
+AOL:    9  2/18    96 nominal 90-percentile object size (bytes)
+AOM:    3 13/18    24 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    9  3/18 10505 nominal allocation rate (bytes / usec) (24619905928/2343600.0)
+BAL:    8  5/19   118 nominal aaload per usec
+BAS:    9  2/19    55 nominal aastore per usec
+BEF:    9  3/19    14 nominal execution focus / dominance of hot code
+BGF:    8  4/19  5520 nominal getfield per usec
+BPF:    9  3/19   714 nominal putfield per usec
+BUB:    4 13/19    25 nominal thousands of unique bytecodes executed
+BUF:    3 14/19     2 nominal thousands of unique function calls
+GCA:    2 19/22    80 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (17/21)
+GCC:   10  1/22 17270 nominal GC count at 2X heap size (G1)
+GCM:    1 20/22    66 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (14/21)
+GCP:    9  3/22    19 nominal percentage of time spent in GC pauses at 2X heap size (G1) (6675/35050)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (21/21)
+GMD:    2 18/22    21 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    4 11/18    89 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    2 18/22     5 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 19/22    21 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:    6 10/22   185 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (6702.5/2343.6)
+GTO:   10  1/18  1118 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    6  9/22     3 nominal execution time (sec)
+PKP:    8  5/22    16 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    8  5/22    31 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[2.952s][info][gc] GC(1) Pause Full (System.gc()) 105M->3M(1024M) 3.041ms
+===== DaCapo unknown lusearch starting =====
+Starting 524288 requests...
+[3.816s][info][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 1.471ms
+[3.969s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.421ms
+Completing query batches: 5%[4.104s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.220ms
+[4.241s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.792ms
+Completing query batches: 10%[4.351s][info][gc] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.649ms
+[4.460s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.745ms
+Completing query batches: 15%[4.575s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 1.677ms
+Completing query batches: 20%[4.662s][info][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.488ms
+[4.756s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.550ms
+Completing query batches: 25%[4.844s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.593ms
+[4.931s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.258ms
+Completing query batches: 30%[5.004s][info][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.336ms
+[5.085s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.351ms
+Completing query batches: 35%[5.171s][info][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.437ms
+[5.248s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.491ms
+Completing query batches: 40%[5.324s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 622M->11M(1024M) 1.553ms
+[5.399s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.676ms
+Completing query batches: 45%[5.471s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.663ms
+[5.551s][info][gc] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.845ms
+Completing query batches: 50%[5.629s][info][gc] GC(21) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.768ms
+[5.702s][info][gc] GC(22) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.695ms
+Completing query batches: 55%[5.775s][info][gc] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.787ms
+[5.846s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.671ms
+Completing query batches: 60%[5.920s][info][gc] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.636ms
+[5.996s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.652ms
+Completing query batches: 65%[6.065s][info][gc] GC(27) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.598ms
+[6.147s][info][gc] GC(28) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.690ms
+Completing query batches: 70%[6.231s][info][gc] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.743ms
+[6.312s][info][gc] GC(30) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.819ms
+Completing query batches: 75%[6.386s][info][gc] GC(31) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 1.310ms
+[6.457s][info][gc] GC(32) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.637ms
+Completing query batches: 80%[6.533s][info][gc] GC(33) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 1.306ms
+[6.613s][info][gc] GC(34) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.666ms
+Completing query batches: 85%[6.700s][info][gc] GC(35) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.839ms
+[6.780s][info][gc] GC(36) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.760ms
+Completing query batches: 90%[6.857s][info][gc] GC(37) Pause Young (Normal) (G1 Evacuation Pause) 623M->11M(1024M) 0.683ms
+[6.935s][info][gc] GC(38) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.709ms
+Completing query batches: 95%[7.013s][info][gc] GC(39) Pause Young (Normal) (G1 Evacuation Pause) 624M->11M(1024M) 0.705ms
+Completing query batches: 100%
+Completed requests
+===== DaCapo unknown lusearch PASSED in 4167 msec =====
+[7.144s][info][gc] GC(40) Pause Young (Normal) (G1 Evacuation Pause) 627M->13M(1024M) 0.952ms
+===== DaCapo simple tail latency: 50% 19 usec, 90% 135 usec, 99% 398 usec, 99.9% 3666 usec, 99.99% 16324 usec, max 46519 usec, measured over 524288 events =====
+===== DaCapo metered tail latency: 50% 476258 usec, 90% 741305 usec, 99% 762192 usec, 99.9% 766030 usec, 99.99% 766338 usec, max 767157 usec, measured over 524288 events =====
+runAgain

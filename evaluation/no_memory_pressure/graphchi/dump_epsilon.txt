@@ -1,0 +1,395 @@
+[0.005s][info][gc] Using Epsilon
+[0.006s][warning][gc,init] Consider setting -Xms equal to -Xmx to avoid resizing hiccups
+[0.006s][warning][gc,init] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups
+Class name: org.dacapo.harness.GraphChi
+Configurations:
+short     ALS matrix factorization with GraphChi.
+long      The Netflix Challenge dataset is used to drive the GraphChi engine in its ALS matrix factorization mode.  The input data is pre-sharding (sharding is IO intensive, so is excluded from this workload).
+author    null
+license   Apache License, Version 2.0
+copyright Copyright 2012 Aapo Kyrola, Guy Blelloch, Carlos Guestrin / Carnegie Mellon University
+url       https://github.com/GraphChi/graphchi-java
+version   graphchi 0.2.2
+sizes     default large small
+Using scaled threading model. 8 processors detected, 8 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    8  4/18    97 nominal average object size (bytes)
+AOL:    9  2/18    96 nominal 90-percentile object size (bytes)
+AOM:    3 13/18    24 nominal median object size (bytes)
+AOS:    3 14/18    16 nominal 10-percentile object size (bytes)
+ARA:    5 10/18  2825 nominal allocation rate (bytes / usec) (7291380208/2580800.0)
+BAL:    9  2/19  2231 nominal aaload per usec
+BAS:    6  9/19     1 nominal aastore per usec
+BEF:    8  4/19    12 nominal execution focus / dominance of hot code
+BGF:    9  3/19  9335 nominal getfield per usec
+BPF:    4 13/19    44 nominal putfield per usec
+BUB:    0 19/19     8 nominal thousands of unique bytecodes executed
+BUF:    2 17/19     1 nominal thousands of unique function calls
+GCA:    8  5/22   114 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (200/175)
+GCC:    6 10/22  1277 nominal GC count at 2X heap size (G1)
+GCM:    8  6/22   110 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (193/175)
+GCP:    4 14/22     2 nominal percentage of time spent in GC pauses at 2X heap size (G1) (889/31767)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (175/174)
+GMD:    8  5/22   175 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    9  3/18  1152 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:   10  2/22   141 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    8  6/22   179 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:    7  7/22   381 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (12420.2/2580.8)
+GTO:    4 11/18    39 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    6  9/22     3 nominal execution time (sec)
+PKP:    2 19/22     1 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    6  9/22    10 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[8.803s][info   ][gc     ] GC(0) Step 0: Prologue 0.046ms
+[8.807s][info   ][gc     ] GC(0) Step 1: Mark 4.482ms
+[8.809s][info   ][gc     ] GC(0) Step 2: Calculate new locations 1.793ms
+[8.813s][info   ][gc     ] GC(0) Step 3: Adjust pointers 4.482ms
+[8.815s][info   ][gc     ] GC(0) Step 4: Move objects 1.399ms
+[8.815s][info   ][gc     ] GC(0) Step 5: Epilogue 0.033ms
+[8.815s][info   ][gc     ] GC(0) GC Stats: 4514 (8.11%) reachable from roots, 51150 (91.89%) reachable from heap, 27556 (49.50%) moved, 1456 (2.62%) markwords preserved
+[8.815s][info   ][gc     ] GC(0) Heap: 977M reserved, 62572K (6.25%) committed, 4162K (0.42%) used
+[8.815s][info   ][gc     ] GC(0) Lisp2-style Mark-Compact (System.gc()) 19M->4M(61M) 12.384ms
+===== DaCapo 23.11-chopin graphchi starting =====
+Found shards -- no need to preprocess
+Set latent factor dimension to: 20
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+[9.114s][info   ][gc     ] Heap: 977M reserved, 189M (19.34%) committed, 139M (14.29%) used
+[10.804s][info   ][gc     ] Heap: 977M reserved, 189M (19.34%) committed, 188M (19.30%) used
+[11.215s][info   ][gc     ] Heap: 977M reserved, 317M (32.43%) committed, 238M (24.36%) used
+[11.227s][info   ][gc     ] Heap: 977M reserved, 317M (32.43%) committed, 288M (29.46%) used
+[11.239s][info   ][gc     ] Heap: 977M reserved, 445M (45.53%) committed, 336M (34.46%) used
+[11.249s][info   ][gc     ] Heap: 977M reserved, 445M (45.53%) committed, 386M (39.48%) used
+[11.260s][info   ][gc     ] Heap: 977M reserved, 445M (45.53%) committed, 435M (44.51%) used
+[11.270s][info   ][gc     ] Heap: 977M reserved, 573M (58.62%) committed, 484M (49.54%) used
+[11.279s][info   ][gc     ] Heap: 977M reserved, 573M (58.62%) committed, 533M (54.57%) used
+[11.290s][info   ][gc     ] Heap: 977M reserved, 701M (71.71%) committed, 582M (59.60%) used
+[11.300s][info   ][gc     ] Heap: 977M reserved, 701M (71.71%) committed, 631M (64.63%) used
+[11.315s][info   ][gc     ] Heap: 977M reserved, 701M (71.71%) committed, 681M (69.66%) used
+[11.323s][info   ][gc     ] Heap: 977M reserved, 829M (84.80%) committed, 730M (74.70%) used
+[11.333s][info   ][gc     ] Heap: 977M reserved, 829M (84.80%) committed, 779M (79.73%) used
+[11.341s][info   ][gc     ] Heap: 977M reserved, 829M (84.80%) committed, 828M (84.76%) used
+[11.349s][info   ][gc     ] Heap: 977M reserved, 957M (97.90%) committed, 877M (89.79%) used
+[11.357s][info   ][gc     ] Heap: 977M reserved, 957M (97.90%) committed, 927M (94.82%) used
+[11.366s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 976M (99.85%) used
+[11.367s][info   ][gc     ] GC(1) Step 0: Prologue 0.199ms
+[11.391s][info   ][gc     ] GC(1) Step 1: Mark 23.974ms
+[11.413s][info   ][gc     ] GC(1) Step 2: Calculate new locations 21.670ms
+[11.447s][info   ][gc     ] GC(1) Step 3: Adjust pointers 34.134ms
+[11.473s][info   ][gc     ] GC(1) Step 4: Move objects 25.645ms
+[11.473s][info   ][gc     ] GC(1) Step 5: Epilogue 0.120ms
+[11.473s][info   ][gc     ] GC(1) GC Stats: 7801 (1.53%) reachable from roots, 501760 (98.47%) reachable from heap, 476257 (93.46%) moved, 1622 (0.32%) markwords preserved
+[11.473s][info   ][gc     ] GC(1) Heap: 977M reserved, 977M (100.00%) committed, 165M (16.91%) used
+[11.473s][info   ][gc     ] GC(1) Lisp2-style Mark-Compact (Allocation Failure) 977M->165M(977M) 105.964ms
+[11.473s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 166M (17.03%) used
+[11.479s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 215M (22.07%) used
+[11.484s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 264M (27.10%) used
+[11.489s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 314M (32.13%) used
+[11.648s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 363M (37.16%) used
+[11.908s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 412M (42.20%) used
+[11.916s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 461M (47.24%) used
+[11.923s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 511M (52.27%) used
+[11.931s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 560M (57.31%) used
+[11.938s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 609M (62.34%) used
+[11.944s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 658M (67.38%) used
+[11.950s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 707M (72.41%) used
+[11.955s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 757M (77.45%) used
+[11.960s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 806M (82.48%) used
+[11.966s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 855M (87.51%) used
+[11.971s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 904M (92.55%) used
+[11.977s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 954M (97.58%) used
+[11.980s][info   ][gc     ] GC(2) Step 0: Prologue 0.207ms
+[12.003s][info   ][gc     ] GC(2) Step 1: Mark 22.602ms
+[12.024s][info   ][gc     ] GC(2) Step 2: Calculate new locations 20.794ms
+[12.056s][info   ][gc     ] GC(2) Step 3: Adjust pointers 31.832ms
+[12.081s][info   ][gc     ] GC(2) Step 4: Move objects 25.712ms
+[12.082s][info   ][gc     ] GC(2) Step 5: Epilogue 0.124ms
+[12.082s][info   ][gc     ] GC(2) GC Stats: 7821 (1.53%) reachable from roots, 501903 (98.47%) reachable from heap, 435219 (85.38%) moved, 90 (0.02%) markwords preserved
+[12.082s][info   ][gc     ] GC(2) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[12.082s][info   ][gc     ] GC(2) Lisp2-style Mark-Compact (Allocation Failure) 976M->163M(977M) 101.495ms
+[12.082s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.82%) used
+[12.087s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[12.092s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.89%) used
+[12.098s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.93%) used
+[12.103s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.96%) used
+[12.107s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (41.99%) used
+[12.112s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.03%) used
+[12.117s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 509M (52.07%) used
+[12.124s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.11%) used
+[12.294s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.13%) used
+[12.334s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.14%) used
+[12.342s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 705M (72.17%) used
+[12.350s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 754M (77.20%) used
+[12.356s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.24%) used
+[12.363s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.27%) used
+[12.368s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 902M (92.30%) used
+[12.375s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 951M (97.34%) used
+[12.379s][info   ][gc     ] GC(3) Step 0: Prologue 0.210ms
+[12.402s][info   ][gc     ] GC(3) Step 1: Mark 23.542ms
+[12.423s][info   ][gc     ] GC(3) Step 2: Calculate new locations 20.935ms
+[12.455s][info   ][gc     ] GC(3) Step 3: Adjust pointers 32.116ms
+[12.476s][info   ][gc     ] GC(3) Step 4: Move objects 20.683ms
+[12.476s][info   ][gc     ] GC(3) Step 5: Epilogue 0.123ms
+[12.476s][info   ][gc     ] GC(3) GC Stats: 7832 (1.54%) reachable from roots, 501941 (98.46%) reachable from heap, 433759 (85.09%) moved, 50 (0.01%) markwords preserved
+[12.476s][info   ][gc     ] GC(3) Heap: 977M reserved, 977M (100.00%) committed, 165M (16.90%) used
+[12.476s][info   ][gc     ] GC(3) Lisp2-style Mark-Compact (Allocation Failure) 976M->165M(977M) 97.833ms
+[12.476s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 166M (17.03%) used
+[12.482s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 215M (22.07%) used
+[12.487s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 264M (27.10%) used
+[12.493s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 314M (32.14%) used
+[12.498s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 363M (37.17%) used
+[12.504s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 412M (42.21%) used
+[12.509s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 461M (47.24%) used
+[12.514s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 511M (52.28%) used
+[12.520s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 560M (57.31%) used
+[12.524s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 609M (62.35%) used
+[12.530s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 658M (67.38%) used
+[12.534s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 708M (72.42%) used
+[12.539s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 757M (77.46%) used
+[12.781s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 806M (82.54%) used
+[12.816s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 856M (87.61%) used
+[12.823s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 905M (92.64%) used
+[12.837s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 954M (97.67%) used
+[12.841s][info   ][gc     ] GC(4) Step 0: Prologue 0.182ms
+[12.864s][info   ][gc     ] GC(4) Step 1: Mark 22.367ms
+[12.884s][info   ][gc     ] GC(4) Step 2: Calculate new locations 20.641ms
+[12.916s][info   ][gc     ] GC(4) Step 3: Adjust pointers 31.359ms
+[12.935s][info   ][gc     ] GC(4) Step 4: Move objects 19.724ms
+[12.935s][info   ][gc     ] GC(4) Step 5: Epilogue 0.118ms
+[12.936s][info   ][gc     ] GC(4) GC Stats: 7849 (1.54%) reachable from roots, 502092 (98.46%) reachable from heap, 428116 (83.95%) moved, 24 (0.00%) markwords preserved
+[12.936s][info   ][gc     ] GC(4) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[12.936s][info   ][gc     ] GC(4) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 94.584ms
+[12.936s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.82%) used
+[12.942s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[12.948s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.89%) used
+[12.954s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.93%) used
+[12.959s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.96%) used
+[12.965s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (42.00%) used
+[12.971s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.03%) used
+[12.976s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 509M (52.07%) used
+[12.982s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.10%) used
+[12.987s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.14%) used
+[12.992s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.17%) used
+[12.998s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 705M (72.21%) used
+[13.003s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 755M (77.24%) used
+[13.008s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.28%) used
+[13.013s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.31%) used
+[13.019s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 902M (92.35%) used
+[13.024s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 952M (97.39%) used
+[13.028s][info   ][gc     ] GC(5) Step 0: Prologue 0.123ms
+[13.050s][info   ][gc     ] GC(5) Step 1: Mark 22.319ms
+[13.071s][info   ][gc     ] GC(5) Step 2: Calculate new locations 20.669ms
+[13.103s][info   ][gc     ] GC(5) Step 3: Adjust pointers 31.748ms
+[13.122s][info   ][gc     ] GC(5) Step 4: Move objects 19.638ms
+[13.122s][info   ][gc     ] GC(5) Step 5: Epilogue 0.063ms
+[13.122s][info   ][gc     ] GC(5) GC Stats: 7810 (1.53%) reachable from roots, 501792 (98.47%) reachable from heap, 427725 (83.93%) moved, 11 (0.00%) markwords preserved
+[13.122s][info   ][gc     ] GC(5) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.69%) used
+[13.122s][info   ][gc     ] GC(5) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 94.732ms
+[13.123s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.82%) used
+[13.287s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.85%) used
+[13.324s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.88%) used
+[13.331s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.92%) used
+[13.338s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.95%) used
+[13.344s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (41.98%) used
+[13.351s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.02%) used
+[13.358s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 508M (52.05%) used
+[13.363s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.09%) used
+[13.369s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.12%) used
+[13.376s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.15%) used
+[13.383s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 705M (72.19%) used
+[13.388s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 754M (77.22%) used
+[13.393s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.26%) used
+[13.399s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.29%) used
+[13.404s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 902M (92.33%) used
+[13.409s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 951M (97.36%) used
+[13.412s][info   ][gc     ] GC(6) Step 0: Prologue 0.125ms
+[13.435s][info   ][gc     ] GC(6) Step 1: Mark 23.021ms
+[13.456s][info   ][gc     ] GC(6) Step 2: Calculate new locations 21.102ms
+[13.489s][info   ][gc     ] GC(6) Step 3: Adjust pointers 32.878ms
+[13.514s][info   ][gc     ] GC(6) Step 4: Move objects 25.076ms
+[13.514s][info   ][gc     ] GC(6) Step 5: Epilogue 0.094ms
+[13.514s][info   ][gc     ] GC(6) GC Stats: 7863 (1.54%) reachable from roots, 502035 (98.46%) reachable from heap, 434877 (85.29%) moved, 112 (0.02%) markwords preserved
+[13.514s][info   ][gc     ] GC(6) Heap: 977M reserved, 977M (100.00%) committed, 165M (16.91%) used
+[13.514s][info   ][gc     ] GC(6) Lisp2-style Mark-Compact (Allocation Failure) 977M->165M(977M) 102.500ms
+[13.515s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 166M (17.03%) used
+[13.519s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 215M (22.07%) used
+[13.524s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 264M (27.10%) used
+[13.529s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 314M (32.14%) used
+[13.534s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 363M (37.18%) used
+[13.687s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 412M (42.22%) used
+[13.807s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 462M (47.32%) used
+[13.815s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 511M (52.36%) used
+[13.822s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 561M (57.39%) used
+[13.830s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 610M (62.42%) used
+[13.836s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 659M (67.46%) used
+[13.843s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 708M (72.49%) used
+[13.850s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 757M (77.53%) used
+[13.856s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 807M (82.56%) used
+[13.861s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 856M (87.60%) used
+[13.867s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 905M (92.63%) used
+[13.872s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 954M (97.67%) used
+[13.875s][info   ][gc     ] GC(7) Step 0: Prologue 0.187ms
+[13.897s][info   ][gc     ] GC(7) Step 1: Mark 22.168ms
+[13.918s][info   ][gc     ] GC(7) Step 2: Calculate new locations 20.915ms
+[13.950s][info   ][gc     ] GC(7) Step 3: Adjust pointers 32.180ms
+[13.970s][info   ][gc     ] GC(7) Step 4: Move objects 19.959ms
+[13.970s][info   ][gc     ] GC(7) Step 5: Epilogue 0.095ms
+[13.970s][info   ][gc     ] GC(7) GC Stats: 7876 (1.54%) reachable from roots, 502170 (98.46%) reachable from heap, 433953 (85.08%) moved, 79 (0.02%) markwords preserved
+[13.970s][info   ][gc     ] GC(7) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[13.970s][info   ][gc     ] GC(7) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 95.732ms
+[13.971s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.83%) used
+[13.976s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[13.982s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.89%) used
+[13.988s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.93%) used
+[13.993s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.96%) used
+[13.998s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (42.00%) used
+[14.003s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.03%) used
+[14.008s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 509M (52.07%) used
+[14.013s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.11%) used
+[14.021s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.15%) used
+[14.205s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.16%) used
+[14.221s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 705M (72.21%) used
+[14.227s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 755M (77.24%) used
+[14.235s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.28%) used
+[14.242s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.31%) used
+[14.248s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 902M (92.35%) used
+[14.254s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 952M (97.38%) used
+[14.257s][info   ][gc     ] GC(8) Step 0: Prologue 0.157ms
+[14.280s][info   ][gc     ] GC(8) Step 1: Mark 22.927ms
+[14.301s][info   ][gc     ] GC(8) Step 2: Calculate new locations 21.106ms
+[14.334s][info   ][gc     ] GC(8) Step 3: Adjust pointers 32.433ms
+[14.359s][info   ][gc     ] GC(8) Step 4: Move objects 25.403ms
+[14.360s][info   ][gc     ] GC(8) Step 5: Epilogue 0.100ms
+[14.360s][info   ][gc     ] GC(8) GC Stats: 7897 (1.55%) reachable from roots, 502262 (98.45%) reachable from heap, 435338 (85.33%) moved, 142 (0.03%) markwords preserved
+[14.360s][info   ][gc     ] GC(8) Heap: 977M reserved, 977M (100.00%) committed, 165M (16.91%) used
+[14.360s][info   ][gc     ] GC(8) Lisp2-style Mark-Compact (Allocation Failure) 977M->165M(977M) 102.353ms
+[14.360s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 166M (17.04%) used
+[14.366s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 215M (22.07%) used
+[14.372s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 264M (27.10%) used
+[14.379s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 314M (32.14%) used
+[14.385s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 363M (37.17%) used
+[14.391s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 412M (42.21%) used
+[14.397s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 461M (47.24%) used
+[14.404s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 511M (52.28%) used
+[14.410s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 560M (57.31%) used
+[14.416s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 609M (62.35%) used
+[14.422s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 658M (67.38%) used
+[14.428s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 708M (72.42%) used
+[14.433s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 757M (77.45%) used
+[14.439s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 806M (82.50%) used
+[14.681s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 855M (87.53%) used
+[14.714s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 905M (92.64%) used
+[14.720s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 954M (97.67%) used
+[14.723s][info   ][gc     ] GC(9) Step 0: Prologue 0.194ms
+[14.746s][info   ][gc     ] GC(9) Step 1: Mark 22.565ms
+[14.767s][info   ][gc     ] GC(9) Step 2: Calculate new locations 20.643ms
+[14.798s][info   ][gc     ] GC(9) Step 3: Adjust pointers 31.382ms
+[14.818s][info   ][gc     ] GC(9) Step 4: Move objects 19.830ms
+[14.818s][info   ][gc     ] GC(9) Step 5: Epilogue 0.093ms
+[14.818s][info   ][gc     ] GC(9) GC Stats: 7906 (1.55%) reachable from roots, 502373 (98.45%) reachable from heap, 428320 (83.94%) moved, 54 (0.01%) markwords preserved
+[14.818s][info   ][gc     ] GC(9) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[14.818s][info   ][gc     ] GC(9) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 94.903ms
+[14.818s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.83%) used
+[14.824s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[14.830s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.89%) used
+[14.836s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.93%) used
+[14.842s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.96%) used
+[14.847s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (42.00%) used
+[14.853s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.03%) used
+[14.858s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 509M (52.07%) used
+[14.864s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.10%) used
+[14.870s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.14%) used
+[14.875s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.17%) used
+[14.881s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 705M (72.21%) used
+[14.886s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 755M (77.24%) used
+[14.891s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.27%) used
+[14.896s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.31%) used
+[14.901s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 902M (92.34%) used
+[14.905s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 952M (97.38%) used
+[14.909s][info   ][gc     ] GC(10) Step 0: Prologue 0.188ms
+[14.931s][info   ][gc     ] GC(10) Step 1: Mark 22.554ms
+[14.952s][info   ][gc     ] GC(10) Step 2: Calculate new locations 20.946ms
+[14.984s][info   ][gc     ] GC(10) Step 3: Adjust pointers 32.276ms
+[15.004s][info   ][gc     ] GC(10) Step 4: Move objects 19.541ms
+[15.004s][info   ][gc     ] GC(10) Step 5: Epilogue 0.079ms
+[15.004s][info   ][gc     ] GC(10) GC Stats: 7899 (1.55%) reachable from roots, 502142 (98.45%) reachable from heap, 427823 (83.88%) moved, 10 (0.00%) markwords preserved
+[15.004s][info   ][gc     ] GC(10) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[15.004s][info   ][gc     ] GC(10) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 95.747ms
+[15.004s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.82%) used
+[15.008s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[15.174s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 263M (26.92%) used
+[15.488s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 313M (32.05%) used
+[15.496s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 362M (37.09%) used
+[15.503s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 411M (42.12%) used
+[15.510s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 461M (47.16%) used
+[15.518s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 510M (52.19%) used
+[15.525s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 559M (57.22%) used
+[15.531s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 608M (62.26%) used
+[15.537s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 657M (67.29%) used
+[15.543s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 707M (72.33%) used
+[15.550s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 756M (77.36%) used
+[15.556s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 805M (82.39%) used
+[15.562s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 854M (87.43%) used
+[15.568s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 903M (92.46%) used
+[15.574s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 953M (97.50%) used
+[15.578s][info   ][gc     ] GC(11) Step 0: Prologue 0.243ms
+[15.601s][info   ][gc     ] GC(11) Step 1: Mark 22.774ms
+[15.622s][info   ][gc     ] GC(11) Step 2: Calculate new locations 20.949ms
+[15.654s][info   ][gc     ] GC(11) Step 3: Adjust pointers 32.134ms
+[15.674s][info   ][gc     ] GC(11) Step 4: Move objects 20.006ms
+[15.674s][info   ][gc     ] GC(11) Step 5: Epilogue 0.188ms
+[15.674s][info   ][gc     ] GC(11) GC Stats: 7919 (1.55%) reachable from roots, 502289 (98.45%) reachable from heap, 428167 (83.92%) moved, 54 (0.01%) markwords preserved
+[15.674s][info   ][gc     ] GC(11) Heap: 977M reserved, 977M (100.00%) committed, 165M (16.91%) used
+[15.675s][info   ][gc     ] GC(11) Lisp2-style Mark-Compact (Allocation Failure) 977M->165M(977M) 96.523ms
+[15.675s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 167M (17.16%) used
+[15.680s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 217M (22.20%) used
+[15.685s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 266M (27.23%) used
+[15.690s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 315M (32.27%) used
+[15.695s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 364M (37.31%) used
+[15.699s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 414M (42.35%) used
+[15.923s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 463M (47.38%) used
+[16.030s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 512M (52.41%) used
+[16.119s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 561M (57.44%) used
+[16.171s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 611M (62.55%) used
+[16.190s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 660M (67.59%) used
+[16.196s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 709M (72.62%) used
+[16.202s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 759M (77.65%) used
+[16.209s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 808M (82.69%) used
+[16.215s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 857M (87.72%) used
+[16.221s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 906M (92.76%) used
+[16.226s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 956M (97.79%) used
+[16.229s][info   ][gc     ] GC(12) Step 0: Prologue 0.166ms
+[16.252s][info   ][gc     ] GC(12) Step 1: Mark 22.886ms
+[16.273s][info   ][gc     ] GC(12) Step 2: Calculate new locations 20.950ms
+[16.305s][info   ][gc     ] GC(12) Step 3: Adjust pointers 32.097ms
+[16.325s][info   ][gc     ] GC(12) Step 4: Move objects 19.977ms
+[16.325s][info   ][gc     ] GC(12) Step 5: Epilogue 0.130ms
+[16.325s][info   ][gc     ] GC(12) GC Stats: 7923 (1.55%) reachable from roots, 502420 (98.45%) reachable from heap, 428234 (83.91%) moved, 53 (0.01%) markwords preserved
+[16.325s][info   ][gc     ] GC(12) Heap: 977M reserved, 977M (100.00%) committed, 163M (16.70%) used
+[16.325s][info   ][gc     ] GC(12) Lisp2-style Mark-Compact (Allocation Failure) 977M->163M(977M) 96.399ms
+[16.326s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 164M (16.83%) used
+[16.331s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 213M (21.86%) used
+[16.336s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 262M (26.90%) used
+[16.341s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 312M (31.93%) used
+[16.347s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 361M (36.97%) used
+[16.352s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 410M (42.00%) used
+[16.358s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 459M (47.04%) used
+[16.363s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 509M (52.07%) used
+[16.368s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 558M (57.11%) used
+[16.372s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 607M (62.14%) used
+[16.377s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 656M (67.18%) used
+[16.382s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 706M (72.22%) used
+[16.387s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 755M (77.25%) used
+[16.419s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 804M (82.29%) used
+[16.488s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 853M (87.32%) used
+Total edges: 1000000
+Left 284808, Right 241
+===== DaCapo 23.11-chopin graphchi PASSED in 7763 msec =====
+runAgain
+[16.589s][info   ][gc     ] Heap: 977M reserved, 977M (100.00%) committed, 898M (91.95%) used

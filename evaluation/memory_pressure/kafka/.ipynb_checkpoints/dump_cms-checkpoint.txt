@@ -1,0 +1,97 @@
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[0.003s][warning][gc,ergo] NewSize was set larger than initial heap size, will use initial heap size.
+[0.003s][warning][gc,ergo] MaxNewSize (524288k) is equal to or greater than the entire heap (524288k).  A new max generation size of 524224k will be used.
+[0.007s][info   ][gc     ] Using Concurrent Mark Sweep
+Class name: org.dacapo.harness.Kafka
+Configurations:
+short     Apache Kafka® is a distributed streaming platform.
+long      Apache Kafka® aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds.
+author    Apache Software Foundation
+license   Apache License, Version 2.0
+copyright Copyright (c) Apache Software Foundation
+url       https://kafka.apache.org/
+version   kafka 3.3.1
+sizes     default large small
+Using scaled threading model. 8 processors detected, 8 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: kafka 3.3.1
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    4 11/18    54 nominal average object size (bytes)
+AOL:    4 12/18    48 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:    3 14/18    16 nominal 10-percentile object size (bytes)
+ARA:    2 15/18   595 nominal allocation rate (bytes / usec) (3026868936/5085700.0)
+BAL:    2 16/19     1 nominal aaload per usec
+BAS:    4 12/19     0 nominal aastore per usec
+BEF:    3 14/19     3 nominal execution focus / dominance of hot code
+BGF:    2 17/19    92 nominal getfield per usec
+BPF:    2 16/19    25 nominal putfield per usec
+BUB:    8  4/19   128 nominal thousands of unique bytecodes executed
+BUF:    8  4/19    21 nominal thousands of unique function calls
+GCA:    3 17/22    87 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (172/196)
+GCC:    2 19/22   247 nominal GC count at 2X heap size (G1)
+GCM:    4 14/22    87 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (171/196)
+GCP:    1 21/22     0 nominal percentage of time spent in GC pauses at 2X heap size (G1) (450/55640)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (196/196)
+GMD:    9  3/22   191 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    7  6/18   305 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:   10  1/22   157 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    9  4/22   203 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:    1 21/22     0 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (5099/5085.7)
+GTO:    3 14/18    14 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    9  3/22     6 nominal execution time (sec)
+PKP:   10  2/22    31 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    1 20/22     3 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    8  6/22     1 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    7  7/22     5 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+Starting Zookeeper...
+Starting Kafka Server...
+[1.173s][info   ][gc     ] GC(0) Pause Young (Allocation Failure) 405M->10M(461M) 10.151ms
+[1.175s][info   ][gc     ] GC(1) Pause Initial Mark 18M->18M(461M) 0.894ms
+[1.175s][info   ][gc     ] GC(1) Concurrent Mark
+[1.177s][info   ][gc     ] GC(1) Concurrent Mark 2.166ms
+[1.177s][info   ][gc     ] GC(1) Concurrent Preclean
+[1.177s][info   ][gc     ] GC(1) Concurrent Preclean 0.058ms
+[1.177s][info   ][gc     ] GC(1) Concurrent Abortable Preclean
+[1.219s][info   ][gc     ] GC(1) Concurrent Abortable Preclean 41.410ms
+[1.230s][info   ][gc     ] GC(1) Pause Remark 223M->223M(461M) 10.379ms
+[1.230s][info   ][gc     ] GC(1) Concurrent Sweep
+[1.230s][info   ][gc     ] GC(1) Concurrent Sweep 0.223ms
+[1.230s][info   ][gc     ] GC(1) Concurrent Reset
+[1.230s][info   ][gc     ] GC(1) Concurrent Reset 0.021ms
+[1.545s][info   ][gc     ] GC(2) Pause Full (System.gc()) 284M->141M(461M) 37.549ms
+===== DaCapo 23.11-chopin kafka starting =====
+Trogdor is running the workload....
+[2.700s][info   ][gc     ] GC(4) Pause Full (Allocation Failure) 435M->154M(461M) 59.208ms
+[2.701s][info   ][gc     ] GC(3) Pause Young (Allocation Failure) 406M->154M(461M) 87.446ms
+Starting 1000000 requests...
+5%[3.332s][info   ][gc     ] GC(6) Pause Full (Allocation Failure) 456M->172M(461M) 65.115ms
+[3.332s][info   ][gc     ] GC(5) Pause Young (Allocation Failure) 406M->172M(461M) 99.905ms
+10%15%[3.830s][info   ][gc     ] GC(8) Pause Full (Allocation Failure) 456M->173M(461M) 72.375ms
+[3.830s][info   ][gc     ] GC(7) Pause Young (Allocation Failure) 406M->173M(461M) 111.655ms
+20%25%[4.352s][info   ][gc     ] GC(10) Pause Full (Allocation Failure) 456M->172M(461M) 73.983ms
+[4.352s][info   ][gc     ] GC(9) Pause Young (Allocation Failure) 405M->172M(461M) 111.871ms
+30%35%[4.921s][info   ][gc     ] GC(12) Pause Full (Allocation Failure) 456M->173M(461M) 73.460ms
+[4.921s][info   ][gc     ] GC(11) Pause Young (Allocation Failure) 406M->173M(461M) 110.009ms
+40%45%[5.437s][info   ][gc     ] GC(14) Pause Full (Allocation Failure) 456M->176M(461M) 66.517ms
+[5.437s][info   ][gc     ] GC(13) Pause Young (Allocation Failure) 406M->176M(461M) 103.573ms
+50%55%60%[6.029s][info   ][gc     ] GC(16) Pause Full (Allocation Failure) 457M->177M(461M) 74.721ms
+[6.029s][info   ][gc     ] GC(15) Pause Young (Allocation Failure) 406M->177M(461M) 110.624ms
+65%70%[6.604s][info   ][gc     ] GC(18) Pause Full (Allocation Failure) 457M->175M(461M) 75.312ms
+[6.604s][info   ][gc     ] GC(17) Pause Young (Allocation Failure) 406M->175M(461M) 110.880ms
+75%80%[7.227s][info   ][gc     ] GC(20) Pause Full (Allocation Failure) 457M->177M(461M) 72.188ms
+[7.227s][info   ][gc     ] GC(19) Pause Young (Allocation Failure) 406M->177M(461M) 110.166ms
+85%90%[7.805s][info   ][gc     ] GC(22) Pause Full (Allocation Failure) 457M->175M(461M) 63.114ms
+[7.805s][info   ][gc     ] GC(21) Pause Young (Allocation Failure) 406M->175M(461M) 98.811ms
+95%100%
+Completed requests
+Finished
+===== DaCapo 23.11-chopin kafka PASSED in 6411 msec =====
+===== DaCapo simple tail latency: 50% 16454 usec, 90% 93150 usec, 99% 144252 usec, 99.9% 151592 usec, 99.99% 152960 usec, max 153078 usec, measured over 1000000 events =====
+[8.308s][info   ][gc     ] GC(24) Pause Full (Allocation Failure) 457M->163M(461M) 72.348ms
+[8.308s][info   ][gc     ] GC(23) Pause Young (Allocation Failure) 406M->163M(461M) 111.565ms
+===== DaCapo metered tail latency: 50% 89611 usec, 90% 182056 usec, 99% 239628 usec, 99.9% 253397 usec, 99.99% 254993 usec, max 255574 usec, measured over 1000000 events =====
+runAgain

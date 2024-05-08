@@ -1,0 +1,291 @@
+[0.003s][info][gc] Using Serial
+Class name: org.dacapo.harness.H2
+Configurations:
+short     An SQL relational database engine written in Java
+long      H2 executes a TPC-C like benchmark written by Apache as part of the Apache Derby database. The application models: customers, districts, warehouses, purchases and deliveries.
+author    TPC-C like workload authored by The Apache Software Foundation, and Database authored by H2
+license   Apache License, Version 2.0 covering TPC-C like workload, and Eclipse Public License Version 1.0 covering H2
+copyright Copyright (c) 2001-2002, The Apache Software Foundation and H2 Group, H2
+url       http://db.apache.org/derby/ and http://www.h2database.com
+version   h2 2.2.220 derby 10.15.2.0
+sizes     default large small vlarge
+Using scaled threading model. 8 processors detected, 8 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2 2.2.220 derby 10.15.2.0
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    3 14/18    42 nominal average object size (bytes)
+AOL:    5  9/18    64 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    6  8/18  3539 nominal allocation rate (bytes / usec) (6765032248/1911200.0)
+BAL:    7  7/19    68 nominal aaload per usec
+BAS:    8  4/19     8 nominal aastore per usec
+BEF:    6  8/19     7 nominal execution focus / dominance of hot code
+BGF:    6  8/19  1060 nominal getfield per usec
+BPF:    7  6/19   172 nominal putfield per usec
+BUB:    2 17/19    17 nominal thousands of unique bytecodes executed
+BUF:    3 14/19     2 nominal thousands of unique function calls
+GCA:    5 12/22    98 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (670/681)
+GCC:    3 17/22   558 nominal GC count at 2X heap size (G1)
+GCM:    3 16/22    82 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (564/681)
+GCP:    5 11/22     4 nominal percentage of time spent in GC pauses at 2X heap size (G1) (3171/63848)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (681/679)
+GMD:   10  1/22   681 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:   10  1/18 10193 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    8  6/22    69 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:   10  1/22   902 nominal minimum heap size (MB) for default size without compressed pointers
+GMV:   10   1/3 20609 nominal minimum heap size (MB) for vlarge size configuration (with compressed pointers)
+GSS:    4 14/22    40 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (2691.3/1911.2)
+GTO:    1 17/18     9 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    4 15/22     2 nominal execution time (sec)
+PKP:    1 21/22     0 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    8  6/22    24 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    8  6/22     1 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+Preparing the H2 database...
+TPCC configuration: scale: 16, terminals: 8, transactions: 100000
+[0.297s][info][gc] GC(0) Pause Young (Allocation Failure) 16M->4M(59M) 4.634ms
+[0.436s][info][gc] GC(1) Pause Young (Allocation Failure) 21M->5M(59M) 4.586ms
+[0.463s][info][gc] GC(2) Pause Young (Allocation Failure) 22M->7M(59M) 3.468ms
+[0.501s][info][gc] GC(3) Pause Young (Allocation Failure) 23M->8M(59M) 3.331ms
+[0.539s][info][gc] GC(4) Pause Young (Allocation Failure) 24M->9M(59M) 3.066ms
+[0.595s][info][gc] GC(5) Pause Young (Allocation Failure) 25M->11M(59M) 5.453ms
+[0.628s][info][gc] GC(6) Pause Young (Allocation Failure) 27M->12M(59M) 4.642ms
+[0.652s][info][gc] GC(7) Pause Young (Allocation Failure) 29M->14M(59M) 3.125ms
+[0.672s][info][gc] GC(8) Pause Young (Allocation Failure) 30M->15M(59M) 4.381ms
+[0.694s][info][gc] GC(9) Pause Young (Allocation Failure) 32M->16M(59M) 2.659ms
+[0.713s][info][gc] GC(10) Pause Young (Allocation Failure) 33M->18M(59M) 4.985ms
+[0.727s][info][gc] GC(11) Pause Young (Allocation Failure) 35M->19M(59M) 2.718ms
+[0.744s][info][gc] GC(12) Pause Young (Allocation Failure) 35M->20M(59M) 4.121ms
+[0.753s][info][gc] GC(13) Pause Young (Allocation Failure) 37M->20M(59M) 1.750ms
+[0.777s][info][gc] GC(14) Pause Young (Allocation Failure) 37M->22M(59M) 2.546ms
+[0.796s][info][gc] GC(15) Pause Young (Allocation Failure) 38M->23M(59M) 3.819ms
+[0.819s][info][gc] GC(16) Pause Young (Allocation Failure) 40M->25M(59M) 4.985ms
+[0.836s][info][gc] GC(17) Pause Young (Allocation Failure) 41M->26M(59M) 3.159ms
+[0.853s][info][gc] GC(18) Pause Young (Allocation Failure) 42M->27M(59M) 3.939ms
+[0.869s][info][gc] GC(19) Pause Young (Allocation Failure) 44M->29M(59M) 5.327ms
+[0.885s][info][gc] GC(20) Pause Young (Allocation Failure) 45M->30M(59M) 2.602ms
+[0.899s][info][gc] GC(21) Pause Young (Allocation Failure) 46M->32M(59M) 5.017ms
+[0.911s][info][gc] GC(22) Pause Young (Allocation Failure) 48M->32M(59M) 2.277ms
+[0.925s][info][gc] GC(23) Pause Young (Allocation Failure) 48M->34M(59M) 3.541ms
+[0.935s][info][gc] GC(24) Pause Young (Allocation Failure) 50M->35M(59M) 2.914ms
+[0.949s][info][gc] GC(25) Pause Young (Allocation Failure) 51M->35M(59M) 2.286ms
+[0.963s][info][gc] GC(26) Pause Young (Allocation Failure) 52M->36M(59M) 2.697ms
+[0.979s][info][gc] GC(27) Pause Young (Allocation Failure) 53M->38M(59M) 5.198ms
+[0.991s][info][gc] GC(28) Pause Young (Allocation Failure) 55M->40M(59M) 3.726ms
+[1.002s][info][gc] GC(29) Pause Young (Allocation Failure) 56M->41M(59M) 2.474ms
+[1.016s][info][gc] GC(30) Pause Young (Allocation Failure) 57M->43M(59M) 4.949ms
+[1.064s][info][gc] GC(32) Pause Full (Allocation Failure) 43M->43M(60M) 37.074ms
+[1.064s][info][gc] GC(31) Pause Young (Allocation Failure) 59M->43M(102M) 39.740ms
+[1.094s][info][gc] GC(33) Pause Young (Allocation Failure) 70M->45M(102M) 15.257ms
+[1.116s][info][gc] GC(34) Pause Young (Allocation Failure) 74M->47M(102M) 6.733ms
+[1.132s][info][gc] GC(35) Pause Young (Allocation Failure) 75M->48M(102M) 3.391ms
+[1.155s][info][gc] GC(36) Pause Young (Allocation Failure) 76M->50M(102M) 4.433ms
+[1.174s][info][gc] GC(37) Pause Young (Allocation Failure) 78M->52M(102M) 6.062ms
+[1.196s][info][gc] GC(38) Pause Young (Allocation Failure) 81M->55M(102M) 5.938ms
+[1.215s][info][gc] GC(39) Pause Young (Allocation Failure) 83M->56M(102M) 4.720ms
+[1.231s][info][gc] GC(40) Pause Young (Allocation Failure) 84M->57M(102M) 3.798ms
+[1.254s][info][gc] GC(41) Pause Young (Allocation Failure) 86M->61M(102M) 7.755ms
+[1.271s][info][gc] GC(42) Pause Young (Allocation Failure) 89M->61M(102M) 3.943ms
+[1.295s][info][gc] GC(43) Pause Young (Allocation Failure) 89M->64M(102M) 5.473ms
+[1.320s][info][gc] GC(44) Pause Young (Allocation Failure) 92M->65M(102M) 7.120ms
+[1.343s][info][gc] GC(45) Pause Young (Allocation Failure) 94M->68M(102M) 8.090ms
+[1.366s][info][gc] GC(46) Pause Young (Allocation Failure) 96M->70M(102M) 6.659ms
+[1.384s][info][gc] GC(47) Pause Young (Allocation Failure) 98M->71M(102M) 4.075ms
+[1.461s][info][gc] GC(49) Pause Full (Allocation Failure) 73M->73M(103M) 57.839ms
+[1.461s][info][gc] GC(48) Pause Young (Allocation Failure) 99M->73M(172M) 63.347ms
+[1.516s][info][gc] GC(50) Pause Young (Allocation Failure) 119M->76M(172M) 24.618ms
+[1.552s][info][gc] GC(51) Pause Young (Allocation Failure) 124M->79M(172M) 12.437ms
+[1.588s][info][gc] GC(52) Pause Young (Allocation Failure) 127M->83M(172M) 11.236ms
+[1.619s][info][gc] GC(53) Pause Young (Allocation Failure) 131M->86M(172M) 9.371ms
+[1.651s][info][gc] GC(54) Pause Young (Allocation Failure) 134M->88M(172M) 6.992ms
+[1.682s][info][gc] GC(55) Pause Young (Allocation Failure) 136M->92M(172M) 7.531ms
+[1.714s][info][gc] GC(56) Pause Young (Allocation Failure) 140M->95M(172M) 9.626ms
+[1.746s][info][gc] GC(57) Pause Young (Allocation Failure) 143M->99M(172M) 9.926ms
+[1.776s][info][gc] GC(58) Pause Young (Allocation Failure) 147M->101M(172M) 6.539ms
+[1.808s][info][gc] GC(59) Pause Young (Allocation Failure) 148M->104M(172M) 8.280ms
+[1.842s][info][gc] GC(60) Pause Young (Allocation Failure) 152M->107M(172M) 12.029ms
+[1.875s][info][gc] GC(61) Pause Young (Allocation Failure) 155M->111M(172M) 8.701ms
+[1.907s][info][gc] GC(62) Pause Young (Allocation Failure) 159M->113M(172M) 7.985ms
+[1.938s][info][gc] GC(63) Pause Young (Allocation Failure) 160M->116M(172M) 6.869ms
+[1.969s][info][gc] GC(64) Pause Young (Allocation Failure) 164M->119M(172M) 9.767ms
+[2.097s][info][gc] GC(66) Pause Full (Allocation Failure) 123M->123M(173M) 97.016ms
+[2.097s][info][gc] GC(65) Pause Young (Allocation Failure) 167M->123M(289M) 106.212ms
+[2.179s][info][gc] GC(67) Pause Young (Allocation Failure) 199M->128M(289M) 39.886ms
+[2.231s][info][gc] GC(68) Pause Young (Allocation Failure) 208M->133M(289M) 16.602ms
+[2.278s][info][gc] GC(69) Pause Young (Allocation Failure) 213M->137M(289M) 13.054ms
+[2.333s][info][gc] GC(70) Pause Young (Allocation Failure) 218M->143M(289M) 14.984ms
+[2.389s][info][gc] GC(71) Pause Young (Allocation Failure) 223M->148M(289M) 18.535ms
+[2.444s][info][gc] GC(72) Pause Young (Allocation Failure) 228M->153M(289M) 16.442ms
+[2.494s][info][gc] GC(73) Pause Young (Allocation Failure) 233M->158M(289M) 14.157ms
+[2.542s][info][gc] GC(74) Pause Young (Allocation Failure) 238M->163M(289M) 13.216ms
+[2.595s][info][gc] GC(75) Pause Young (Allocation Failure) 243M->168M(289M) 14.383ms
+[2.647s][info][gc] GC(76) Pause Young (Allocation Failure) 248M->173M(289M) 17.986ms
+[2.700s][info][gc] GC(77) Pause Young (Allocation Failure) 253M->178M(289M) 15.228ms
+[2.748s][info][gc] GC(78) Pause Young (Allocation Failure) 258M->183M(289M) 13.631ms
+[2.797s][info][gc] GC(79) Pause Young (Allocation Failure) 263M->188M(289M) 13.052ms
+[2.849s][info][gc] GC(80) Pause Young (Allocation Failure) 268M->193M(289M) 13.131ms
+[2.899s][info][gc] GC(81) Pause Young (Allocation Failure) 273M->198M(289M) 16.140ms
+[2.952s][info][gc] GC(82) Pause Young (Allocation Failure) 278M->203M(289M) 13.984ms
+[3.211s][info][gc] GC(84) Pause Full (Allocation Failure) 208M->205M(293M) 203.729ms
+[3.211s][info][gc] GC(83) Pause Young (Allocation Failure) 283M->205M(491M) 222.467ms
+[3.374s][info][gc] GC(85) Pause Young (Allocation Failure) 338M->214M(491M) 66.354ms
+[3.487s][info][gc] GC(86) Pause Young (Allocation Failure) 350M->220M(491M) 23.590ms
+[3.581s][info][gc] GC(87) Pause Young (Allocation Failure) 355M->224M(491M) 19.351ms
+[3.662s][info][gc] GC(88) Pause Young (Allocation Failure) 360M->233M(491M) 30.568ms
+[3.739s][info][gc] GC(89) Pause Young (Allocation Failure) 369M->242M(491M) 33.711ms
+[3.797s][info][gc] GC(90) Pause Young (Allocation Failure) 378M->242M(491M) 9.028ms
+[3.864s][info][gc] GC(91) Pause Young (Allocation Failure) 378M->252M(491M) 21.275ms
+[3.952s][info][gc] GC(92) Pause Young (Allocation Failure) 387M->250M(491M) 9.855ms
+[4.050s][info][gc] GC(93) Pause Young (Allocation Failure) 385M->260M(491M) 25.307ms
+[4.127s][info][gc] GC(94) Pause Young (Allocation Failure) 395M->269M(491M) 28.131ms
+[4.201s][info][gc] GC(95) Pause Young (Allocation Failure) 404M->278M(491M) 27.011ms
+[4.273s][info][gc] GC(96) Pause Young (Allocation Failure) 414M->288M(491M) 25.531ms
+[4.347s][info][gc] GC(97) Pause Young (Allocation Failure) 423M->297M(491M) 27.961ms
+[4.421s][info][gc] GC(98) Pause Young (Allocation Failure) 432M->306M(491M) 28.496ms
+[4.495s][info][gc] GC(99) Pause Young (Allocation Failure) 442M->315M(491M) 27.293ms
+[4.567s][info][gc] GC(100) Pause Young (Allocation Failure) 451M->324M(491M) 25.797ms
+[4.632s][info][gc] GC(101) Pause Young (Allocation Failure) 460M->333M(491M) 23.051ms
+[4.701s][info][gc] GC(102) Pause Young (Allocation Failure) 469M->342M(491M) 23.964ms
+[5.043s][info][gc] GC(104) Pause Full (Allocation Failure) 351M->351M(495M) 275.391ms
+[5.043s][info][gc] GC(103) Pause Young (Allocation Failure) 478M->351M(828M) 300.627ms
+[5.219s][info][gc] GC(105) Pause Young (Allocation Failure) 571M->357M(828M) 84.453ms
+[5.319s][info][gc] GC(106) Pause Young (Allocation Failure) 586M->359M(828M) 13.695ms
+[5.405s][info][gc] GC(107) Pause Young (Allocation Failure) 588M->361M(828M) 4.152ms
+[5.564s][info][gc] GC(108) Pause Young (Allocation Failure) 590M->376M(828M) 32.859ms
+[5.717s][info][gc] GC(109) Pause Young (Allocation Failure) 604M->383M(828M) 35.058ms
+[5.831s][info][gc] GC(110) Pause Young (Allocation Failure) 611M->397M(828M) 29.481ms
+[5.926s][info][gc] GC(111) Pause Young (Allocation Failure) 626M->390M(828M) 22.781ms
+[6.117s][info][gc] GC(112) Pause Young (Allocation Failure) 618M->405M(828M) 32.406ms
+[6.248s][info][gc] GC(113) Pause Young (Allocation Failure) 634M->400M(828M) 28.676ms
+[6.390s][info][gc] GC(114) Pause Young (Allocation Failure) 629M->405M(828M) 28.396ms
+[6.564s][info][gc] GC(115) Pause Young (Allocation Failure) 633M->409M(828M) 27.277ms
+[6.697s][info][gc] GC(116) Pause Young (Allocation Failure) 638M->425M(828M) 55.035ms
+[6.825s][info][gc] GC(117) Pause Young (Allocation Failure) 654M->451M(828M) 75.359ms
+[6.948s][info][gc] GC(118) Pause Young (Allocation Failure) 679M->476M(828M) 71.702ms
+[7.067s][info][gc] GC(119) Pause Young (Allocation Failure) 704M->500M(828M) 67.502ms
+[7.275s][info][gc] GC(120) Pause Young (Allocation Failure) 729M->532M(828M) 45.494ms
+[7.464s][info][gc] GC(121) Pause Young (Allocation Failure) 761M->532M(828M) 17.684ms
+[7.613s][info][gc] GC(122) Pause Young (Allocation Failure) 761M->533M(828M) 1.467ms
+[7.724s][info][gc] GC(123) Pause Young (Allocation Failure) 761M->535M(828M) 3.914ms
+[7.833s][info][gc] GC(124) Pause Young (Allocation Failure) 763M->537M(828M) 4.010ms
+[8.028s][info][gc] GC(125) Pause Young (Allocation Failure) 765M->557M(828M) 44.417ms
+[8.251s][info][gc] GC(126) Pause Young (Allocation Failure) 785M->582M(828M) 69.044ms
+[8.884s][info][gc] GC(128) Pause Full (Allocation Failure) 607M->477M(839M) 424.515ms
+[8.884s][info][gc] GC(127) Pause Young (Allocation Failure) 811M->477M(945M) 483.585ms
+[9.128s][info][gc] GC(129) Pause Young (Allocation Failure) 738M->504M(945M) 69.343ms
+[9.404s][info][gc] GC(130) Pause Young (Allocation Failure) 765M->526M(945M) 33.850ms
+[9.633s][info][gc] GC(131) Pause Young (Allocation Failure) 787M->526M(945M) 13.424ms
+[9.807s][info][gc] GC(132) Pause Young (Allocation Failure) 787M->528M(945M) 2.596ms
+[9.973s][info][gc] GC(133) Pause Young (Allocation Failure) 789M->530M(945M) 4.260ms
+[10.471s][info][gc] GC(134) Pause Full (System.gc()) 671M->476M(945M) 412.221ms
+===== DaCapo 23.11-chopin h2 starting =====
+Starting 100000 requests...
+[10.778s][info][gc] GC(135) Pause Young (Allocation Failure) 736M->482M(945M) 13.296ms
+[11.018s][info][gc] GC(136) Pause Young (Allocation Failure) 743M->487M(945M) 16.720ms
+[11.249s][info][gc] GC(137) Pause Young (Allocation Failure) 748M->490M(945M) 18.401ms
+5%[11.509s][info][gc] GC(138) Pause Young (Allocation Failure) 751M->493M(945M) 22.022ms
+[11.752s][info][gc] GC(139) Pause Young (Allocation Failure) 754M->496M(945M) 23.408ms
+[11.980s][info][gc] GC(140) Pause Young (Allocation Failure) 757M->499M(945M) 22.921ms
+[12.210s][info][gc] GC(141) Pause Young (Allocation Failure) 759M->501M(945M) 23.195ms
+10%[12.450s][info][gc] GC(142) Pause Young (Allocation Failure) 762M->504M(945M) 23.333ms
+[12.684s][info][gc] GC(143) Pause Young (Allocation Failure) 765M->507M(945M) 27.207ms
+[12.881s][info][gc] GC(144) Pause Young (Allocation Failure) 768M->509M(945M) 24.981ms
+15%[13.057s][info][gc] GC(145) Pause Young (Allocation Failure) 770M->513M(945M) 25.752ms
+[13.212s][info][gc] GC(146) Pause Young (Allocation Failure) 774M->515M(945M) 21.469ms
+[13.351s][info][gc] GC(147) Pause Young (Allocation Failure) 776M->518M(945M) 25.197ms
+[13.476s][info][gc] GC(148) Pause Young (Allocation Failure) 779M->521M(945M) 22.011ms
+20%[13.592s][info][gc] GC(149) Pause Young (Allocation Failure) 782M->525M(945M) 25.333ms
+[13.708s][info][gc] GC(150) Pause Young (Allocation Failure) 785M->527M(945M) 20.530ms
+[13.817s][info][gc] GC(151) Pause Young (Allocation Failure) 788M->530M(945M) 21.784ms
+25%[13.934s][info][gc] GC(152) Pause Young (Allocation Failure) 791M->533M(945M) 24.062ms
+[14.038s][info][gc] GC(153) Pause Young (Allocation Failure) 794M->536M(945M) 21.540ms
+[14.159s][info][gc] GC(154) Pause Young (Allocation Failure) 797M->538M(945M) 22.364ms
+[14.301s][info][gc] GC(155) Pause Young (Allocation Failure) 799M->541M(945M) 20.813ms
+30%[14.425s][info][gc] GC(156) Pause Young (Allocation Failure) 802M->544M(945M) 24.516ms
+[14.552s][info][gc] GC(157) Pause Young (Allocation Failure) 805M->547M(945M) 24.770ms
+[14.669s][info][gc] GC(158) Pause Young (Allocation Failure) 808M->550M(945M) 22.074ms
+35%[14.774s][info][gc] GC(159) Pause Young (Allocation Failure) 810M->552M(945M) 22.018ms
+[14.879s][info][gc] GC(160) Pause Young (Allocation Failure) 813M->555M(945M) 23.469ms
+[14.991s][info][gc] GC(161) Pause Young (Allocation Failure) 816M->558M(945M) 23.636ms
+[15.095s][info][gc] GC(162) Pause Young (Allocation Failure) 819M->561M(945M) 24.078ms
+40%[15.203s][info][gc] GC(163) Pause Young (Allocation Failure) 822M->564M(945M) 24.628ms
+[15.315s][info][gc] GC(164) Pause Young (Allocation Failure) 825M->567M(945M) 26.067ms
+[15.421s][info][gc] GC(165) Pause Young (Allocation Failure) 828M->570M(945M) 23.774ms
+45%[15.534s][info][gc] GC(166) Pause Young (Allocation Failure) 831M->573M(945M) 27.397ms
+[15.645s][info][gc] GC(167) Pause Young (Allocation Failure) 834M->576M(945M) 24.769ms
+[15.756s][info][gc] GC(168) Pause Young (Allocation Failure) 837M->579M(945M) 25.735ms
+50%[15.865s][info][gc] GC(169) Pause Young (Allocation Failure) 840M->582M(945M) 25.032ms
+[15.969s][info][gc] GC(170) Pause Young (Allocation Failure) 843M->584M(945M) 23.454ms
+[16.069s][info][gc] GC(171) Pause Young (Allocation Failure) 845M->587M(945M) 22.897ms
+[16.167s][info][gc] GC(172) Pause Young (Allocation Failure) 848M->590M(945M) 24.404ms
+55%[16.281s][info][gc] GC(173) Pause Young (Allocation Failure) 851M->593M(945M) 23.187ms
+[16.375s][info][gc] GC(174) Pause Young (Allocation Failure) 854M->596M(945M) 23.304ms
+[16.476s][info][gc] GC(175) Pause Young (Allocation Failure) 857M->599M(945M) 23.891ms
+60%[16.571s][info][gc] GC(176) Pause Young (Allocation Failure) 859M->601M(945M) 24.182ms
+[16.673s][info][gc] GC(177) Pause Young (Allocation Failure) 862M->604M(945M) 24.492ms
+[16.795s][info][gc] GC(178) Pause Young (Allocation Failure) 865M->607M(945M) 24.780ms
+[16.894s][info][gc] GC(179) Pause Young (Allocation Failure) 868M->610M(945M) 22.709ms
+65%[16.995s][info][gc] GC(180) Pause Young (Allocation Failure) 871M->613M(945M) 25.053ms
+[17.098s][info][gc] GC(181) Pause Young (Allocation Failure) 874M->616M(945M) 23.515ms
+[17.205s][info][gc] GC(182) Pause Young (Allocation Failure) 877M->619M(945M) 24.620ms
+70%[17.299s][info][gc] GC(183) Pause Young (Allocation Failure) 880M->622M(945M) 23.578ms
+[17.392s][info][gc] GC(184) Pause Young (Allocation Failure) 882M->625M(945M) 23.909ms
+[17.488s][info][gc] GC(185) Pause Young (Allocation Failure) 885M->628M(945M) 23.245ms
+75%[17.575s][info][gc] GC(186) Pause Young (Allocation Failure) 888M->631M(945M) 23.057ms
+[17.656s][info][gc] GC(187) Pause Young (Allocation Failure) 891M->633M(945M) 21.298ms
+[17.748s][info][gc] GC(188) Pause Young (Allocation Failure) 894M->636M(945M) 24.094ms
+[17.847s][info][gc] GC(189) Pause Young (Allocation Failure) 897M->640M(945M) 23.093ms
+80%[17.937s][info][gc] GC(190) Pause Young (Allocation Failure) 900M->642M(945M) 23.488ms
+[18.025s][info][gc] GC(191) Pause Young (Allocation Failure) 903M->645M(945M) 24.001ms
+[18.115s][info][gc] GC(192) Pause Young (Allocation Failure) 906M->648M(945M) 24.329ms
+85%[18.206s][info][gc] GC(193) Pause Young (Allocation Failure) 909M->651M(945M) 24.019ms
+[18.291s][info][gc] GC(194) Pause Young (Allocation Failure) 912M->654M(945M) 22.344ms
+[18.379s][info][gc] GC(195) Pause Young (Allocation Failure) 915M->657M(945M) 23.446ms
+[18.481s][info][gc] GC(196) Pause Young (Allocation Failure) 918M->660M(945M) 26.142ms
+90%[18.571s][info][gc] GC(197) Pause Young (Allocation Failure) 921M->663M(945M) 25.065ms
+[18.667s][info][gc] GC(198) Pause Young (Allocation Failure) 924M->666M(945M) 23.113ms
+[18.757s][info][gc] GC(199) Pause Young (Allocation Failure) 926M->669M(945M) 23.735ms
+95%[19.528s][info][gc] GC(201) Pause Full (Allocation Failure) 930M->544M(945M) 695.260ms
+[19.528s][info][gc] GC(200) Pause Young (Allocation Failure) 930M->544M(945M) 695.346ms
+[19.609s][info][gc] GC(202) Pause Young (Allocation Failure) 805M->551M(945M) 11.745ms
+[19.699s][info][gc] GC(203) Pause Young (Allocation Failure) 811M->555M(945M) 17.751ms
+[19.837s][info][gc] GC(204) Pause Young (Allocation Failure) 816M->559M(945M) 20.863ms
+100%
+Completed requests
+	Stock level .............   3973 ( 4.0%)
+	Order status by name ....   2361 ( 2.4%)
+	Order status by ID ......   1609 ( 1.6%)
+	Payment by name .........  25847 (25.8%)
+	Payment by ID ...........  17220 (17.2%)
+	Delivery schedule .......   4029 ( 4.0%)
+	New order ...............  44509 (44.5%)
+	New order rollback ......    452 ( 0.5%)
+===== DaCapo 23.11-chopin h2 PASSED in 9400 msec =====
+Resetting database to initial state....[20.252s][info][gc] GC(205) Pause Young (Allocation Failure) 819M->586M(945M) 83.574ms
+.[20.893s][info][gc] GC(206) Pause Young (Allocation Failure) 847M->622M(945M) 106.507ms
+[21.268s][info][gc] GC(207) Pause Young (Allocation Failure) 883M->653M(945M) 93.851ms
+[22.294s][info][gc] GC(209) Pause Full (Allocation Failure) 945M->684M(945M) 651.418ms
+[22.294s][info][gc] GC(208) Pause Young (Allocation Failure) 914M->684M(945M) 786.827ms
+[23.371s][info][gc] GC(210) Pause Full (Allocation Failure) 945M->716M(945M) 797.864ms
+..[24.443s][info][gc] GC(211) Pause Full (Allocation Failure) 945M->708M(945M) 758.571ms
+[25.584s][info][gc] GC(212) Pause Full (Allocation Failure) 945M->654M(945M) 793.818ms
+[26.541s][info][gc] GC(213) Pause Full (Allocation Failure) 945M->657M(945M) 642.972ms
+[27.493s][info][gc] GC(214) Pause Full (Allocation Failure) 945M->632M(945M) 637.720ms
+.[28.224s][info][gc] GC(216) Pause Full (Allocation Failure) 893M->499M(945M) 543.468ms
+[28.225s][info][gc] GC(215) Pause Young (Allocation Failure) 893M->499M(945M) 543.594ms
+......[28.464s][info][gc] GC(217) Pause Young (Allocation Failure) 760M->506M(945M) 8.549ms
+[28.732s][info][gc] GC(218) Pause Young (Allocation Failure) 767M->554M(945M) 109.837ms
+[28.951s][info][gc] GC(219) Pause Young (Allocation Failure) 814M->584M(945M) 103.396ms
+[29.214s][info][gc] GC(220) Pause Young (Allocation Failure) 845M->616M(945M) 104.099ms
+[29.484s][info][gc] GC(221) Pause Young (Allocation Failure) 876M->648M(945M) 98.453ms
+.[30.353s][info][gc] GC(223) Pause Full (Allocation Failure) 909M->550M(945M) 638.477ms
+[30.353s][info][gc] GC(222) Pause Young (Allocation Failure) 909M->550M(945M) 638.576ms
+...[30.588s][info][gc] GC(224) Pause Young (Allocation Failure) 811M->554M(945M) 6.515ms
+..
+===== DaCapo simple tail latency: 50% 206 usec, 90% 1377 usec, 99% 5902 usec, 99.9% 28907 usec, 99.99% 37427 usec, max 700481 usec, measured over 100000 events =====
+===== DaCapo metered tail latency: 50% 536916 usec, 90% 1081424 usec, 99% 1154275 usec, 99.9% 1164427 usec, 99.99% 1166406 usec, max 1171194 usec, measured over 100000 events =====
+runAgain

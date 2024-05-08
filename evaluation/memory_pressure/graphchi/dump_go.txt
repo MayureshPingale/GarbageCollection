@@ -1,0 +1,164 @@
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[0.003s][warning][gc,ergo] NewSize was set larger than initial heap size, will use initial heap size.
+[0.003s][warning][gc,ergo] MaxNewSize (524288k) is equal to or greater than the entire heap (524288k).  A new max generation size of 524224k will be used.
+[0.003s][info   ][gc     ] Using Concurrent Mark Sweep
+Class name: org.dacapo.harness.GraphChi
+Configurations:
+short     ALS matrix factorization with GraphChi.
+long      The Netflix Challenge dataset is used to drive the GraphChi engine in its ALS matrix factorization mode.  The input data is pre-sharding (sharding is IO intensive, so is excluded from this workload).
+author    null
+license   Apache License, Version 2.0
+copyright Copyright 2012 Aapo Kyrola, Guy Blelloch, Carlos Guestrin / Carnegie Mellon University
+url       https://github.com/GraphChi/graphchi-java
+version   graphchi 0.2.2
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,unlimited]
+Version: graphchi 0.2.2
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    8  4/18    97 nominal average object size (bytes)
+AOL:    9  2/18    96 nominal 90-percentile object size (bytes)
+AOM:    3 13/18    24 nominal median object size (bytes)
+AOS:    3 14/18    16 nominal 10-percentile object size (bytes)
+ARA:    5 10/18  2825 nominal allocation rate (bytes / usec) (7291380208/2580800.0)
+BAL:    9  2/19  2231 nominal aaload per usec
+BAS:    6  9/19     1 nominal aastore per usec
+BEF:    8  4/19    12 nominal execution focus / dominance of hot code
+BGF:    9  3/19  9335 nominal getfield per usec
+BPF:    4 13/19    44 nominal putfield per usec
+BUB:    0 19/19     8 nominal thousands of unique bytecodes executed
+BUF:    2 17/19     1 nominal thousands of unique function calls
+GCA:    8  5/22   114 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (200/175)
+GCC:    6 10/22  1277 nominal GC count at 2X heap size (G1)
+GCM:    8  6/22   110 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (193/175)
+GCP:    4 14/22     2 nominal percentage of time spent in GC pauses at 2X heap size (G1) (889/31767)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (175/174)
+GMD:    8  5/22   175 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    9  3/18  1152 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:   10  2/22   141 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    8  6/22   179 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:    7  7/22   381 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (12420.2/2580.8)
+GTO:    4 11/18    39 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    6  9/22     3 nominal execution time (sec)
+PKP:    2 19/22     1 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    6  9/22    10 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[8.696s][info   ][gc     ] GC(0) Pause Full (System.gc()) 40M->3M(461M) 4.858ms
+[8.696s][info   ][gc     ] GC(1) Pause Initial Mark 12M->12M(461M) 0.086ms
+[8.696s][info   ][gc     ] GC(1) Concurrent Mark
+===== DaCapo unknown graphchi starting =====
+Found shards -- no need to preprocess
+Set latent [8.698s][info   ][gc     ] GC(1) Concurrent Mark 2.353ms
+fa[8.698s][info   ][gc     ] GC(1) Concurrent Preclean
+ctor dimension to: 20[8.698s][info   ][gc     ] GC(1) Concurrent Preclean 0.135ms
+
+[8.698s][info   ][gc     ] GC(1) Concurrent Abortable Preclean
+Initializing latent factors for 285050 vertices
+Creating 1 blocks
+[11.072s][info   ][gc     ] GC(1) Concurrent Abortable Preclean 2373.775ms
+[11.080s][info   ][gc     ] GC(1) Pause Remark 244M->244M(461M) 7.762ms
+[11.080s][info   ][gc     ] GC(1) Concurrent Sweep
+[11.081s][info   ][gc     ] GC(1) Concurrent Sweep 0.637ms
+[11.081s][info   ][gc     ] GC(1) Concurrent Reset
+[11.081s][info   ][gc     ] GC(1) Concurrent Reset 0.004ms
+[11.371s][info   ][gc     ] GC(3) Pause Full (Allocation Failure) 442M->164M(461M) 38.608ms
+[11.371s][info   ][gc     ] GC(2) Pause Young (Allocation Failure) 409M->164M(461M) 60.263ms
+[11.375s][info   ][gc     ] GC(4) Pause Initial Mark 167M->167M(461M) 4.082ms
+[11.375s][info   ][gc     ] GC(4) Concurrent Mark
+[11.376s][info   ][gc     ] GC(4) Concurrent Mark 0.812ms
+[11.376s][info   ][gc     ] GC(4) Concurrent Preclean
+[11.377s][info   ][gc     ] GC(4) Concurrent Preclean 0.927ms
+[11.377s][info   ][gc     ] GC(4) Concurrent Abortable Preclean
+[11.414s][info   ][gc     ] GC(4) Concurrent Abortable Preclean 37.001ms
+[11.446s][info   ][gc     ] GC(6) Pause Full (Allocation Failure) 448M->164M(461M) 32.203ms
+[11.446s][info   ][gc     ] GC(5) Pause Young (Allocation Failure) 409M->164M(461M) 50.842ms
+[11.513s][info   ][gc     ] GC(8) Pause Full (Allocation Failure) 455M->164M(461M) 31.805ms
+[11.513s][info   ][gc     ] GC(7) Pause Young (Allocation Failure) 409M->164M(461M) 48.904ms
+[11.576s][info   ][gc     ] GC(10) Pause Full (Allocation Failure) 449M->164M(461M) 31.702ms
+[11.576s][info   ][gc     ] GC(9) Pause Young (Allocation Failure) 409M->164M(461M) 49.132ms
+[11.899s][info   ][gc     ] GC(12) Pause Full (Allocation Failure) 455M->162M(461M) 38.745ms
+[11.899s][info   ][gc     ] GC(11) Pause Young (Allocation Failure) 409M->162M(461M) 63.273ms
+[11.968s][info   ][gc     ] GC(14) Pause Full (Allocation Failure) 452M->162M(461M) 32.385ms
+[11.968s][info   ][gc     ] GC(13) Pause Young (Allocation Failure) 409M->162M(461M) 49.982ms
+[12.034s][info   ][gc     ] GC(16) Pause Full (Allocation Failure) 451M->162M(461M) 32.704ms
+[12.034s][info   ][gc     ] GC(15) Pause Young (Allocation Failure) 409M->162M(461M) 50.426ms
+[12.099s][info   ][gc     ] GC(18) Pause Full (Allocation Failure) 454M->162M(461M) 33.137ms
+[12.099s][info   ][gc     ] GC(17) Pause Young (Allocation Failure) 409M->162M(461M) 50.815ms
+[12.332s][info   ][gc     ] GC(20) Pause Full (Allocation Failure) 450M->164M(461M) 36.570ms
+[12.332s][info   ][gc     ] GC(19) Pause Young (Allocation Failure) 409M->164M(461M) 58.088ms
+[12.404s][info   ][gc     ] GC(22) Pause Full (Allocation Failure) 451M->164M(461M) 33.551ms
+[12.404s][info   ][gc     ] GC(21) Pause Young (Allocation Failure) 409M->164M(461M) 51.801ms
+[12.473s][info   ][gc     ] GC(24) Pause Full (Allocation Failure) 455M->164M(461M) 33.293ms
+[12.473s][info   ][gc     ] GC(23) Pause Young (Allocation Failure) 409M->164M(461M) 51.062ms
+[12.539s][info   ][gc     ] GC(26) Pause Full (Allocation Failure) 452M->164M(461M) 33.230ms
+[12.539s][info   ][gc     ] GC(25) Pause Young (Allocation Failure) 409M->164M(461M) 50.873ms
+[12.631s][info   ][gc     ] GC(28) Pause Full (Allocation Failure) 453M->164M(461M) 32.931ms
+[12.631s][info   ][gc     ] GC(27) Pause Young (Allocation Failure) 409M->164M(461M) 50.453ms
+[12.901s][info   ][gc     ] GC(30) Pause Full (Allocation Failure) 455M->162M(461M) 38.010ms
+[12.902s][info   ][gc     ] GC(29) Pause Young (Allocation Failure) 409M->162M(461M) 61.013ms
+[12.970s][info   ][gc     ] GC(32) Pause Full (Allocation Failure) 452M->162M(461M) 33.353ms
+[12.970s][info   ][gc     ] GC(31) Pause Young (Allocation Failure) 409M->162M(461M) 51.223ms
+[13.036s][info   ][gc     ] GC(34) Pause Full (Allocation Failure) 456M->162M(461M) 33.193ms
+[13.036s][info   ][gc     ] GC(33) Pause Young (Allocation Failure) 409M->162M(461M) 50.804ms
+[13.100s][info   ][gc     ] GC(36) Pause Full (Allocation Failure) 454M->162M(461M) 32.969ms
+[13.100s][info   ][gc     ] GC(35) Pause Young (Allocation Failure) 409M->162M(461M) 50.312ms
+[13.335s][info   ][gc     ] GC(38) Pause Full (Allocation Failure) 448M->164M(461M) 37.457ms
+[13.335s][info   ][gc     ] GC(37) Pause Young (Allocation Failure) 409M->164M(461M) 59.763ms
+[13.404s][info   ][gc     ] GC(40) Pause Full (Allocation Failure) 453M->164M(461M) 33.407ms
+[13.404s][info   ][gc     ] GC(39) Pause Young (Allocation Failure) 409M->164M(461M) 51.383ms
+[13.471s][info   ][gc     ] GC(42) Pause Full (Allocation Failure) 454M->164M(461M) 33.016ms
+[13.471s][info   ][gc     ] GC(41) Pause Young (Allocation Failure) 409M->164M(461M) 50.722ms
+[13.535s][info   ][gc     ] GC(44) Pause Full (Allocation Failure) 448M->164M(461M) 32.826ms
+[13.535s][info   ][gc     ] GC(43) Pause Young (Allocation Failure) 409M->164M(461M) 50.039ms
+[13.825s][info   ][gc     ] GC(46) Pause Full (Allocation Failure) 448M->162M(461M) 37.229ms
+[13.825s][info   ][gc     ] GC(45) Pause Young (Allocation Failure) 409M->162M(461M) 59.938ms
+[13.896s][info   ][gc     ] GC(48) Pause Full (Allocation Failure) 454M->162M(461M) 34.149ms
+[13.896s][info   ][gc     ] GC(47) Pause Young (Allocation Failure) 409M->162M(461M) 51.653ms
+[13.963s][info   ][gc     ] GC(50) Pause Full (Allocation Failure) 452M->162M(461M) 33.414ms
+[13.963s][info   ][gc     ] GC(49) Pause Young (Allocation Failure) 409M->162M(461M) 50.902ms
+[14.029s][info   ][gc     ] GC(52) Pause Full (Allocation Failure) 454M->162M(461M) 33.220ms
+[14.029s][info   ][gc     ] GC(51) Pause Young (Allocation Failure) 409M->162M(461M) 50.962ms
+[14.224s][info   ][gc     ] GC(54) Pause Full (Allocation Failure) 437M->143M(461M) 29.335ms
+[14.224s][info   ][gc     ] GC(53) Pause Young (Allocation Failure) 409M->143M(461M) 48.569ms
+[14.318s][info   ][gc     ] GC(56) Pause Full (Allocation Failure) 446M->164M(461M) 33.404ms
+[14.318s][info   ][gc     ] GC(55) Pause Young (Allocation Failure) 409M->164M(461M) 51.555ms
+[14.352s][info   ][gc     ] GC(57) Pause Young (Allocation Failure) 409M->454M(461M) 17.398ms
+[14.388s][info   ][gc     ] GC(58) Pause Full (Allocation Failure) 454M->164M(461M) 35.391ms
+[14.453s][info   ][gc     ] GC(60) Pause Full (Allocation Failure) 448M->164M(461M) 32.860ms
+[14.453s][info   ][gc     ] GC(59) Pause Young (Allocation Failure) 409M->164M(461M) 50.347ms
+[14.517s][info   ][gc     ] GC(62) Pause Full (Allocation Failure) 450M->164M(461M) 32.582ms
+[14.517s][info   ][gc     ] GC(61) Pause Young (Allocation Failure) 409M->164M(461M) 49.844ms
+[14.816s][info   ][gc     ] GC(64) Pause Full (Allocation Failure) 456M->162M(461M) 38.971ms
+[14.816s][info   ][gc     ] GC(63) Pause Young (Allocation Failure) 409M->162M(461M) 62.691ms
+[14.885s][info   ][gc     ] GC(66) Pause Full (Allocation Failure) 457M->162M(461M) 33.263ms
+[14.885s][info   ][gc     ] GC(65) Pause Young (Allocation Failure) 409M->162M(461M) 51.175ms
+[14.951s][info   ][gc     ] GC(68) Pause Full (Allocation Failure) 450M->162M(461M) 33.052ms
+[14.951s][info   ][gc     ] GC(67) Pause Young (Allocation Failure) 409M->162M(461M) 50.718ms
+[15.015s][info   ][gc     ] GC(70) Pause Full (Allocation Failure) 450M->162M(461M) 32.497ms
+[15.015s][info   ][gc     ] GC(69) Pause Young (Allocation Failure) 409M->162M(461M) 49.840ms
+[15.332s][info   ][gc     ] GC(72) Pause Full (Allocation Failure) 450M->164M(461M) 36.618ms
+[15.332s][info   ][gc     ] GC(71) Pause Young (Allocation Failure) 409M->164M(461M) 58.531ms
+[15.403s][info   ][gc     ] GC(74) Pause Full (Allocation Failure) 452M->164M(461M) 33.166ms
+[15.403s][info   ][gc     ] GC(73) Pause Young (Allocation Failure) 409M->164M(461M) 51.100ms
+[15.470s][info   ][gc     ] GC(76) Pause Full (Allocation Failure) 454M->164M(461M) 33.048ms
+[15.471s][info   ][gc     ] GC(75) Pause Young (Allocation Failure) 409M->164M(461M) 50.737ms
+[15.538s][info   ][gc     ] GC(78) Pause Full (Allocation Failure) 452M->164M(461M) 32.473ms
+[15.538s][info   ][gc     ] GC(77) Pause Young (Allocation Failure) 409M->164M(461M) 50.229ms
+[15.756s][info   ][gc     ] GC(80) Pause Full (Allocation Failure) 449M->164M(461M) 40.341ms
+[15.756s][info   ][gc     ] GC(79) Pause Young (Allocation Failure) 409M->164M(461M) 65.442ms
+[15.963s][info   ][gc     ] GC(82) Pause Full (Allocation Failure) 455M->162M(461M) 42.264ms
+[15.963s][info   ][gc     ] GC(81) Pause Young (Allocation Failure) 409M->162M(461M) 69.934ms
+[16.033s][info   ][gc     ] GC(84) Pause Full (Allocation Failure) 455M->162M(461M) 33.184ms
+[16.033s][info   ][gc     ] GC(83) Pause Young (Allocation Failure) 409M->162M(461M) 52.187ms
+[16.099s][info   ][gc     ] GC(86) Pause Full (Allocation Failure) 453M->162M(461M) 32.653ms
+[16.099s][info   ][gc     ] GC(85) Pause Young (Allocation Failure) 409M->162M(461M) 50.028ms
+[16.164s][info   ][gc     ] GC(88) Pause Full (Allocation Failure) 454M->162M(461M) 32.604ms
+[16.164s][info   ][gc     ] GC(87) Pause Young (Allocation Failure) 409M->162M(461M) 49.875ms
+Total edges: 1000000
+Left 284808, Right 241
+===== DaCapo unknown graphchi PASSED in 7621 msec =====
+runAgain

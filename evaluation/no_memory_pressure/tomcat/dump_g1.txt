@@ -1,0 +1,159 @@
+[0.003s][info][gc] Using G1
+Class name: org.dacapo.harness.Tomcat
+Configurations:
+short     Tomcat servlet container
+long      Runs the tomcat sample web applications
+author    Apache Software Foundation
+license   Apache License, Version 2.0
+copyright Copyright (c) Apache Software Foundation
+url       http://tomcat.apache.org
+version   tomcat 10.1.11
+sizes     default large small
+Using scaled threading model. 8 processors detected, 8 threads used to drive the workload, in a possible range of [1,512]
+Tomcat is using port 8080. Configure with -Ddacapo.tomcat.port.
+[0.235s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 23M->2M(62M) 2.153ms
+Version: tomcat 10.1.11
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    7  7/18    77 nominal average object size (bytes)
+AOL:    7  6/18    80 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    8  5/18  5128 nominal allocation rate (bytes / usec) (17515864152/3415100.0)
+BAL:    3 15/19     7 nominal aaload per usec
+BAS:    4 12/19     0 nominal aastore per usec
+BEF:    7  6/19    10 nominal execution focus / dominance of hot code
+BGF:    4 13/19   265 nominal getfield per usec
+BPF:    5 11/19    76 nominal putfield per usec
+BUB:    7  6/19   117 nominal thousands of unique bytecodes executed
+BUF:    7  6/19    17 nominal thousands of unique function calls
+GCA:    7  7/22   110 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (21/19)
+GCC:    9  4/22  7676 nominal GC count at 2X heap size (G1)
+GCM:    7  8/22   105 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (20/19)
+GCP:    7  8/22    10 nominal percentage of time spent in GC pauses at 2X heap size (G1) (4080/39743)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (19/19)
+GMD:    2 19/22    19 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    3 14/18    31 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    5 12/22    13 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 18/22    23 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:   10  2/22  1916 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (68848.7/3415.1)
+GTO:    9  3/18   879 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    7  7/22     4 nominal execution time (sec)
+PKP:    9  4/22    21 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:   10  1/22    91 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[0.422s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 36M->3M(62M) 2.536ms
+[0.751s][info][gc] GC(2) Pause Young (Concurrent Start) (Metadata GC Threshold) 33M->7M(62M) 5.865ms
+[0.751s][info][gc] GC(3) Concurrent Cycle
+[0.758s][info][gc] GC(3) Pause Remark 7M->7M(62M) 1.930ms
+[0.759s][info][gc] GC(3) Pause Cleanup 7M->7M(62M) 0.091ms
+[0.759s][info][gc] GC(3) Concurrent Cycle 8.207ms
+[0.911s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 39M->9M(62M) 5.338ms
+[1.064s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 42M->10M(75M) 3.286ms
+Server thread created
+[1.149s][info][gc] GC(6) Pause Full (System.gc()) 43M->9M(37M) 14.041ms
+===== DaCapo 23.11-chopin tomcat starting =====
+Loading web application
+Starting 80000 requests...
+[1.350s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 27M->12M(37M) 10.321ms
+[1.429s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 25M->13M(37M) 2.181ms
+[1.478s][info][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 24M->14M(37M) 1.899ms
+[1.504s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 25M->15M(45M) 1.789ms
+[1.537s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 31M->17M(45M) 2.541ms
+[1.566s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 32M->17M(45M) 2.099ms
+[1.590s][info][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 31M->17M(45M) 1.707ms
+[1.616s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 31M->18M(54M) 1.884ms
+[1.727s][info][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 37M->18M(54M) 1.964ms
+[1.911s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 37M->18M(54M) 1.973ms
+[2.014s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 38M->19M(54M) 2.624ms
+[2.127s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 40M->18M(68M) 2.086ms
+[2.264s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 50M->19M(68M) 1.665ms
+[2.414s][info][gc] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 51M->20M(68M) 2.303ms
+[2.423s][info][gc] GC(21) Pause Young (Concurrent Start) (Metadata GC Threshold) 21M->20M(68M) 2.855ms
+[2.423s][info][gc] GC(22) Concurrent Cycle
+[2.441s][info][gc] GC(22) Pause Remark 21M->21M(68M) 7.898ms
+[2.450s][info][gc] GC(22) Pause Cleanup 23M->23M(68M) 0.173ms
+[2.450s][info][gc] GC(22) Concurrent Cycle 27.271ms
+[2.515s][info][gc] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 41M->19M(83M) 2.654ms
+[2.623s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 47M->19M(83M) 2.236ms
+[2.731s][info][gc] GC(25) Pause Young (Normal) (G1 Evacuation Pause) 49M->20M(83M) 1.897ms
+[2.841s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 53M->20M(83M) 3.009ms
+[2.973s][info][gc] GC(27) Pause Young (Normal) (G1 Evacuation Pause) 55M->20M(100M) 2.162ms
+[3.157s][info][gc] GC(28) Pause Young (Normal) (G1 Evacuation Pause) 60M->20M(100M) 2.546ms
+[3.337s][info][gc] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 65M->20M(100M) 2.600ms
+[3.550s][info][gc] GC(30) Pause Young (Normal) (G1 Evacuation Pause) 75M->20M(100M) 3.133ms
+[3.778s][info][gc] GC(31) Pause Young (Normal) (G1 Evacuation Pause) 75M->20M(120M) 3.301ms
+[4.047s][info][gc] GC(32) Pause Young (Normal) (G1 Evacuation Pause) 82M->20M(120M) 3.486ms
+Completing requests: 5%[4.327s][info][gc] GC(33) Pause Young (Normal) (G1 Evacuation Pause) 86M->20M(120M) 4.093ms
+[4.606s][info][gc] GC(34) Pause Young (Normal) (G1 Evacuation Pause) 89M->20M(120M) 3.422ms
+[4.896s][info][gc] GC(35) Pause Young (Normal) (G1 Evacuation Pause) 90M->20M(120M) 4.348ms
+[5.185s][info][gc] GC(36) Pause Young (Normal) (G1 Evacuation Pause) 90M->20M(144M) 3.825ms
+Completing requests: 10%[5.513s][info][gc] GC(37) Pause Young (Normal) (G1 Evacuation Pause) 100M->20M(144M) 3.570ms
+[5.906s][info][gc] GC(38) Pause Young (Normal) (G1 Evacuation Pause) 104M->20M(144M) 8.377ms
+[6.262s][info][gc] GC(39) Pause Young (Normal) (G1 Evacuation Pause) 104M->20M(144M) 4.835ms
+Completing requests: 15%[6.610s][info][gc] GC(40) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 4.210ms
+[6.934s][info][gc] GC(41) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 4.658ms
+[7.250s][info][gc] GC(42) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.873ms
+Completing requests: 20%[7.578s][info][gc] GC(43) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.634ms
+[7.893s][info][gc] GC(44) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.680ms
+[8.198s][info][gc] GC(45) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.203ms
+Completing requests: 25%[8.515s][info][gc] GC(46) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.970ms
+[8.822s][info][gc] GC(47) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.702ms
+[9.129s][info][gc] GC(48) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.549ms
+[9.427s][info][gc] GC(49) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.367ms
+Completing requests: 30%[9.727s][info][gc] GC(50) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.558ms
+[10.038s][info][gc] GC(51) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 4.210ms
+[10.338s][info][gc] GC(52) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.223ms
+Completing requests: 35%[10.644s][info][gc] GC(53) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.001ms
+[10.947s][info][gc] GC(54) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.423ms
+[11.256s][info][gc] GC(55) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.260ms
+Completing requests: 40%[11.560s][info][gc] GC(56) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.239ms
+[11.879s][info][gc] GC(57) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.327ms
+[12.189s][info][gc] GC(58) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.246ms
+Completing requests: 45%[12.505s][info][gc] GC(59) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.606ms
+[12.814s][info][gc] GC(60) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.515ms
+[13.107s][info][gc] GC(61) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.119ms
+Completing requests: 50%[13.414s][info][gc] GC(62) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.608ms
+[13.712s][info][gc] GC(63) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.191ms
+[14.035s][info][gc] GC(64) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.269ms
+[14.370s][info][gc] GC(65) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.005ms
+Completing requests: 55%[14.715s][info][gc] GC(66) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.370ms
+[15.063s][info][gc] GC(67) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.750ms
+[15.413s][info][gc] GC(68) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.845ms
+Completing requests: 60%[15.727s][info][gc] GC(69) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.270ms
+[16.070s][info][gc] GC(70) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.162ms
+[16.388s][info][gc] GC(71) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.292ms
+Completing requests: 65%[16.703s][info][gc] GC(72) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.782ms
+[17.010s][info][gc] GC(73) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.179ms
+[17.313s][info][gc] GC(74) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.557ms
+Completing requests: 70%[17.624s][info][gc] GC(75) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.551ms
+[17.932s][info][gc] GC(76) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.577ms
+[18.238s][info][gc] GC(77) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.166ms
+Completing requests: 75%[18.549s][info][gc] GC(78) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.826ms
+[18.877s][info][gc] GC(79) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.327ms
+[19.220s][info][gc] GC(80) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.357ms
+Completing requests: 80%[19.529s][info][gc] GC(81) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.370ms
+[19.851s][info][gc] GC(82) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.174ms
+[20.159s][info][gc] GC(83) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.330ms
+[20.485s][info][gc] GC(84) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.706ms
+Completing requests: 85%[20.786s][info][gc] GC(85) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.994ms
+[21.187s][info][gc] GC(86) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.276ms
+[21.510s][info][gc] GC(87) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.923ms
+Completing requests: 90%[21.830s][info][gc] GC(88) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.236ms
+[22.138s][info][gc] GC(89) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.533ms
+[22.457s][info][gc] GC(90) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 2.740ms
+Completing requests: 95%[22.768s][info][gc] GC(91) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.606ms
+[23.095s][info][gc] GC(92) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 3.029ms
+[23.416s][info][gc] GC(93) Pause Young (Normal) (G1 Evacuation Pause) 105M->20M(144M) 1.209ms
+
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo 23.11-chopin tomcat PASSED in 22594 msec =====
+===== DaCapo simple tail latency: 50% 1716 usec, 90% 2361 usec, 99% 14012 usec, 99.9% 43512 usec, 99.99% 91844 usec, max 598980 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 861492 usec, 90% 1743307 usec, 99% 1799748 usec, 99.9% 1804476 usec, 99.99% 1812567 usec, max 1817340 usec, measured over 80000 events =====
+runAgain
+Server stopped ... iteration complete

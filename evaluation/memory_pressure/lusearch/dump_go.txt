@@ -1,0 +1,256 @@
+OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[0.004s][warning][gc,ergo] NewSize was set larger than initial heap size, will use initial heap size.
+[0.004s][warning][gc,ergo] MaxNewSize (524288k) is equal to or greater than the entire heap (524288k).  A new max generation size of 524224k will be used.
+[0.004s][info   ][gc     ] Using Concurrent Mark Sweep
+Class name: org.dacapo.harness.Lusearch
+Configurations:
+short     A text search tool
+long      Text search of keywords over a corpus of data comprising the works of Shakespeare and the King James bible
+author    Lucene Project Management Committee
+license   Apache License, Version 2.0
+copyright Apache Software Foundation, Apache license v2.0
+url       http://lucene.apache.org/
+version   lucene 9.7.0
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,2048]
+Version: lucene 9.7.0
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    6  8/18    76 nominal average object size (bytes)
+AOL:    9  2/18    96 nominal 90-percentile object size (bytes)
+AOM:    3 13/18    24 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    9  3/18 10505 nominal allocation rate (bytes / usec) (24619905928/2343600.0)
+BAL:    8  5/19   118 nominal aaload per usec
+BAS:    9  2/19    55 nominal aastore per usec
+BEF:    9  3/19    14 nominal execution focus / dominance of hot code
+BGF:    8  4/19  5520 nominal getfield per usec
+BPF:    9  3/19   714 nominal putfield per usec
+BUB:    4 13/19    25 nominal thousands of unique bytecodes executed
+BUF:    3 14/19     2 nominal thousands of unique function calls
+GCA:    2 19/22    80 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (17/21)
+GCC:   10  1/22 17270 nominal GC count at 2X heap size (G1)
+GCM:    1 20/22    66 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (14/21)
+GCP:    9  3/22    19 nominal percentage of time spent in GC pauses at 2X heap size (G1) (6675/35050)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (21/21)
+GMD:    2 18/22    21 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    4 11/18    89 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    2 18/22     5 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 19/22    21 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:    6 10/22   185 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (6702.5/2343.6)
+GTO:   10  1/18  1118 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    6  9/22     3 nominal execution time (sec)
+PKP:    8  5/22    16 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    8  5/22    31 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[2.930s][info   ][gc     ] GC(0) Pause Full (System.gc()) 171M->3M(461M) 7.903ms
+===== DaCapo unknown lusearch starting [2.930s][info   ][gc     ] GC(1) Pause Initial Mark 11M->11M(461M) 0.111ms
+[2.930s][info   ][gc     ] GC(1) Concurrent Mark
+=====
+[2.931s][info   ][gc     ] GC(1) Concurrent Mark 0.992ms
+[2.931s][info   ][gc     ] GC(1) Concurrent Preclean
+[2.932s][info   ][gc     ] GC(1) Concurrent Preclean 0.110ms
+[2.932s][info   ][gc     ] GC(1) Concurrent Abortable Preclean
+Starting 524288 requests...
+[3.290s][info   ][gc     ] GC(1) Concurrent Abortable Preclean 358.452ms
+[3.317s][info   ][gc     ] GC(1) Pause Remark 218M->218M(461M) 26.624ms
+[3.317s][info   ][gc     ] GC(1) Concurrent Sweep
+[3.317s][info   ][gc     ] GC(1) Concurrent Sweep 0.629ms
+[3.317s][info   ][gc     ] GC(1) Concurrent Reset
+[3.318s][info   ][gc     ] GC(1) Concurrent Reset 0.005ms
+[3.445s][info   ][gc     ] GC(2) Pause Young (Allocation Failure) 408M->9M(461M) 1.794ms
+[3.447s][info   ][gc     ] GC(3) Pause Initial Mark 28M->28M(461M) 0.372ms
+[3.448s][info   ][gc     ] GC(3) Concurrent Mark
+[3.449s][info   ][gc     ] GC(3) Concurrent Mark 1.154ms
+[3.449s][info   ][gc     ] GC(3) Concurrent Preclean
+[3.449s][info   ][gc     ] GC(3) Concurrent Preclean 0.090ms
+[3.449s][info   ][gc     ] GC(3) Concurrent Abortable Preclean
+[3.696s][info   ][gc     ] GC(4) Pause Young (Allocation Failure) 415M->10M(461M) 1.194ms
+[3.696s][info   ][gc     ] GC(3) Concurrent Abortable Preclean 247.299ms
+[3.698s][info   ][gc     ] GC(3) Pause Remark 13M->13M(461M) 1.365ms
+[3.698s][info   ][gc     ] GC(3) Concurrent Sweep
+[3.698s][info   ][gc     ] GC(3) Concurrent Sweep 0.596ms
+[3.698s][info   ][gc     ] GC(3) Concurrent Reset
+[3.698s][info   ][gc     ] GC(3) Concurrent Reset 0.004ms
+[3.911s][info   ][gc     ] GC(5) Pause Young (Allocation Failure) 415M->10M(461M) 0.794ms
+Completing query batches: 5%[4.059s][info   ][gc     ] GC(6) Pause Young (Allocation Failure) 415M->10M(461M) 0.833ms
+[4.130s][info   ][gc     ] GC(7) Pause Young (Allocation Failure) 415M->10M(461M) 1.505ms
+[4.202s][info   ][gc     ] GC(8) Pause Young (Allocation Failure) 415M->10M(461M) 0.885ms
+Completing query batches: 10%[4.345s][info   ][gc     ] GC(10) Pause Full (Allocation Failure) 411M->9M(461M) 49.550ms
+[4.346s][info   ][gc     ] GC(9) Pause Young (Allocation Failure) 416M->9M(461M) 88.686ms
+[4.346s][info   ][gc     ] GC(11) Pause Initial Mark 14M->14M(461M) 0.214ms
+[4.346s][info   ][gc     ] GC(11) Concurrent Mark
+[4.348s][info   ][gc     ] GC(11) Concurrent Mark 2.347ms
+[4.348s][info   ][gc     ] GC(11) Concurrent Preclean
+[4.350s][info   ][gc     ] GC(11) Concurrent Preclean 1.571ms
+[4.350s][info   ][gc     ] GC(11) Concurrent Abortable Preclean
+[4.350s][info   ][gc     ] GC(11) Concurrent Abortable Preclean 0.004ms
+[4.352s][info   ][gc     ] GC(11) Pause Remark 40M->40M(461M) 1.520ms
+[4.352s][info   ][gc     ] GC(11) Concurrent Sweep
+[4.353s][info   ][gc     ] GC(11) Concurrent Sweep 0.815ms
+[4.353s][info   ][gc     ] GC(11) Concurrent Reset
+[4.353s][info   ][gc     ] GC(11) Concurrent Reset 0.004ms
+[4.627s][info   ][gc     ] GC(13) Pause Full (Allocation Failure) 461M->9M(461M) 48.627ms
+[4.627s][info   ][gc     ] GC(12) Pause Young (Allocation Failure) 461M->9M(461M) 48.675ms
+[4.677s][info   ][gc     ] GC(14) Pause Young (Allocation Failure) 409M->9M(461M) 0.562ms
+Completing query batches: 15%[4.732s][info   ][gc     ] GC(15) Pause Young (Allocation Failure) 415M->9M(461M) 0.350ms
+[4.787s][info   ][gc     ] GC(16) Pause Young (Allocation Failure) 415M->9M(461M) 0.339ms
+Completing query bat[4.842s][info   ][gc     ] GC(17) Pause Young (Allocation Failure) 415M->9M(461M) 0.361ms
+ches: 20%[4.899s][info   ][gc     ] GC(18) Pause Young (Allocation Failure) 415M->9M(461M) 0.672ms
+[4.958s][info   ][gc     ] GC(19) Pause Young (Allocation Failure) 415M->9M(461M) 0.346ms
+Completing query batches: 25%[5.042s][info   ][gc     ] GC(20) Pause Young (Allocation Failure) 415M->411M(461M) 36.050ms
+[5.090s][info   ][gc     ] GC(21) Pause Full (Allocation Failure) 411M->9M(461M) 47.899ms
+[5.091s][info   ][gc     ] GC(22) Pause Initial Mark 15M->15M(461M) 0.095ms
+[5.091s][info   ][gc     ] GC(22) Concurrent Mark
+[5.092s][info   ][gc     ] GC(22) Concurrent Mark 1.157ms
+[5.092s][info   ][gc     ] GC(22) Concurrent Preclean
+[5.093s][info   ][gc     ] GC(22) Concurrent Preclean 1.438ms
+[5.093s][info   ][gc     ] GC(22) Concurrent Abortable Preclean
+[5.093s][info   ][gc     ] GC(22) Concurrent Abortable Preclean 0.004ms
+[5.095s][info   ][gc     ] GC(22) Pause Remark 29M->29M(461M) 1.438ms
+[5.095s][info   ][gc     ] GC(22) Concurrent Sweep
+[5.096s][info   ][gc     ] GC(22) Concurrent Sweep 0.783ms
+[5.096s][info   ][gc     ] GC(22) Concurrent Reset
+[5.096s][info   ][gc     ] GC(22) Concurrent Reset 0.004ms
+[5.323s][info   ][gc     ] GC(23) Pause Young (Allocation Failure) 461M->10M(461M) 0.463ms
+[5.324s][info   ][gc     ] GC(24) Pause Initial Mark 11M->11M(461M) 0.097ms
+[5.324s][info   ][gc     ] GC(24) Concurrent Mark
+[5.325s][info   ][gc     ] GC(24) Concurrent Mark 1.712ms
+[5.325s][info   ][gc     ] GC(24) Concurrent Preclean
+[5.325s][info   ][gc     ] GC(24) Concurrent Preclean 0.064ms
+[5.325s][info   ][gc     ] GC(24) Concurrent Abortable Preclean
+[5.529s][info   ][gc     ] GC(25) Pause Young (Allocation Failure) 461M->10M(461M) 0.303ms
+[5.529s][info   ][gc     ] GC(24) Concurrent Abortable Preclean 203.149ms
+[5.530s][info   ][gc     ] GC(24) Pause Remark 13M->13M(461M) 1.263ms
+[5.530s][info   ][gc     ] GC(24) Concurrent Sweep
+[5.531s][info   ][gc     ] GC(24) Concurrent Sweep 0.882ms
+[5.531s][info   ][gc     ] GC(24) Concurrent Reset
+[5.531s][info   ][gc     ] GC(24) Concurrent Reset 0.004ms
+Completing query batches: 30%[5.745s][info   ][gc     ] GC(26) Pause Young (Allocation Failure) 460M->9M(461M) 0.298ms
+[5.961s][info   ][gc     ] GC(27) Pause Young (Allocation Failure) 460M->9M(461M) 0.307ms
+[6.165s][info   ][gc     ] GC(28) Pause Young (Allocation Failure) 460M->9M(461M) 0.309ms
+Completing query batches: 35%[6.369s][info   ][gc     ] GC(29) Pause Young (Allocation Failure) 460M->9M(461M) 0.296ms
+[6.666s][info   ][gc     ] GC(31) Pause Full (Allocation Failure) 411M->9M(461M) 47.066ms
+[6.666s][info   ][gc     ] GC(30) Pause Young (Allocation Failure) 460M->9M(461M) 86.541ms
+[6.666s][info   ][gc     ] GC(32) Pause Initial Mark 16M->16M(461M) 0.117ms
+[6.666s][info   ][gc     ] GC(32) Concurrent Mark
+[6.669s][info   ][gc     ] GC(32) Concurrent Mark 2.466ms
+[6.669s][info   ][gc     ] GC(32) Concurrent Preclean
+[6.670s][info   ][gc     ] GC(32) Concurrent Preclean 1.466ms
+[6.670s][info   ][gc     ] GC(32) Concurrent Abortable Preclean
+[6.670s][info   ][gc     ] GC(32) Concurrent Abortable Preclean 0.028ms
+[6.672s][info   ][gc     ] GC(32) Pause Remark 49M->49M(461M) 1.902ms
+[6.672s][info   ][gc     ] GC(32) Concurrent Sweep
+[6.673s][info   ][gc     ] GC(32) Concurrent Sweep 0.817ms
+[6.673s][info   ][gc     ] GC(32) Concurrent Reset
+[6.673s][info   ][gc     ] GC(32) Concurrent Reset 0.006ms
+Completing query batches: 40%[6.889s][info   ][gc     ] GC(33) Pause Young (Allocation Failure) 461M->10M(461M) 0.483ms
+[6.889s][info   ][gc     ] GC(34) Pause Initial Mark 14M->14M(461M) 0.078ms
+[6.890s][info   ][gc     ] GC(34) Concurrent Mark
+[6.892s][info   ][gc     ] GC(34) Concurrent Mark 2.913ms
+[6.892s][info   ][gc     ] GC(34) Concurrent Preclean
+[6.893s][info   ][gc     ] GC(34) Concurrent Preclean 0.080ms
+[6.893s][info   ][gc     ] GC(34) Concurrent Abortable Preclean
+[7.096s][info   ][gc     ] GC(35) Pause Young (Allocation Failure) 461M->10M(461M) 0.328ms
+[7.096s][info   ][gc     ] GC(34) Concurrent Abortable Preclean 203.954ms
+[7.098s][info   ][gc     ] GC(34) Pause Remark 14M->14M(461M) 1.176ms
+[7.098s][info   ][gc     ] GC(34) Concurrent Sweep
+[7.099s][info   ][gc     ] GC(34) Concurrent Sweep 0.853ms
+[7.099s][info   ][gc     ] GC(34) Concurrent Reset
+[7.099s][info   ][gc     ] GC(34) Concurrent Reset 0.005ms
+[7.305s][info   ][gc     ] GC(36) Pause Young (Allocation Failure) 460M->9M(461M) 0.321ms
+Completing query batches: 45%[7.511s][info   ][gc     ] GC(37) Pause Young (Allocation Failure) 460M->9M(461M) 0.312ms
+[7.715s][info   ][gc     ] GC(38) Pause Young (Allocation Failure) 460M->9M(461M) 0.290ms
+[7.920s][info   ][gc     ] GC(39) Pause Young (Allocation Failure) 460M->9M(461M) 0.259ms
+Completing query batches: 50%[8.219s][info   ][gc     ] GC(41) Pause Full (Allocation Failure) 411M->9M(461M) 47.129ms
+[8.219s][info   ][gc     ] GC(40) Pause Young (Allocation Failure) 460M->9M(461M) 87.571ms
+[8.220s][info   ][gc     ] GC(42) Pause Initial Mark 16M->16M(461M) 0.098ms
+[8.220s][info   ][gc     ] GC(42) Concurrent Mark
+[8.221s][info   ][gc     ] GC(42) Concurrent Mark 1.434ms
+[8.221s][info   ][gc     ] GC(42) Concurrent Preclean
+[8.224s][info   ][gc     ] GC(42) Concurrent Preclean 2.263ms
+[8.224s][info   ][gc     ] GC(42) Concurrent Abortable Preclean
+[8.224s][info   ][gc     ] GC(42) Concurrent Abortable Preclean 0.004ms
+[8.225s][info   ][gc     ] GC(42) Pause Remark 36M->36M(461M) 1.470ms
+[8.225s][info   ][gc     ] GC(42) Concurrent Sweep
+[8.226s][info   ][gc     ] GC(42) Concurrent Sweep 0.790ms
+[8.226s][info   ][gc     ] GC(42) Concurrent Reset
+[8.226s][info   ][gc     ] GC(42) Concurrent Reset 0.009ms
+[8.443s][info   ][gc     ] GC(43) Pause Young (Allocation Failure) 461M->10M(461M) 0.466ms
+[8.443s][info   ][gc     ] GC(44) Pause Initial Mark 13M->13M(461M) 0.102ms
+[8.443s][info   ][gc     ] GC(44) Concurrent Mark
+[8.446s][info   ][gc     ] GC(44) Concurrent Mark 3.045ms
+[8.446s][info   ][gc     ] GC(44) Concurrent Preclean
+[8.447s][info   ][gc     ] GC(44) Concurrent Preclean 0.079ms
+[8.447s][info   ][gc     ] GC(44) Concurrent Abortable Preclean
+Completing query batches: 55%[8.646s][info   ][gc     ] GC(45) Pause Young (Allocation Failure) 461M->10M(461M) 0.304ms
+[8.646s][info   ][gc     ] GC(44) Concurrent Abortable Preclean 199.960ms
+[8.648s][info   ][gc     ] GC(44) Pause Remark 13M->13M(461M) 1.222ms
+[8.648s][info   ][gc     ] GC(44) Concurrent Sweep
+[8.649s][info   ][gc     ] GC(44) Concurrent Sweep 0.863ms
+[8.649s][info   ][gc     ] GC(44) Concurrent Reset
+[8.649s][info   ][gc     ] GC(44) Concurrent Reset 0.005ms
+[8.855s][info   ][gc     ] GC(46) Pause Young (Allocation Failure) 460M->9M(461M) 0.286ms
+[9.054s][info   ][gc     ] GC(47) Pause Young (Allocation Failure) 460M->9M(461M) 0.278ms
+Completing query batches: 60%[9.253s][info   ][gc     ] GC(48) Pause Young (Allocation Failure) 460M->9M(461M) 0.266ms
+[9.454s][info   ][gc     ] GC(49) Pause Young (Allocation Failure) 460M->9M(461M) 0.248ms
+Completing query batches: 65%[9.738s][info   ][gc     ] GC(51) Pause Full (Allocation Failure) 411M->9M(461M) 46.029ms
+[9.738s][info   ][gc     ] GC(50) Pause Young (Allocation Failure) 460M->9M(461M) 86.341ms
+[9.738s][info   ][gc     ] GC(52) Pause Initial Mark 14M->14M(461M) 0.135ms
+[9.738s][info   ][gc     ] GC(52) Concurrent Mark
+[9.740s][info   ][gc     ] GC(52) Concurrent Mark 2.077ms
+[9.740s][info   ][gc     ] GC(52) Concurrent Preclean
+[9.743s][info   ][gc     ] GC(52) Concurrent Preclean 2.251ms
+[9.743s][info   ][gc     ] GC(52) Concurrent Abortable Preclean
+[9.784s][info   ][gc     ] GC(53) Pause Young (Allocation Failure) 410M->10M(461M) 0.453ms
+[9.832s][info   ][gc     ] GC(54) Pause Young (Allocation Failure) 416M->10M(461M) 0.294ms
+Completing query batches: 70%[9.883s][info   ][gc     ] GC(55) Pause Young (Allocation Failure) 416M->10M(461M) 0.498ms
+[9.951s][info   ][gc     ] GC(56) Pause Young (Allocation Failure) 416M->10M(461M) 0.285ms
+[10.001s][info   ][gc     ] GC(57) Pause Young (Allocation Failure) 416M->10M(461M) 0.281ms
+Completing query batches: 75%[10.047s][info   ][gc     ] GC(58) Pause Young (Allocation Failure) 416M->10M(461M) 0.273ms
+[10.131s][info   ][gc     ] GC(52) Concurrent Abortable Preclean 388.505ms
+[10.174s][info   ][gc     ] GC(60) Pause Full (Allocation Failure) 412M->8M(461M) 42.704ms
+[10.174s][info   ][gc     ] GC(59) Pause Young (Allocation Failure) 416M->8M(461M) 78.759ms
+[10.219s][info   ][gc     ] GC(61) Pause Young (Allocation Failure) 410M->10M(461M) 0.446ms
+[10.219s][info   ][gc     ] GC(62) Pause Initial Mark 14M->14M(461M) 0.079ms
+[10.219s][info   ][gc     ] GC(62) Concurrent Mark
+[10.221s][info   ][gc     ] GC(62) Concurrent Mark 1.591ms
+[10.221s][info   ][gc     ] GC(62) Concurrent Preclean
+[10.221s][info   ][gc     ] GC(62) Concurrent Preclean 0.084ms
+[10.221s][info   ][gc     ] GC(62) Concurrent Abortable Preclean
+Completing query batches: 80%[10.271s][info   ][gc     ] GC(63) Pause Young (Allocation Failure) 415M->10M(461M) 0.383ms
+[10.322s][info   ][gc     ] GC(64) Pause Young (Allocation Failure) 415M->10M(461M) 0.290ms
+[10.375s][info   ][gc     ] GC(65) Pause Young (Allocation Failure) 416M->10M(461M) 0.278ms
+Completing query batches: 85%[10.425s][info   ][gc     ] GC(66) Pause Young (Allocation Failure) 415M->10M(461M) 0.295ms
+[10.473s][info   ][gc     ] GC(67) Pause Young (Allocation Failure) 415M->10M(461M) 0.282ms
+[10.561s][info   ][gc     ] GC(62) Concurrent Abortable Preclean 339.840ms
+[10.603s][info   ][gc     ] GC(69) Pause Full (Allocation Failure) 411M->8M(461M) 41.972ms
+[10.603s][info   ][gc     ] GC(68) Pause Young (Allocation Failure) 415M->8M(461M) 77.284ms
+Completing query batches: 90%[10.648s][info   ][gc     ] GC(70) Pause Young (Allocation Failure) 410M->10M(461M) 0.477ms
+[10.648s][info   ][gc     ] GC(71) Pause Initial Mark 15M->15M(461M) 0.077ms
+[10.648s][info   ][gc     ] GC(71) Concurrent Mark
+[10.651s][info   ][gc     ] GC(71) Concurrent Mark 2.974ms
+[10.651s][info   ][gc     ] GC(71) Concurrent Preclean
+[10.651s][info   ][gc     ] GC(71) Concurrent Preclean 0.112ms
+[10.651s][info   ][gc     ] GC(71) Concurrent Abortable Preclean
+[10.697s][info   ][gc     ] GC(72) Pause Young (Allocation Failure) 415M->10M(461M) 0.302ms
+[10.748s][info   ][gc     ] GC(73) Pause Young (Allocation Failure) 416M->10M(461M) 0.283ms
+Completing query batches: 95%[10.796s][info   ][gc     ] GC(74) Pause Young (Allocation Failure) 415M->10M(461M) 0.302ms
+[10.843s][info   ][gc     ] GC(75) Pause Young (Allocation Failure) 416M->10M(461M) 0.295ms
+[10.889s][info   ][gc     ] GC(76) Pause Young (Allocation Failure) 415M->10M(461M) 0.312ms
+Completing query batches: 100%
+Completed requests
+[10.940s][info   ][gc     ] GC(71) Concurrent Abortable Preclean 288.754ms
+[10.947s][info   ][gc     ] GC(71) Pause Remark 269M->269M(461M) 6.495ms
+[10.947s][info   ][gc     ] GC(71) Concurrent Sweep
+[10.947s][info   ][gc     ] GC(71) Concurrent Sweep 0.849ms
+[10.948s][info   ][gc     ] GC(71) Concurrent Reset
+[10.948s][info   ][gc     ] GC(71) Concurrent Reset 0.004ms
+===== DaCapo unknown lusearch PASSED in 8008 msec =====
+===== DaCapo simple tail latency: 50% 19 usec, 90% 158 usec, 99% 2009 usec, 99.9% 3510 usec, 99.99% 79155 usec, max 93250 usec, measured over 524288 events =====
+===== DaCapo metered tail latency: 50% 501540 usec, 90% 1272093 usec, 99% 1492350 usec, 99.9% 1538269 usec, 99.99% 1542686 usec, max 1543521 usec, measured over 524288 events =====
+runAgain
