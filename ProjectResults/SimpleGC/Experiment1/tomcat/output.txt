@@ -1,0 +1,139 @@
+map@map-VirtualBox:~/Documents/Benchmarks/dacapo-23.11-chopin$ ../../epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java -Xlog:gc -XX:+UnlockExperimentalVMOptions -XX:+UseEpsilonGC -XX:+EpsilonSlidingGC -jar dacapo-23.11-chopin.jar tomcat -v -p -d --latency-csv
+[0.093s][info][gc] Using Epsilon
+[0.094s][warning][gc,init] Consider setting -Xms equal to -Xmx to avoid resizing hiccups
+[0.094s][warning][gc,init] Consider enabling -XX:+AlwaysPreTouch to avoid memory commit hiccups
+Class name: org.dacapo.harness.Tomcat
+Configurations:
+short     Tomcat servlet container
+long      Runs the tomcat sample web applications
+author    Apache Software Foundation
+license   Apache License, Version 2.0
+copyright Copyright (c) Apache Software Foundation
+url       http://tomcat.apache.org
+version   tomcat 10.1.11
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,512]
+Tomcat is using port 8080. Configure with -Ddacapo.tomcat.port.
+Version: tomcat 10.1.11
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    7  7/18    77 nominal average object size (bytes)
+AOL:    7  6/18    80 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    8  5/18  5128 nominal allocation rate (bytes / usec) (17515864152/3415100.0)
+BAL:    3 15/19     7 nominal aaload per usec
+BAS:    4 12/19     0 nominal aastore per usec
+BEF:    7  6/19    10 nominal execution focus / dominance of hot code
+BGF:    4 13/19   265 nominal getfield per usec
+BPF:    5 11/19    76 nominal putfield per usec
+BUB:    7  6/19   117 nominal thousands of unique bytecodes executed
+BUF:    7  6/19    17 nominal thousands of unique function calls
+GCA:    7  7/22   110 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (21/19)
+GCC:    9  4/22  7676 nominal GC count at 2X heap size (G1)
+GCM:    7  8/22   105 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (20/19)
+GCP:    7  8/22    10 nominal percentage of time spent in GC pauses at 2X heap size (G1) (4080/39743)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (19/19)
+GMD:    2 19/22    19 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    3 14/18    31 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    5 12/22    13 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 18/22    23 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:   10  2/22  1916 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (68848.7/3415.1)
+GTO:    9  3/18   879 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    7  7/22     4 nominal execution time (sec)
+PKP:    9  4/22    21 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:   10  1/22    91 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[6.921s][info   ][gc     ] Heap: 2435M reserved, 152M (6.25%) committed, 123M (5.09%) used
+Server thread created
+[7.731s][info   ][gc     ] GC(0) Step 0: Prologue 0.042ms
+[7.763s][info   ][gc     ] GC(0) Step 1: Mark 32.617ms
+[7.772s][info   ][gc     ] GC(0) Step 2: Calculate new locations 8.655ms
+[7.818s][info   ][gc     ] GC(0) Step 3: Adjust pointers 45.333ms
+[7.828s][info   ][gc     ] GC(0) Step 4: Move objects 10.364ms
+[7.829s][info   ][gc     ] GC(0) Step 5: Epilogue 0.420ms
+[7.829s][info   ][gc     ] GC(0) GC Stats: 26011 (10.94%) reachable from roots, 211769 (89.06%) reachable from heap, 188177 (79.14%) moved, 7513 (3.16%) markwords preserved
+[7.829s][info   ][gc     ] GC(0) Heap: 2435M reserved, 280M (11.51%) committed, 10584K (0.42%) used
+[7.829s][info   ][gc     ] GC(0) Lisp2-style Mark-Compact (System.gc()) 157M->10M(280M) 98.180ms
+[7.831s][info   ][gc     ] Heap: 2435M reserved, 280M (11.51%) committed, 13701K (0.55%) used
+===== DaCapo 23.11-chopin tomcat starting =====
+Loading web application
+Starting 80000 requests...
+[9.373s][info   ][gc     ] GC request for "Metadata GC Threshold" is handled
+[10.994s][info   ][gc     ] Heap: 2435M reserved, 280M (11.51%) committed, 135M (5.55%) used
+[15.952s][info   ][gc     ] Heap: 2435M reserved, 280M (11.51%) committed, 257M (10.56%) used
+[21.068s][info   ][gc     ] Heap: 2435M reserved, 408M (16.76%) committed, 378M (15.56%) used
+[31.094s][info   ][gc     ] Heap: 2435M reserved, 536M (22.02%) committed, 500M (20.57%) used
+[41.033s][info   ][gc     ] Heap: 2435M reserved, 664M (27.28%) committed, 623M (25.59%) used
+[48.464s][info   ][gc     ] Heap: 2435M reserved, 792M (32.53%) committed, 744M (30.59%) used
+[54.090s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 866M (35.60%) used
+[54.756s][info   ][gc     ] GC(1) Step 0: Prologue 0.660ms
+[55.113s][info   ][gc     ] GC(1) Step 1: Mark 357.432ms
+[55.142s][info   ][gc     ] GC(1) Step 2: Calculate new locations 28.329ms
+[55.251s][info   ][gc     ] GC(1) Step 3: Adjust pointers 109.558ms
+[55.281s][info   ][gc     ] GC(1) Step 4: Move objects 29.812ms
+[55.282s][info   ][gc     ] GC(1) Step 5: Epilogue 0.903ms
+[55.282s][info   ][gc     ] GC(1) GC Stats: 53744 (7.11%) reachable from roots, 702213 (92.89%) reachable from heap, 680570 (90.03%) moved, 28096 (3.72%) markwords preserved
+[55.282s][info   ][gc     ] GC(1) Heap: 2435M reserved, 920M (37.79%) committed, 33889K (1.36%) used
+[55.282s][info   ][gc     ] GC(1) Lisp2-style Mark-Compact (CodeCache GC Threshold) 874M->33M(920M) 527.386ms
+[55.283s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 34411K (1.38%) used
+[60.192s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 155M (6.40%) used
+[64.567s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 277M (11.40%) used
+[69.031s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 399M (16.42%) used
+[72.662s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 521M (21.43%) used
+[76.590s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 643M (26.44%) used
+[80.035s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 766M (31.46%) used
+[82.904s][info   ][gc     ] Heap: 2435M reserved, 920M (37.79%) committed, 887M (36.46%) used
+[86.329s][info   ][gc     ] Heap: 2435M reserved, 1048M (43.05%) committed, 1009M (41.46%) used
+[90.373s][info   ][gc     ] Heap: 2435M reserved, 1176M (48.30%) committed, 1131M (46.47%) used
+[94.045s][info   ][gc     ] Heap: 2435M reserved, 1304M (53.56%) committed, 1253M (51.48%) used
+[97.356s][info   ][gc     ] Heap: 2435M reserved, 1432M (58.82%) committed, 1375M (56.49%) used
+[100.706s][info   ][gc     ] Heap: 2435M reserved, 1560M (64.07%) committed, 1497M (61.50%) used
+[104.644s][info   ][gc     ] Heap: 2435M reserved, 1688M (69.33%) committed, 1619M (66.50%) used
+[108.913s][info   ][gc     ] Heap: 2435M reserved, 1816M (74.59%) committed, 1741M (71.52%) used
+[112.916s][info   ][gc     ] Heap: 2435M reserved, 1944M (79.84%) committed, 1863M (76.53%) used
+[116.474s][info   ][gc     ] Heap: 2435M reserved, 2072M (85.10%) committed, 1985M (81.54%) used
+[119.151s][info   ][gc     ] Heap: 2435M reserved, 2200M (90.36%) committed, 2107M (86.57%) used
+[122.478s][info   ][gc     ] Heap: 2435M reserved, 2328M (95.61%) committed, 2229M (91.57%) used
+[126.012s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 2351M (96.58%) used
+[129.328s][info   ][gc     ] GC(2) Step 0: Prologue 0.320ms
+[129.397s][info   ][gc     ] GC(2) Step 1: Mark 68.558ms
+[129.439s][info   ][gc     ] GC(2) Step 2: Calculate new locations 42.424ms
+[129.538s][info   ][gc     ] GC(2) Step 3: Adjust pointers 99.108ms
+[129.567s][info   ][gc     ] GC(2) Step 4: Move objects 27.911ms
+[129.567s][info   ][gc     ] GC(2) Step 5: Epilogue 0.607ms
+[129.568s][info   ][gc     ] GC(2) GC Stats: 34734 (5.35%) reachable from roots, 614455 (94.65%) reachable from heap, 589342 (90.78%) moved, 7347 (1.13%) markwords preserved
+[129.568s][info   ][gc     ] GC(2) Heap: 2435M reserved, 2435M (100.00%) committed, 30013K (1.20%) used
+[129.568s][info   ][gc     ] GC(2) Lisp2-style Mark-Compact (Allocation Failure) 2434M->29M(2435M) 239.915ms
+[129.568s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 30535K (1.22%) used
+[132.349s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 152M (6.24%) used
+[136.345s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 273M (11.25%) used
+[139.755s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 395M (16.26%) used
+[143.019s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 517M (21.26%) used
+[146.503s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 639M (26.28%) used
+[149.947s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 762M (31.30%) used
+[153.104s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 884M (36.31%) used
+[155.911s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1006M (41.33%) used
+[158.921s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1128M (46.34%) used
+[162.316s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1250M (51.35%) used
+[166.112s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1372M (56.36%) used
+[169.856s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1494M (61.36%) used
+[172.844s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1616M (66.39%) used
+[175.660s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1738M (71.40%) used
+[178.773s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1860M (76.43%) used
+[182.116s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 1983M (81.44%) used
+[185.890s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 2105M (86.45%) used
+[188.891s][info   ][gc     ] Heap: 2435M reserved, 2435M (100.00%) committed, 2227M (91.46%) used
+
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo 23.11-chopin tomcat PASSED in 182734 msec =====
+===== DaCapo simple tail latency: 50% 16408 usec, 90% 38813 usec, 99% 163315 usec, 99.9% 471835 usec, 99.99% 2337914 usec, max 2455277 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 18772290 usec, 90% 29157007 usec, 99% 29913220 usec, 99.9% 30001588 usec, 99.99% 30070003 usec, max 30265661 usec, measured over 80000 events =====
+runAgain
+Server stopped ... iteration complete
+

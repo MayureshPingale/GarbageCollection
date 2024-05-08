@@ -1,0 +1,122 @@
+ ../../epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java -Xlog:gc -XX:+UseParallelGC -jar dacapo-23.11-chopin.jar tomcat -v -p -d --latency-csv
+[0.026s][info][gc] Using Parallel
+Class name: org.dacapo.harness.Tomcat
+Configurations:
+short     Tomcat servlet container
+long      Runs the tomcat sample web applications
+author    Apache Software Foundation
+license   Apache License, Version 2.0
+copyright Copyright (c) Apache Software Foundation
+url       http://tomcat.apache.org
+version   tomcat 10.1.11
+sizes     default large small
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,512]
+Tomcat is using port 8080. Configure with -Ddacapo.tomcat.port.
+[1.848s][info][gc] GC(0) Pause Young (Allocation Failure) 40M->2M(148M) 85.332ms
+Version: tomcat 10.1.11
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    7  7/18    77 nominal average object size (bytes)
+AOL:    7  6/18    80 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    8  5/18  5128 nominal allocation rate (bytes / usec) (17515864152/3415100.0)
+BAL:    3 15/19     7 nominal aaload per usec
+BAS:    4 12/19     0 nominal aastore per usec
+BEF:    7  6/19    10 nominal execution focus / dominance of hot code
+BGF:    4 13/19   265 nominal getfield per usec
+BPF:    5 11/19    76 nominal putfield per usec
+BUB:    7  6/19   117 nominal thousands of unique bytecodes executed
+BUF:    7  6/19    17 nominal thousands of unique function calls
+GCA:    7  7/22   110 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (21/19)
+GCC:    9  4/22  7676 nominal GC count at 2X heap size (G1)
+GCM:    7  8/22   105 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (20/19)
+GCP:    7  8/22    10 nominal percentage of time spent in GC pauses at 2X heap size (G1) (4080/39743)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (19/19)
+GMD:    2 19/22    19 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:    3 14/18    31 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    5 12/22    13 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:    2 18/22    23 nominal minimum heap size (MB) for default size without compressed pointers
+GSS:   10  2/22  1916 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (68848.7/3415.1)
+GTO:    9  3/18   879 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    7  7/22     4 nominal execution time (sec)
+PKP:    9  4/22    21 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:   10  1/22    91 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    5 13/22     0 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+[8.061s][info][gc] GC(1) Pause Young (Allocation Failure) 41M->7M(148M) 22.561ms
+[9.867s][info][gc] GC(2) Pause Young (Allocation Failure) 46M->8M(148M) 46.566ms
+[10.626s][info][gc] GC(3) Pause Young (Allocation Failure) 47M->9M(187M) 24.905ms
+Server thread created
+[10.958s][info][gc] GC(4) Pause Young (System.gc()) 22M->10M(187M) 25.097ms
+[11.230s][info][gc] GC(5) Pause Full (System.gc()) 10M->9M(187M) 248.366ms
+===== DaCapo 23.11-chopin tomcat starting =====
+Loading web application
+Starting 80000 requests...
+[16.697s][info][gc] GC(6) Pause Young (Allocation Failure) 87M->14M(183M) 276.084ms
+[17.502s][info][gc] GC(7) Pause Young (Metadata GC Threshold) 59M->14M(187M) 11.169ms
+[17.675s][info][gc] GC(8) Pause Full (Metadata GC Threshold) 14M->13M(187M) 167.679ms
+[21.637s][info][gc] GC(9) Pause Young (Allocation Failure) 88M->15M(255M) 19.670ms
+[28.312s][info][gc] GC(10) Pause Young (Allocation Failure) 164M->16M(250M) 16.625ms
+[40.588s][info][gc] GC(11) Pause Young (Allocation Failure) 160M->16M(244M) 41.696ms
+[46.047s][info][gc] GC(12) Pause Young (Allocation Failure) 154M->16M(237M) 66.812ms
+[52.887s][info][gc] GC(13) Pause Young (Allocation Failure) 149M->16M(231M) 14.916ms
+[56.874s][info][gc] GC(14) Pause Young (Allocation Failure) 144M->16M(236M) 22.366ms
+[61.054s][info][gc] GC(15) Pause Young (Allocation Failure) 140M->16M(222M) 18.027ms
+[63.914s][info][gc] GC(16) Pause Young (Allocation Failure) 135M->16M(227M) 14.423ms
+[66.340s][info][gc] GC(17) Pause Young (Allocation Failure) 131M->16M(215M) 12.882ms
+[69.826s][info][gc] GC(18) Pause Young (Allocation Failure) 127M->16M(219M) 14.803ms
+[72.528s][info][gc] GC(19) Pause Young (Allocation Failure) 123M->17M(207M) 26.634ms
+[76.902s][info][gc] GC(20) Pause Young (Allocation Failure) 120M->17M(212M) 21.968ms
+[79.197s][info][gc] GC(21) Pause Young (Allocation Failure) 117M->17M(200M) 43.803ms
+[82.559s][info][gc] GC(22) Pause Young (Allocation Failure) 113M->17M(204M) 28.858ms
+[84.266s][info][gc] GC(23) Pause Young (Allocation Failure) 110M->17M(208M) 54.740ms
+[86.263s][info][gc] GC(24) Pause Young (Allocation Failure) 114M->17M(208M) 27.993ms
+[89.339s][info][gc] GC(25) Pause Young (Allocation Failure) 114M->17M(198M) 21.490ms
+[91.598s][info][gc] GC(26) Pause Young (Allocation Failure) 111M->17M(201M) 10.049ms
+[92.768s][info][gc] GC(27) Pause Young (Allocation Failure) 108M->17M(192M) 11.745ms
+[94.925s][info][gc] GC(28) Pause Young (Allocation Failure) 105M->17M(224M) 52.388ms
+[97.697s][info][gc] GC(29) Pause Young (Allocation Failure) 132M->17M(235M) 95.858ms
+[102.186s][info][gc] GC(30) Pause Young (Allocation Failure) 144M->17M(235M) 102.367ms
+[106.261s][info][gc] GC(31) Pause Young (Allocation Failure) 144M->17M(226M) 32.293ms
+[109.902s][info][gc] GC(32) Pause Young (Allocation Failure) 139M->17M(226M) 15.616ms
+[113.345s][info][gc] GC(33) Pause Young (Allocation Failure) 135M->17M(217M) 47.174ms
+[116.725s][info][gc] GC(34) Pause Young (Allocation Failure) 131M->17M(217M) 15.168ms
+[118.881s][info][gc] GC(35) Pause Young (Allocation Failure) 127M->17M(209M) 12.504ms
+[121.607s][info][gc] GC(36) Pause Young (Allocation Failure) 123M->17M(209M) 16.243ms
+[124.605s][info][gc] GC(37) Pause Young (Allocation Failure) 120M->17M(202M) 24.070ms
+[126.989s][info][gc] GC(38) Pause Young (Allocation Failure) 116M->17M(202M) 11.640ms
+[129.911s][info][gc] GC(39) Pause Young (Allocation Failure) 113M->17M(196M) 17.643ms
+[132.426s][info][gc] GC(40) Pause Young (Allocation Failure) 110M->17M(195M) 14.356ms
+[134.666s][info][gc] GC(41) Pause Young (Allocation Failure) 107M->17M(190M) 14.689ms
+[135.844s][info][gc] GC(42) Pause Young (Allocation Failure) 104M->17M(189M) 10.654ms
+[137.165s][info][gc] GC(43) Pause Young (Allocation Failure) 101M->17M(185M) 21.091ms
+[139.409s][info][gc] GC(44) Pause Young (Allocation Failure) 99M->17M(184M) 22.259ms
+[141.835s][info][gc] GC(45) Pause Young (Allocation Failure) 96M->17M(180M) 15.548ms
+[144.007s][info][gc] GC(46) Pause Young (Allocation Failure) 94M->18M(198M) 39.388ms
+[146.720s][info][gc] GC(47) Pause Young (Allocation Failure) 111M->18M(218M) 29.064ms
+[149.781s][info][gc] GC(48) Pause Young (Allocation Failure) 132M->18M(215M) 14.068ms
+[152.699s][info][gc] GC(49) Pause Young (Allocation Failure) 128M->18M(210M) 13.862ms
+[155.111s][info][gc] GC(50) Pause Young (Allocation Failure) 124M->18M(207M) 17.898ms
+[156.977s][info][gc] GC(51) Pause Young (Allocation Failure) 121M->18M(203M) 14.819ms
+[159.244s][info][gc] GC(52) Pause Young (Allocation Failure) 117M->18M(200M) 10.449ms
+[160.707s][info][gc] GC(53) Pause Young (Allocation Failure) 114M->18M(196M) 16.126ms
+[162.637s][info][gc] GC(54) Pause Young (Allocation Failure) 111M->18M(217M) 80.062ms
+[167.868s][info][gc] GC(55) Pause Young (Allocation Failure) 131M->18M(240M) 57.410ms
+[172.148s][info][gc] GC(56) Pause Young (Allocation Failure) 155M->18M(249M) 50.513ms
+[175.134s][info][gc] GC(57) Pause Young (Allocation Failure) 163M->18M(270M) 59.854ms
+[179.951s][info][gc] GC(58) Pause Young (Allocation Failure) 184M->18M(263M) 17.177ms
+
+Completed requests
+Client threads complete ... unloading web application
+===== DaCapo 23.11-chopin tomcat PASSED in 169945 msec =====
+[181.290s][info][gc] GC(59) Pause Young (CodeCache GC Threshold) 58M->18M(263M) 17.487ms
+[181.636s][info][gc] GC(60) Pause Full (CodeCache GC Threshold) 18M->14M(263M) 341.062ms
+===== DaCapo simple tail latency: 50% 11112 usec, 90% 42123 usec, 99% 150547 usec, 99.9% 566837 usec, 99.99% 5129924 usec, max 5201495 usec, measured over 80000 events =====
+===== DaCapo metered tail latency: 50% 17196372 usec, 90% 26263169 usec, 99% 27550971 usec, 99.9% 27725829 usec, 99.99% 27788447 usec, max 27842738 usec, measured over 80000 events =====
+runAgain
+Server stopped ... iteration complete
+

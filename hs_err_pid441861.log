@@ -1,0 +1,1080 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (/home/map/Documents/epsilon-jdk/src/hotspot/share/runtime/mutex.cpp:57), pid=441861, tid=441864
+#  fatal error: VM thread could block on lock that may be held by a JavaThread during safepoint: ClassLoaderDataGraph_lock
+#
+# JRE version: OpenJDK Runtime Environment (22.0) (fastdebug build 22-internal-adhoc.map.epsilon-jdk)
+# Java VM: OpenJDK 64-Bit Server VM (fastdebug 22-internal-adhoc.map.epsilon-jdk, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, simple gc, linux-amd64)
+# Problematic frame:
+# V  [libjvm.so+0x147c9f5]  Mutex::check_safepoint_state(Thread*)+0x115
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E" (or dumping to /home/map/Documents/epsilon-jdk/core.441861)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Xlog:gc -XX:+UnlockExperimentalVMOptions -XX:+UseSimpleGC spring-petclinic/target/spring-petclinic-3.2.0-SNAPSHOT.jar
+
+Host: map-VirtualBox, 12th Gen Intel(R) Core(TM) i5-1245U, 10 cores, 9G, Ubuntu 20.04.6 LTS
+Time: Thu May  2 01:55:55 2024 EDT elapsed time: 185.325424 seconds (0d 0h 3m 5s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f081c0e5f80):  VMThread "VM Thread"          [id=441864, stack(0x00007f0821039000,0x00007f0821139000) (1024K)]
+
+Stack: [0x00007f0821039000,0x00007f0821139000],  sp=0x00007f0821137580,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x147c9f5]  Mutex::check_safepoint_state(Thread*)+0x115  (mutex.cpp:57)
+V  [libjvm.so+0x147f95f]  Mutex::lock()+0x3f  (mutex.cpp:119)
+V  [libjvm.so+0x17d8140]  SimpleGCHeap::do_roots(OopClosure*, bool)+0xb0  (simplegcheap.cpp:417)
+V  [libjvm.so+0x17d99d8]  SimpleGCHeap::entry_collect(GCCause::Cause)+0x418  (simplegcheap.hpp:181)
+V  [libjvm.so+0x1a4f6c1]  VM_Operation::evaluate()+0x161  (vmOperations.cpp:71)
+V  [libjvm.so+0x1a710cf]  VMThread::evaluate_operation(VM_Operation*)+0x13f  (vmThread.cpp:281)
+V  [libjvm.so+0x1a72027]  VMThread::inner_execute(VM_Operation*)+0x417  (vmThread.cpp:435)
+V  [libjvm.so+0x1a721c8]  VMThread::loop()+0x78  (vmThread.cpp:502)
+V  [libjvm.so+0x1a72308]  VMThread::run()+0x98  (vmThread.cpp:175)
+V  [libjvm.so+0x195e631]  Thread::call_run()+0xe1  (thread.cpp:220)
+V  [libjvm.so+0x1526f65]  thread_native_entry(Thread*)+0x115  (os_linux.cpp:786)
+Registers:
+RAX=0x00007f0826365000, RBX=0x00007f0821137760, RCX=0x00007f0825ba7608, RDX=0x0000000000000039
+RSP=0x00007f0821137580, RBP=0x00007f0821137590, RSI=0x00007f0825ba7530, RDI=0x00000000e0000000
+R8 =0x00007f081c0e6c30, R9 =0x00007f081c0e6c30, R10=0x00007f0823b3a000, R11=0x00007f0825a408aa
+R12=0x00007f081c0e5f80, R13=0x00007f082609f180, R14=0x00007f08211375f0, R15=0x00007f08211375c8
+RIP=0x00007f082526a9f5, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000006
+  TRAPNO=0x000000000000000e
+
+
+Register to memory mapping:
+
+RAX=0x00007f0826365000 in mmap'd memory region [0x00007f0826365000 - 0x00007f0826366000], tag mtInternal
+RBX=0x00007f0821137760 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+RCX=0x00007f0825ba7608: <offset 0x0000000001db9608> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+RDX=0x0000000000000039 is an unknown value
+RSP=0x00007f0821137580 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+RBP=0x00007f0821137590 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+RSI=0x00007f0825ba7530: <offset 0x0000000001db9530> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+RDI=0x00000000e0000000 is an unknown value
+R8 =0x00007f081c0e6c30 points into unknown readable memory: 0x0000000000000003 | 03 00 00 00 00 00 00 00
+R9 =0x00007f081c0e6c30 points into unknown readable memory: 0x0000000000000003 | 03 00 00 00 00 00 00 00
+R10=0x00007f0823b3a000 in mmap'd memory region [0x00007f0823b3a000 - 0x00007f0823b46000], tag mtCode
+R11=0x00007f0825a408aa: <offset 0x0000000001c528aa> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+R12=0x00007f081c0e5f80 into live malloced block starting at 0x00007f081c0e5f80, size 976, tag mtThread
+R13=0x00007f082609f180: <offset 0x00000000022b1180> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+R14=0x00007f08211375f0 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+R15=0x00007f08211375c8 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+
+Top of Stack: (sp=0x00007f0821137580)
+0x00007f0821137580:   00007f082609f180 00007f081c0e5f80
+0x00007f0821137590:   00007f08211375b0 00007f082526d95f
+0x00007f08211375a0:   00007f0821137710 00007f08211375c4
+0x00007f08211375b0:   00007f0821137630 00007f08255c6140
+0x00007f08211375c0:   0000000123255f75 00007f082609f180
+0x00007f08211375d0:   00007f0825f13d50 00007f0821137710
+0x00007f08211375e0:   00007f0800000000 0000000000000040
+0x00007f08211375f0:   00007f0825f13d98 00007f0821137710
+0x00007f0821137600:   00007f0826070101 3bb7511b4a37a500
+0x00007f0821137610:   0000002b233bc5dc 0000000000000000
+0x00007f0821137620:   0000002b233bc5dc 00007f081c03ff50
+0x00007f0821137630:   00007f0821137900 00007f08255c79d8
+0x00007f0821137640:   00007f0821137680 00007f0821137700
+0x00007f0821137650:   00007f0821137680 00007f0824829e0f
+0x00007f0821137660:   00007f0805feca90 00007f0805fefe37
+0x00007f0821137670:   00007f0805feca90 00007f08211376c4
+0x00007f0821137680:   00007f0821137750 00007f08211378b8
+0x00007f0821137690:   00007f0821137768 00007f081c040150
+0x00007f08211376a0:   00007f0805fed3d8 00007f0821137760
+0x00007f08211376b0:   00007f0821137710 0000000000000000
+0x00007f08211376c0:   ffffffff211376e0 00007f0821137800
+0x00007f08211376d0:   00007f0825ff6f80 00007f082609f428
+0x00007f08211376e0:   00007f08260a1518 00007f081c0e5f80
+0x00007f08211376f0:   00007f08211378a0 00007f082634dcbc
+0x00007f0821137700:   00007f0821137710 00007f0826353dec
+0x00007f0821137710:   00007f0825f1d530 0000000000000000
+0x00007f0821137720:   00007f0821137760 00007f081c040150
+0x00007f0821137730:   00007f081c06cb30 0000000000000002
+0x00007f0821137740:   0000000000000000 0000000000000002
+0x00007f0821137750:   0000000000000000 00007f08260a1518
+0x00007f0821137760:   00007f0825f0fc88 00000000000001fe
+0x00007f0821137770:   ffffffffffffff00 0000000000000004 
+
+Instructions: (pc=0x00007f082526a9f5)
+0x00007f082526a8f5:   f4 75 11 48 8b 06 48 89 f7 ff 50 38 84 c0 0f 85
+0x00007f082526a905:   ca 00 00 00 48 8d 05 d8 cf e5 00 48 83 38 00 74
+0x00007f082526a915:   0c 48 8d 05 d3 cf e5 00 4c 3b 20 74 6e 41 83 7d
+0x00007f082526a925:   6c 15 7f 11 48 8d 05 14 bf e0 00 8b 10 85 d2 0f
+0x00007f082526a935:   8e 91 00 00 00 49 8b 04 24 4c 89 e7 ff 90 a8 00
+0x00007f082526a945:   00 00 84 c0 74 35 49 8b 04 24 4c 89 e7 ff 50 40
+0x00007f082526a955:   84 c0 75 11 48 8d 05 e4 be e0 00 8b 00 85 c0 0f
+0x00007f082526a965:   8e 99 00 00 00 4c 89 e7 41 5c 41 5d 5d e9 e9 45
+0x00007f082526a975:   a8 ff 66 0f 1f 84 00 00 00 00 00 41 5c 41 5d 5d
+0x00007f082526a985:   c3 66 2e 0f 1f 84 00 00 00 00 00 48 8d 05 ad be
+0x00007f082526a995:   e0 00 8b 08 85 c9 7f 9d 48 8d 05 0c 17 d9 00 48
+0x00007f082526a9a5:   8d 0d b5 cc 93 00 48 8d 15 e6 cc 93 00 be 3c 00
+0x00007f082526a9b5:   00 00 48 8d 3d 72 cb 93 00 48 8b 00 c6 00 58 31
+0x00007f082526a9c5:   c0 e8 a5 e1 65 ff 4c 89 ef e8 cd fd ff ff 48 8d
+0x00007f082526a9d5:   05 d6 16 d9 00 48 8d 0d 27 cc 93 00 ba 39 00 00
+0x00007f082526a9e5:   00 48 8d 35 43 cb 93 00 bf 00 00 00 e0 48 8b 00
+0x00007f082526a9f5:   c6 00 58 4d 8b 45 60 31 c0 e8 0d e3 65 ff 48 8d
+0x00007f082526aa05:   05 a6 16 d9 00 48 8d 0d f8 29 7c 00 48 8d 15 a8
+0x00007f082526aa15:   28 7c 00 be d4 03 00 00 48 8d 3d c4 28 7c 00 48
+0x00007f082526aa25:   8b 00 c6 00 58 31 c0 e8 3f e1 65 ff 90 66 66 2e
+0x00007f082526aa35:   0f 1f 84 00 00 00 00 00 0f 1f 00 f3 0f 1e fa 55
+0x00007f082526aa45:   48 89 e5 41 55 49 89 fd 41 54 80 7f 68 00 49 89
+0x00007f082526aa55:   f4 75 11 48 8b 06 48 89 f7 ff 50 38 84 c0 0f 85
+0x00007f082526aa65:   82 00 00 00 48 8d 05 78 ce e5 00 48 83 38 00 74
+0x00007f082526aa75:   0c 48 8d 05 73 ce e5 00 4c 3b 20 74 2e 49 8b 04
+0x00007f082526aa85:   24 4c 89 e7 ff 90 a8 00 00 00 84 c0 74 14 41 83
+0x00007f082526aa95:   7d 6c 15 7e 0d 48 8d 05 a3 bd e0 00 8b 00 85 c0
+0x00007f082526aaa5:   7e 74 41 5c 41 5d 5d c3 0f 1f 00 48 8d 05 8d bd
+0x00007f082526aab5:   e0 00 8b 10 85 d2 7f c5 48 8d 05 ec 15 d9 00 48
+0x00007f082526aac5:   8d 0d 95 cb 93 00 48 8d 15 c6 cb 93 00 be 3c 00
+0x00007f082526aad5:   00 00 48 8d 3d 52 ca 93 00 48 8b 00 c6 00 58 31
+0x00007f082526aae5:   c0 e8 85 e0 65 ff 48 8d 05 be 15 d9 00 48 8d 0d 
+
+
+Stack slot to memory mapping:
+
+stack at sp + 0 slots: 0x00007f082609f180: <offset 0x00000000022b1180> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+stack at sp + 1 slots: 0x00007f081c0e5f80 into live malloced block starting at 0x00007f081c0e5f80, size 976, tag mtThread
+stack at sp + 2 slots: 0x00007f08211375b0 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+stack at sp + 3 slots: 0x00007f082526d95f: <offset 0x000000000147f95f> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+stack at sp + 4 slots: 0x00007f0821137710 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+stack at sp + 5 slots: 0x00007f08211375c4 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+stack at sp + 6 slots: 0x00007f0821137630 in mmap'd memory region [0x00007f0821039000 - 0x00007f0821139000], tag mtThreadStack
+stack at sp + 7 slots: 0x00007f08255c6140: <offset 0x00000000017d8140> in /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so at 0x00007f0823dee000
+
+VM_Operation (0x00007f08204bfdc0): SimpleGCHeap Collection, mode: safepoint, requested by thread 0x00007f081c122ea0
+
+
+---------------  P R O C E S S  ---------------
+
+uid  : 1000 euid : 1000 gid  : 1000 egid : 1000
+
+umask: 0002 (-------w-)
+
+Threads class SMR info:
+_java_thread_list=0x00007f081f497700, length=28, elements={
+0x00007f081c118ed0, 0x00007f081c11a7c0, 0x00007f081c11c710, 0x00007f081c11e010,
+0x00007f081c11f7d0, 0x00007f081c121540, 0x00007f081c122ea0, 0x00007f081c1c1420,
+0x00007f081c1c7ee0, 0x00007f081c2fe160, 0x00007f081d197c70, 0x00007f078c0108c0,
+0x00007f081d19a190, 0x00007f081dfab4e0, 0x00007f081da957a0, 0x00007f081f489210,
+0x00007f081f48a550, 0x00007f081f48b400, 0x00007f081f48c7a0, 0x00007f081f48dc00,
+0x00007f081f48fed0, 0x00007f081f4911a0, 0x00007f081f4925b0, 0x00007f081f493a30,
+0x00007f081f494eb0, 0x00007f081f497e80, 0x00007f081f4cf9b0, 0x00007f081c02a8f0
+}
+_java_thread_list_alloc_cnt=39, _java_thread_list_free_cnt=37, _java_thread_list_max=28, _nested_thread_list_max=0
+_tlh_cnt=5281, _tlh_times=351, avg_tlh_time=0.07, _tlh_time_max=23
+_deleted_thread_cnt=5, _deleted_thread_times=0, avg_deleted_thread_time=0.00, _deleted_thread_time_max=0
+_delete_lock_wait_cnt=0, _delete_lock_wait_max=0
+_to_delete_list_cnt=0, _to_delete_list_max=2
+
+Java Threads: ( => current thread )
+  0x00007f081c118ed0 JavaThread "Reference Handler"          daemon [_thread_blocked, id=441865, stack(0x00007f08209c7000,0x00007f0820ac8000) (1028K)]
+  0x00007f081c11a7c0 JavaThread "Finalizer"                  daemon [_thread_blocked, id=441866, stack(0x00007f08208c6000,0x00007f08209c7000) (1028K)]
+  0x00007f081c11c710 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=441867, stack(0x00007f08207c5000,0x00007f08208c6000) (1028K)]
+  0x00007f081c11e010 JavaThread "Service Thread"             daemon [_thread_blocked, id=441868, stack(0x00007f08206c4000,0x00007f08207c5000) (1028K)]
+  0x00007f081c11f7d0 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=441869, stack(0x00007f08205c3000,0x00007f08206c4000) (1028K)]
+  0x00007f081c121540 JavaThread "C2 CompilerThread0"         daemon [_thread_blocked, id=441870, stack(0x00007f08204c2000,0x00007f08205c3000) (1028K)]
+  0x00007f081c122ea0 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=441871, stack(0x00007f08203c1000,0x00007f08204c2000) (1028K)]
+  0x00007f081c1c1420 JavaThread "Notification Thread"        daemon [_thread_blocked, id=441872, stack(0x00007f08201f0000,0x00007f08202f1000) (1028K)]
+  0x00007f081c1c7ee0 JavaThread "Common-Cleaner"             daemon [_thread_blocked, id=441873, stack(0x00007f08200ef000,0x00007f08201f0000) (1028K)]
+  0x00007f081c2fe160 JavaThread "Cleaner-0"                  daemon [_thread_blocked, id=441874, stack(0x00007f08047fc000,0x00007f08048fd000) (1028K)]
+  0x00007f081d197c70 JavaThread "Catalina-utility-1"                [_thread_blocked, id=441986, stack(0x00007f08046fb000,0x00007f08047fc000) (1028K)]
+  0x00007f078c0108c0 JavaThread "Catalina-utility-2"                [_thread_blocked, id=441987, stack(0x00007f08045fa000,0x00007f08046fb000) (1028K)]
+  0x00007f081d19a190 JavaThread "container-0"                       [_thread_blocked, id=441988, stack(0x00007f08044f9000,0x00007f08045fa000) (1028K)]
+  0x00007f081dfab4e0 JavaThread "mysql-cj-abandoned-connection-cleanup" daemon [_thread_blocked, id=442001, stack(0x00007f08043f8000,0x00007f08044f9000) (1028K)]
+  0x00007f081da957a0 JavaThread "HikariPool-1 housekeeper"   daemon [_thread_blocked, id=442014, stack(0x00007f08042f7000,0x00007f08043f8000) (1028K)]
+  0x00007f081f489210 JavaThread "http-nio-8080-exec-1"       daemon [_thread_blocked, id=442197, stack(0x00007f08041f6000,0x00007f08042f7000) (1028K)]
+  0x00007f081f48a550 JavaThread "http-nio-8080-exec-2"       daemon [_thread_blocked, id=442198, stack(0x00007f08040f5000,0x00007f08041f6000) (1028K)]
+  0x00007f081f48b400 JavaThread "http-nio-8080-exec-3"       daemon [_thread_blocked, id=442199, stack(0x00007f07c2eff000,0x00007f07c3000000) (1028K)]
+  0x00007f081f48c7a0 JavaThread "http-nio-8080-exec-4"       daemon [_thread_blocked, id=442200, stack(0x00007f07c2dfe000,0x00007f07c2eff000) (1028K)]
+  0x00007f081f48dc00 JavaThread "http-nio-8080-exec-5"       daemon [_thread_blocked, id=442201, stack(0x00007f07c2cfd000,0x00007f07c2dfe000) (1028K)]
+  0x00007f081f48fed0 JavaThread "http-nio-8080-exec-6"       daemon [_thread_blocked, id=442202, stack(0x00007f07c2bfc000,0x00007f07c2cfd000) (1028K)]
+  0x00007f081f4911a0 JavaThread "http-nio-8080-exec-7"       daemon [_thread_blocked, id=442203, stack(0x00007f07c2afb000,0x00007f07c2bfc000) (1028K)]
+  0x00007f081f4925b0 JavaThread "http-nio-8080-exec-8"       daemon [_thread_blocked, id=442204, stack(0x00007f07c29fa000,0x00007f07c2afb000) (1028K)]
+  0x00007f081f493a30 JavaThread "http-nio-8080-exec-9"       daemon [_thread_blocked, id=442205, stack(0x00007f07c28f9000,0x00007f07c29fa000) (1028K)]
+  0x00007f081f494eb0 JavaThread "http-nio-8080-exec-10"      daemon [_thread_blocked, id=442206, stack(0x00007f07c27f8000,0x00007f07c28f9000) (1028K)]
+  0x00007f081f497e80 JavaThread "http-nio-8080-Poller"       daemon [_thread_blocked, id=442207, stack(0x00007f07c26f7000,0x00007f07c27f8000) (1028K)]
+  0x00007f081f4cf9b0 JavaThread "http-nio-8080-Acceptor"     daemon [_thread_in_native, id=442208, stack(0x00007f07c25f6000,0x00007f07c26f7000) (1028K)]
+  0x00007f081c02a8f0 JavaThread "DestroyJavaVM"                     [_thread_blocked, id=441862, stack(0x00007f0823b94000,0x00007f0823c95000) (1028K)]
+Total: 28
+
+Other Threads:
+=>0x00007f081c0e5f80 VMThread "VM Thread"                           [id=441864, stack(0x00007f0821039000,0x00007f0821139000) (1024K)]
+  0x00007f081c053210 WatcherThread "VM Periodic Task Thread"        [id=441863, stack(0x00007f082113a000,0x00007f082123a000) (1024K)]
+Total: 2
+
+Threads with active compile tasks:
+C2 CompilerThread0   188110 9440       4       java.lang.StringLatin1::trim (76 bytes)
+C1 CompilerThread0   188110 9445       3       org.apache.tomcat.util.http.MimeHeaders::getValue (44 bytes)
+Total: 2
+
+VM state: at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f082609f428] Threads_lock - owner thread: 0x00007f081c0e5f80
+[0x00007f082609f318] Heap_lock - owner thread: 0x00007f081c122ea0
+
+Heap address: 0x0000000767cf8000, size: 2435 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x00007f07c3000000-0x00007f07c3d36000-0x00007f07c3d36000), size 13852672, SharedBaseAddress: 0x00007f07c3000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x00007f07c4000000-0x00007f0804000000, reserved size: 1073741824
+Narrow klass base: 0x00007f07c3000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+<Empty>
+
+Heap:
+SimpleGC Heap
+Virtual space:
+ - committed: 2553315328
+ - reserved:  2553315328
+ - [low, high]:     [0x0000000767cf8000, 0x0000000800000000]
+ - [low_b, high_b]: [0x0000000767cf8000, 0x0000000800000000]
+Allocation space:
+ space 2493472K,  46% used [0x0000000767cf8000, 0x00000007ade91248, 0x0000000800000000)
+ Metaspace       used 89033K, committed 89728K, reserved 1179648K
+  class space    used 11747K, committed 12096K, reserved 1048576K
+
+
+Polling page: 0x00007f0826335000
+
+Metaspace:
+
+Usage:
+  Non-class:     75.47 MB used.
+      Class:     11.47 MB used.
+       Both:     86.95 MB used.
+
+Virtual space:
+  Non-class space:      128.00 MB reserved,      75.81 MB ( 59%) committed,  2 nodes.
+      Class space:        1.00 GB reserved,      11.81 MB (  1%) committed,  1 nodes.
+             Both:        1.12 GB reserved,      87.62 MB (  8%) committed. 
+
+Chunk freelists:
+   Non-Class:  4.12 MB
+       Class:  4.14 MB
+        Both:  8.26 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 97.31 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - use_allocation_guard: 0.
+
+
+Internal statistics:
+
+num_allocs: 584194.
+num_deallocs: 613.
+num_allocs_from_deallocated_blocks: 10768.
+num_chunks_retired: 3230.
+num_allocs_failed_limit: 9.
+num_arena_births: 1076.
+num_arena_deaths: 0.
+num_vsnodes_births: 3.
+num_vsnodes_deaths: 0.
+num_space_committed: 1402.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 9.
+num_chunks_taken_from_freelist: 4307.
+num_chunk_merges: 6.
+num_chunk_splits: 3146.
+num_chunks_enlarged: 5070.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120028Kb used=11203Kb max_used=11203Kb free=108824Kb
+ bounds [0x00007f080c3c6000, 0x00007f080cec6000, 0x00007f08138fd000]
+CodeHeap 'profiled nmethods': size=120028Kb used=23559Kb max_used=23559Kb free=96468Kb
+ bounds [0x00007f08048fd000, 0x00007f080600d000, 0x00007f080be34000]
+CodeHeap 'non-nmethods': size=5704Kb used=2104Kb max_used=2123Kb free=3600Kb
+ bounds [0x00007f080be34000, 0x00007f080c0a4000, 0x00007f080c3c6000]
+ total_blobs=10343 nmethods=9176 adapters=1084
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 185.259 Thread 0x00007f081c122ea0 nmethod 9432 0x00007f0805ff3910 code [0x00007f0805ff3e80, 0x00007f0805ff6030]
+Event: 185.260 Thread 0x00007f081c122ea0 9433       3       org.thymeleaf.linkbuilder.StandardLinkBuilder::isLinkBaseAbsolute (221 bytes)
+Event: 185.263 Thread 0x00007f081c122ea0 nmethod 9433 0x00007f0805ff6f90 code [0x00007f0805ff73e0, 0x00007f0805ff8ec0]
+Event: 185.263 Thread 0x00007f081c122ea0 9443       3       io.micrometer.core.instrument.Tag::compareTo (11 bytes)
+Event: 185.264 Thread 0x00007f081c122ea0 nmethod 9443 0x00007f0805ff9a90 code [0x00007f0805ff9ce0, 0x00007f0805ffa1b8]
+Event: 185.264 Thread 0x00007f081c122ea0 9444       3       io.micrometer.core.instrument.Tag::compareTo (16 bytes)
+Event: 185.265 Thread 0x00007f081c122ea0 nmethod 9444 0x00007f0805ffa410 code [0x00007f0805ffa640, 0x00007f0805ffa8f8]
+Event: 185.265 Thread 0x00007f081c122ea0 9442       3       org.thymeleaf.standard.expression.StandardExpressionParser::parseExpression (7 bytes)
+Event: 185.266 Thread 0x00007f081c122ea0 nmethod 9442 0x00007f0805ffab10 code [0x00007f0805ffad20, 0x00007f0805ffb288]
+Event: 185.266 Thread 0x00007f081c122ea0 9434       3       org.thymeleaf.linkbuilder.StandardLinkBuilder::isLinkBaseContextRelative (51 bytes)
+Event: 185.267 Thread 0x00007f081c122ea0 nmethod 9434 0x00007f0805ffb590 code [0x00007f0805ffb7a0, 0x00007f0805ffbd10]
+Event: 185.267 Thread 0x00007f081c122ea0 9435       3       org.thymeleaf.linkbuilder.StandardLinkBuilder::computeContextPath (67 bytes)
+Event: 185.269 Thread 0x00007f081c121540 nmethod 9428 0x00007f080ceb5190 code [0x00007f080ceb55c0, 0x00007f080ceb5f38]
+Event: 185.269 Thread 0x00007f081c121540 9440       4       java.lang.StringLatin1::trim (76 bytes)
+Event: 185.270 Thread 0x00007f081c122ea0 nmethod 9435 0x00007f0805ffbf90 code [0x00007f0805ffc320, 0x00007f0805ffd290]
+Event: 185.270 Thread 0x00007f081c122ea0 9426       3       java.util.Arrays::sort (24 bytes)
+Event: 185.270 Thread 0x00007f081c122ea0 nmethod 9426 0x00007f0805ffdb10 code [0x00007f0805ffdce0, 0x00007f0805ffde68]
+Event: 185.270 Thread 0x00007f081c122ea0 9436       3       org.thymeleaf.linkbuilder.StandardLinkBuilder::processLink (20 bytes)
+Event: 185.271 Thread 0x00007f081c122ea0 nmethod 9436 0x00007f0805ffdf90 code [0x00007f0805ffe200, 0x00007f0805ffe940]
+Event: 185.271 Thread 0x00007f081c122ea0 9445       3       org.apache.tomcat.util.http.MimeHeaders::getValue (44 bytes)
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (11 events):
+Event: 0.002 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+Event: 0.211 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+Event: 0.276 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+Event: 0.288 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+Event: 0.429 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+Event: 0.603 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+Event: 6.730 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+Event: 63.497 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+Event: 121.720 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+Event: 121.790 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+Event: 129.465 Loaded shared library /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+
+Deoptimization events (20 events):
+Event: 184.750 Thread 0x00007f081f48fed0 DEOPT PACKING pc=0x00007f080ce81ca8 sp=0x00007f07c2cf9770
+Event: 184.750 Thread 0x00007f081f48fed0 DEOPT UNPACKING pc=0x00007f080bf5098e sp=0x00007f07c2cf9730 mode 2
+Event: 184.750 Thread 0x00007f081f48fed0 Uncommon trap: trap_request=0xffffffd6 fr.pc=0x00007f080ce81ca8 relative=0x0000000000000128
+Event: 184.750 Thread 0x00007f081f48fed0 Uncommon trap: reason=array_check action=maybe_recompile pc=0x00007f080ce81ca8 method=java.util.Arrays.fill([Ljava/lang/Object;Ljava/lang/Object;)V @ 13 c2
+Event: 184.750 Thread 0x00007f081f48fed0 DEOPT PACKING pc=0x00007f080ce81ca8 sp=0x00007f07c2cf9770
+Event: 184.750 Thread 0x00007f081f48fed0 DEOPT UNPACKING pc=0x00007f080bf5098e sp=0x00007f07c2cf9730 mode 2
+Event: 184.946 Thread 0x00007f081f48fed0 Uncommon trap: trap_request=0xffffff6e fr.pc=0x00007f080ce93da8 relative=0x0000000000000108
+Event: 184.946 Thread 0x00007f081f48fed0 Uncommon trap: reason=loop_limit_check action=maybe_recompile pc=0x00007f080ce93da8 method=org.thymeleaf.engine.Attributes.searchAttribute(Lorg/thymeleaf/engine/AttributeName;)I @ 27 c2
+Event: 184.946 Thread 0x00007f081f48fed0 DEOPT PACKING pc=0x00007f080ce93da8 sp=0x00007f07c2cf9330
+Event: 184.946 Thread 0x00007f081f48fed0 DEOPT UNPACKING pc=0x00007f080bf5098e sp=0x00007f07c2cf92f8 mode 2
+Event: 184.983 Thread 0x00007f081f493a30 Uncommon trap: trap_request=0xffffff6e fr.pc=0x00007f080ce96ea8 relative=0x0000000000000208
+Event: 184.983 Thread 0x00007f081f493a30 Uncommon trap: reason=loop_limit_check action=maybe_recompile pc=0x00007f080ce96ea8 method=org.thymeleaf.linkbuilder.StandardLinkBuilder.findCharInSequence(Ljava/lang/CharSequence;C)I @ 11 c2
+Event: 184.983 Thread 0x00007f081f493a30 DEOPT PACKING pc=0x00007f080ce96ea8 sp=0x00007f07c29f5ed0
+Event: 184.983 Thread 0x00007f081f493a30 DEOPT UNPACKING pc=0x00007f080bf5098e sp=0x00007f07c29f5e80 mode 2
+Event: 185.003 Thread 0x00007f081f489210 DEOPT PACKING pc=0x00007f0805ee0f59 sp=0x00007f08042f2940
+Event: 185.003 Thread 0x00007f081f489210 DEOPT UNPACKING pc=0x00007f080bf51036 sp=0x00007f08042f1d80 mode 0
+Event: 185.106 Thread 0x00007f081f4925b0 DEOPT PACKING pc=0x00007f0805e8c449 sp=0x00007f07c2af68d0
+Event: 185.106 Thread 0x00007f081f4925b0 DEOPT UNPACKING pc=0x00007f080bf51036 sp=0x00007f07c2af5d58 mode 0
+Event: 185.140 Thread 0x00007f081f489210 DEOPT PACKING pc=0x00007f0805fabfe5 sp=0x00007f08042f3670
+Event: 185.140 Thread 0x00007f081f489210 DEOPT UNPACKING pc=0x00007f080bf51036 sp=0x00007f08042f2b28 mode 0
+
+Classes loaded (20 events):
+Event: 173.633 Loading class java/lang/invoke/ConstantBootstraps
+Event: 173.633 Loading class java/lang/invoke/ConstantBootstraps done
+Event: 174.437 Loading class jdk/internal/event/SocketReadEvent
+Event: 174.437 Loading class jdk/internal/event/SocketReadEvent done
+Event: 175.471 Loading class sun/nio/cs/ThreadLocalCoders
+Event: 175.471 Loading class sun/nio/cs/ThreadLocalCoders done
+Event: 175.482 Loading class sun/nio/cs/ThreadLocalCoders$1
+Event: 175.482 Loading class sun/nio/cs/ThreadLocalCoders$Cache
+Event: 175.482 Loading class sun/nio/cs/ThreadLocalCoders$Cache done
+Event: 175.488 Loading class sun/nio/cs/ThreadLocalCoders$1 done
+Event: 175.504 Loading class sun/nio/cs/ThreadLocalCoders$2
+Event: 175.504 Loading class sun/nio/cs/ThreadLocalCoders$2 done
+Event: 175.649 Loading class java/util/concurrent/ArrayBlockingQueue
+Event: 175.649 Loading class java/util/concurrent/ArrayBlockingQueue done
+Event: 175.675 Loading class java/util/concurrent/ArrayBlockingQueue$Itr
+Event: 175.676 Loading class java/util/concurrent/ArrayBlockingQueue$Itr done
+Event: 184.312 Loading class jdk/internal/event/SocketWriteEvent
+Event: 184.312 Loading class jdk/internal/event/SocketWriteEvent done
+Event: 184.361 Loading class java/util/ArrayDeque$DescendingIterator
+Event: 184.361 Loading class java/util/ArrayDeque$DescendingIterator done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 108.588 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x000000079c7fca98}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x000000079c7fca98) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 112.673 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/IncompatibleClassChangeError'{0x00000007a04c4d50}: Found class java.lang.Object, but interface was expected> (0x00000007a04c4d50) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 841]
+Event: 114.361 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a0e9fd18}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, long)'> (0x00000007a0e9fd18) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 116.084 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a1f9eaf8}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000007a1f9eaf8) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 117.432 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/IncompatibleClassChangeError'{0x00000007a31c9068}: Found class java.lang.Object, but interface was expected> (0x00000007a31c9068) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 841]
+Event: 117.939 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a3ae6c48}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000007a3ae6c48) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 123.981 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a69f8fe0}: 'double java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object)'> (0x00000007a69f8fe0) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 124.712 Thread 0x00007f081c02a8f0 Implicit null exception at 0x00007f080c65fd48 to 0x00007f080c660094
+Event: 125.532 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a871af78}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000007a871af78) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 126.696 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a8dfd678}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, double)'> (0x00000007a8dfd678) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 127.693 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a8e5b2d0}: 'double java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000007a8e5b2d0) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 128.049 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a8eb5690}: 'double java.lang.invoke.DirectMethodHandle$Holder.invokeInterface(java.lang.Object, java.lang.Object)'> (0x00000007a8eb5690) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 128.794 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/IncompatibleClassChangeError'{0x00000007a90409a0}: Found class java.lang.Object, but interface was expected> (0x00000007a90409a0) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 841]
+Event: 128.915 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a905bd68}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, int, java.lang.Object, java.lang.Object)'> (0x00000007a905bd68) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 128.958 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a9066ba8}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, int, java.lang.Object, int, java.lang.Object)'> (0x00000007a9066ba8) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 128.992 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a906dff8}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.newInvokeSpecial(java.lang.Object, java.lang.Object, int, java.lang.Object, int)'> (0x00000007a906dff8) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 129.016 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/NoSuchMethodError'{0x00000007a9071ea8}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int, java.lang.Object, int)'> (0x00000007a9071ea8) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 130.880 Thread 0x00007f081c02a8f0 Exception <a 'java/lang/IncompatibleClassChangeError'{0x00000007a98275a0}: Found class java.lang.Object, but interface was expected> (0x00000007a98275a0) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 841]
+Event: 174.399 Thread 0x00007f081f489210 Exception <a 'java/lang/NoSuchMethodError'{0x00000007aa256990}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, long)'> (0x00000007aa256990) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+Event: 174.411 Thread 0x00007f081f489210 Exception <a 'java/lang/NoSuchMethodError'{0x00000007aa25a108}: 'java.lang.Object java.lang.invoke.Invokers$Holder.linkToTargetMethod(java.lang.Object, java.lang.Object, java.lang.Object, long, java.lang.Object)'> (0x00000007aa25a108) 
+thrown [/home/map/Documents/epsilon-jdk/src/hotspot/share/interpreter/linkResolver.cpp, line 773]
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (20 events):
+Event: 177.804 Executing VM operation: Cleanup done
+Event: 178.804 Executing VM operation: Cleanup
+Event: 178.813 Executing VM operation: Cleanup done
+Event: 179.813 Executing VM operation: Cleanup
+Event: 179.816 Executing VM operation: Cleanup done
+Event: 180.816 Executing VM operation: Cleanup
+Event: 180.824 Executing VM operation: Cleanup done
+Event: 181.825 Executing VM operation: Cleanup
+Event: 181.826 Executing VM operation: Cleanup done
+Event: 182.472 Executing VM operation: HandshakeAllThreads (HandshakeForDeflation)
+Event: 182.476 Executing VM operation: HandshakeAllThreads (HandshakeForDeflation) done
+Event: 182.476 Executing VM operation: RendezvousGCThreads
+Event: 182.476 Executing VM operation: RendezvousGCThreads done
+Event: 183.477 Executing VM operation: Cleanup
+Event: 183.486 Executing VM operation: Cleanup done
+Event: 183.972 Executing VM operation: HandshakeAllThreads (Deoptimize)
+Event: 183.973 Executing VM operation: HandshakeAllThreads (Deoptimize) done
+Event: 184.973 Executing VM operation: Cleanup
+Event: 184.974 Executing VM operation: Cleanup done
+Event: 185.273 Executing VM operation: SimpleGCHeap Collection
+
+Events (20 events):
+Event: 129.749 Protecting memory [0x00007f07c2dfe000,0x00007f07c2e02000] with protection modes 0
+Event: 129.750 Thread 0x00007f081f48dc00 Thread added: 0x00007f081f48dc00
+Event: 129.750 Protecting memory [0x00007f07c2cfd000,0x00007f07c2d01000] with protection modes 0
+Event: 129.751 Thread 0x00007f081f48fed0 Thread added: 0x00007f081f48fed0
+Event: 129.752 Protecting memory [0x00007f07c2bfc000,0x00007f07c2c00000] with protection modes 0
+Event: 129.752 Thread 0x00007f081f4911a0 Thread added: 0x00007f081f4911a0
+Event: 129.753 Protecting memory [0x00007f07c2afb000,0x00007f07c2aff000] with protection modes 0
+Event: 129.753 Thread 0x00007f081f4925b0 Thread added: 0x00007f081f4925b0
+Event: 129.754 Protecting memory [0x00007f07c29fa000,0x00007f07c29fe000] with protection modes 0
+Event: 129.755 Thread 0x00007f081f493a30 Thread added: 0x00007f081f493a30
+Event: 129.755 Protecting memory [0x00007f07c28f9000,0x00007f07c28fd000] with protection modes 0
+Event: 129.757 Thread 0x00007f081f494eb0 Thread added: 0x00007f081f494eb0
+Event: 129.757 Protecting memory [0x00007f07c27f8000,0x00007f07c27fc000] with protection modes 0
+Event: 129.889 Thread 0x00007f081f497e80 Thread added: 0x00007f081f497e80
+Event: 129.889 Protecting memory [0x00007f07c26f7000,0x00007f07c26fb000] with protection modes 0
+Event: 129.934 Thread 0x00007f081f4cf9b0 Thread added: 0x00007f081f4cf9b0
+Event: 129.934 Protecting memory [0x00007f07c25f6000,0x00007f07c25fa000] with protection modes 0
+Event: 134.109 Thread 0x00007f081c02a8f0 Thread exited: 0x00007f081c02a8f0
+Event: 134.110 Protecting memory [0x00007f0823b94000,0x00007f0823b98000] with protection modes 0
+Event: 134.110 Thread 0x00007f081c02a8f0 Thread added: 0x00007f081c02a8f0
+
+
+Dynamic libraries:
+767cf8000-800000000 rw-p 00000000 00:00 0 
+565162db6000-565162db7000 r--p 00000000 08:05 2628410                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java
+565162db7000-565162db8000 r-xp 00001000 08:05 2628410                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java
+565162db8000-565162db9000 r--p 00002000 08:05 2628410                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java
+565162db9000-565162dba000 r--p 00002000 08:05 2628410                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java
+565162dba000-565162dbb000 rw-p 00003000 08:05 2628410                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/bin/java
+56516413a000-565164181000 rw-p 00000000 00:00 0                          [heap]
+7f0744000000-7f0744021000 rw-p 00000000 00:00 0 
+7f0744021000-7f0748000000 ---p 00000000 00:00 0 
+7f0748000000-7f0748072000 rw-p 00000000 00:00 0 
+7f0748072000-7f074c000000 ---p 00000000 00:00 0 
+7f074c000000-7f074c021000 rw-p 00000000 00:00 0 
+7f074c021000-7f0750000000 ---p 00000000 00:00 0 
+7f0750000000-7f0750021000 rw-p 00000000 00:00 0 
+7f0750021000-7f0754000000 ---p 00000000 00:00 0 
+7f0754000000-7f0754021000 rw-p 00000000 00:00 0 
+7f0754021000-7f0758000000 ---p 00000000 00:00 0 
+7f0758000000-7f0758021000 rw-p 00000000 00:00 0 
+7f0758021000-7f075c000000 ---p 00000000 00:00 0 
+7f075c000000-7f075c021000 rw-p 00000000 00:00 0 
+7f075c021000-7f0760000000 ---p 00000000 00:00 0 
+7f0760000000-7f0760021000 rw-p 00000000 00:00 0 
+7f0760021000-7f0764000000 ---p 00000000 00:00 0 
+7f0764000000-7f0764021000 rw-p 00000000 00:00 0 
+7f0764021000-7f0768000000 ---p 00000000 00:00 0 
+7f0768000000-7f076808e000 rw-p 00000000 00:00 0 
+7f076808e000-7f076c000000 ---p 00000000 00:00 0 
+7f076c000000-7f076c1e0000 rw-p 00000000 00:00 0 
+7f076c1e0000-7f076c200000 rw-p 00000000 00:00 0 
+7f076c200000-7f076c500000 rw-p 00000000 00:00 0 
+7f076c500000-7f076c600000 rw-p 00000000 00:00 0 
+7f076c600000-7f076c680000 rw-p 00000000 00:00 0 
+7f076c680000-7f076c6f0000 rw-p 00000000 00:00 0 
+7f076c6f0000-7f076c700000 ---p 00000000 00:00 0 
+7f076c700000-7f076cbe0000 rw-p 00000000 00:00 0 
+7f076cbe0000-7f0770000000 ---p 00000000 00:00 0 
+7f0770000000-7f077043b000 rw-p 00000000 00:00 0 
+7f077043b000-7f0774000000 ---p 00000000 00:00 0 
+7f0774000000-7f0774021000 rw-p 00000000 00:00 0 
+7f0774021000-7f0778000000 ---p 00000000 00:00 0 
+7f0778000000-7f0778021000 rw-p 00000000 00:00 0 
+7f0778021000-7f077c000000 ---p 00000000 00:00 0 
+7f077c000000-7f077c021000 rw-p 00000000 00:00 0 
+7f077c021000-7f0780000000 ---p 00000000 00:00 0 
+7f0780000000-7f07800d8000 rw-p 00000000 00:00 0 
+7f07800d8000-7f0784000000 ---p 00000000 00:00 0 
+7f0784000000-7f0784075000 rw-p 00000000 00:00 0 
+7f0784075000-7f0788000000 ---p 00000000 00:00 0 
+7f0788000000-7f0788021000 rw-p 00000000 00:00 0 
+7f0788021000-7f078c000000 ---p 00000000 00:00 0 
+7f078c000000-7f078c652000 rw-p 00000000 00:00 0 
+7f078c652000-7f0790000000 ---p 00000000 00:00 0 
+7f0790000000-7f0790021000 rw-p 00000000 00:00 0 
+7f0790021000-7f0794000000 ---p 00000000 00:00 0 
+7f0794000000-7f0794021000 rw-p 00000000 00:00 0 
+7f0794021000-7f0798000000 ---p 00000000 00:00 0 
+7f0798000000-7f079b830000 rw-p 00000000 00:00 0 
+7f079b830000-7f079c000000 ---p 00000000 00:00 0 
+7f079c000000-7f079e67b000 rw-p 00000000 00:00 0 
+7f079e67b000-7f07a0000000 ---p 00000000 00:00 0 
+7f07a0000000-7f07a0021000 rw-p 00000000 00:00 0 
+7f07a0021000-7f07a4000000 ---p 00000000 00:00 0 
+7f07a4000000-7f07a4021000 rw-p 00000000 00:00 0 
+7f07a4021000-7f07a8000000 ---p 00000000 00:00 0 
+7f07a8000000-7f07a8021000 rw-p 00000000 00:00 0 
+7f07a8021000-7f07ac000000 ---p 00000000 00:00 0 
+7f07ac000000-7f07ac021000 rw-p 00000000 00:00 0 
+7f07ac021000-7f07b0000000 ---p 00000000 00:00 0 
+7f07b0000000-7f07b03d2000 rw-p 00000000 00:00 0 
+7f07b03d2000-7f07b4000000 ---p 00000000 00:00 0 
+7f07b4000000-7f07b4021000 rw-p 00000000 00:00 0 
+7f07b4021000-7f07b8000000 ---p 00000000 00:00 0 
+7f07b8000000-7f07b8400000 rw-p 00000000 00:00 0 
+7f07b8400000-7f07b8d00000 rw-p 00000000 00:00 0 
+7f07b8d00000-7f07b8e00000 rw-p 00000000 00:00 0 
+7f07b8e00000-7f07b9380000 rw-p 00000000 00:00 0 
+7f07b9380000-7f07b9400000 rw-p 00000000 00:00 0 
+7f07b9400000-7f07b9500000 rw-p 00000000 00:00 0 
+7f07b9500000-7f07b9600000 rw-p 00000000 00:00 0 
+7f07b9600000-7f07b9f00000 rw-p 00000000 00:00 0 
+7f07b9f00000-7f07ba000000 rw-p 00000000 00:00 0 
+7f07ba000000-7f07bc000000 rw-p 00000000 00:00 0 
+7f07bc000000-7f07bc021000 rw-p 00000000 00:00 0 
+7f07bc021000-7f07c0000000 ---p 00000000 00:00 0 
+7f07c1f00000-7f07c25f6000 rw-p 00000000 00:00 0 
+7f07c25f6000-7f07c25fa000 ---p 00000000 00:00 0 
+7f07c25fa000-7f07c26f7000 rw-p 00000000 00:00 0 
+7f07c26f7000-7f07c26fb000 ---p 00000000 00:00 0 
+7f07c26fb000-7f07c27f8000 rw-p 00000000 00:00 0 
+7f07c27f8000-7f07c27fc000 ---p 00000000 00:00 0 
+7f07c27fc000-7f07c28f9000 rw-p 00000000 00:00 0 
+7f07c28f9000-7f07c28fd000 ---p 00000000 00:00 0 
+7f07c28fd000-7f07c29fa000 rw-p 00000000 00:00 0 
+7f07c29fa000-7f07c29fe000 ---p 00000000 00:00 0 
+7f07c29fe000-7f07c2afb000 rw-p 00000000 00:00 0 
+7f07c2afb000-7f07c2aff000 ---p 00000000 00:00 0 
+7f07c2aff000-7f07c2bfc000 rw-p 00000000 00:00 0 
+7f07c2bfc000-7f07c2c00000 ---p 00000000 00:00 0 
+7f07c2c00000-7f07c2cfd000 rw-p 00000000 00:00 0 
+7f07c2cfd000-7f07c2d01000 ---p 00000000 00:00 0 
+7f07c2d01000-7f07c2dfe000 rw-p 00000000 00:00 0 
+7f07c2dfe000-7f07c2e02000 ---p 00000000 00:00 0 
+7f07c2e02000-7f07c2eff000 rw-p 00000000 00:00 0 
+7f07c2eff000-7f07c2f03000 ---p 00000000 00:00 0 
+7f07c2f03000-7f07c3000000 rw-p 00000000 00:00 0 
+7f07c3000000-7f07c3d36000 rw-p 00001000 08:05 2629096                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/classes.jsa
+7f07c3d36000-7f07c4000000 ---p 00000000 00:00 0 
+7f07c4000000-7f07c4040000 rw-p 00000000 00:00 0 
+7f07c4040000-7f07c4080000 rw-p 00000000 00:00 0 
+7f07c4080000-7f07c4100000 rw-p 00000000 00:00 0 
+7f07c4100000-7f07c42e0000 rw-p 00000000 00:00 0 
+7f07c42e0000-7f07c4300000 rw-p 00000000 00:00 0 
+7f07c4300000-7f07c44c0000 rw-p 00000000 00:00 0 
+7f07c44c0000-7f07c4500000 rw-p 00000000 00:00 0 
+7f07c4500000-7f07c4b40000 rw-p 00000000 00:00 0 
+7f07c4b40000-7f07c4b70000 rw-p 00000000 00:00 0 
+7f07c4b70000-7f07c4b80000 ---p 00000000 00:00 0 
+7f07c4b80000-7f07c4be0000 rw-p 00000000 00:00 0 
+7f07c4be0000-7f0804000000 ---p 00000000 00:00 0 
+7f08040f5000-7f08040f9000 ---p 00000000 00:00 0 
+7f08040f9000-7f08041f6000 rw-p 00000000 00:00 0 
+7f08041f6000-7f08041fa000 ---p 00000000 00:00 0 
+7f08041fa000-7f08042f7000 rw-p 00000000 00:00 0 
+7f08042f7000-7f08042fb000 ---p 00000000 00:00 0 
+7f08042fb000-7f08043f8000 rw-p 00000000 00:00 0 
+7f08043f8000-7f08043fc000 ---p 00000000 00:00 0 
+7f08043fc000-7f08044f9000 rw-p 00000000 00:00 0 
+7f08044f9000-7f08044fd000 ---p 00000000 00:00 0 
+7f08044fd000-7f08045fa000 rw-p 00000000 00:00 0 
+7f08045fa000-7f08045fe000 ---p 00000000 00:00 0 
+7f08045fe000-7f08046fb000 rw-p 00000000 00:00 0 
+7f08046fb000-7f08046ff000 ---p 00000000 00:00 0 
+7f08046ff000-7f08047fc000 rw-p 00000000 00:00 0 
+7f08047fc000-7f0804800000 ---p 00000000 00:00 0 
+7f0804800000-7f08048fd000 rw-p 00000000 00:00 0 
+7f08048fd000-7f080600d000 rwxp 00000000 00:00 0 
+7f080600d000-7f080be34000 ---p 00000000 00:00 0 
+7f080be34000-7f080c0a4000 rwxp 00000000 00:00 0 
+7f080c0a4000-7f080c3c6000 ---p 00000000 00:00 0 
+7f080c3c6000-7f080cec6000 rwxp 00000000 00:00 0 
+7f080cec6000-7f08138fd000 ---p 00000000 00:00 0 
+7f08138fd000-7f081c000000 r--s 00000000 08:05 2628381                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/modules
+7f081c000000-7f081f741000 rw-p 00000000 00:00 0 
+7f081f741000-7f0820000000 ---p 00000000 00:00 0 
+7f0820076000-7f082007d000 r--s 00000000 08:05 1355596                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f082007d000-7f082007e000 r--p 00000000 08:05 2628529                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+7f082007e000-7f082007f000 r-xp 00001000 08:05 2628529                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+7f082007f000-7f0820080000 r--p 00002000 08:05 2628529                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+7f0820080000-7f0820081000 r--p 00002000 08:05 2628529                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+7f0820081000-7f0820082000 rw-p 00003000 08:05 2628529                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libextnet.so
+7f0820082000-7f0820084000 r--p 00000000 08:05 2628523                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+7f0820084000-7f0820087000 r-xp 00002000 08:05 2628523                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+7f0820087000-7f0820089000 r--p 00005000 08:05 2628523                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+7f0820089000-7f082008a000 r--p 00006000 08:05 2628523                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+7f082008a000-7f082008b000 rw-p 00007000 08:05 2628523                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement_ext.so
+7f082008b000-7f082008d000 r--p 00000000 08:05 2628452                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+7f082008d000-7f082008e000 r-xp 00002000 08:05 2628452                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+7f082008e000-7f082008f000 r--p 00003000 08:05 2628452                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+7f082008f000-7f0820090000 r--p 00003000 08:05 2628452                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+7f0820090000-7f0820091000 rw-p 00004000 08:05 2628452                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libmanagement.so
+7f0820091000-7f0820095000 r--p 00000000 08:05 2628424                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+7f0820095000-7f082009d000 r-xp 00004000 08:05 2628424                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+7f082009d000-7f08200a0000 r--p 0000c000 08:05 2628424                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+7f08200a0000-7f08200a2000 r--p 0000e000 08:05 2628424                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+7f08200a2000-7f08200a3000 rw-p 00010000 08:05 2628424                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libverify.so
+7f08200a3000-7f08200a6000 r--p 00000000 08:05 2628475                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+7f08200a6000-7f08200b8000 r-xp 00003000 08:05 2628475                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+7f08200b8000-7f08200bd000 r--p 00015000 08:05 2628475                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+7f08200bd000-7f08200bf000 r--p 00019000 08:05 2628475                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+7f08200bf000-7f08200c0000 rw-p 0001b000 08:05 2628475                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/lible.so
+7f08200c0000-7f08200c2000 r--p 00000000 08:05 2628425                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+7f08200c2000-7f08200c7000 r-xp 00002000 08:05 2628425                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+7f08200c7000-7f08200c9000 r--p 00007000 08:05 2628425                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+7f08200c9000-7f08200ca000 r--p 00008000 08:05 2628425                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+7f08200ca000-7f08200cb000 rw-p 00009000 08:05 2628425                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libzip.so
+7f08200cb000-7f08200ce000 r--p 00000000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200ce000-7f08200d6000 r-xp 00003000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200d6000-7f08200d8000 r--p 0000b000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200d8000-7f08200d9000 ---p 0000d000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200d9000-7f08200da000 r--p 0000d000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200da000-7f08200db000 rw-p 0000e000 08:05 2628421                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnet.so
+7f08200db000-7f08200e1000 r--p 00000000 08:05 2628422                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+7f08200e1000-7f08200e9000 r-xp 00006000 08:05 2628422                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+7f08200e9000-7f08200ed000 r--p 0000e000 08:05 2628422                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+7f08200ed000-7f08200ee000 r--p 00011000 08:05 2628422                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+7f08200ee000-7f08200ef000 rw-p 00012000 08:05 2628422                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libnio.so
+7f08200ef000-7f08200f3000 ---p 00000000 00:00 0 
+7f08200f3000-7f08201f0000 rw-p 00000000 00:00 0 
+7f08201f0000-7f08201f4000 ---p 00000000 00:00 0 
+7f08201f4000-7f08202f1000 rw-p 00000000 00:00 0 
+7f08202f1000-7f08202f5000 r--p 00000000 08:05 2628474                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+7f08202f5000-7f0820336000 r-xp 00004000 08:05 2628474                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+7f0820336000-7f08203bf000 r--p 00045000 08:05 2628474                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+7f08203bf000-7f08203c0000 r--p 000cd000 08:05 2628474                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+7f08203c0000-7f08203c1000 rw-p 000ce000 08:05 2628474                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjsvml.so
+7f08203c1000-7f08203c5000 ---p 00000000 00:00 0 
+7f08203c5000-7f08204c2000 rw-p 00000000 00:00 0 
+7f08204c2000-7f08204c6000 ---p 00000000 00:00 0 
+7f08204c6000-7f08205c3000 rw-p 00000000 00:00 0 
+7f08205c3000-7f08205c7000 ---p 00000000 00:00 0 
+7f08205c7000-7f08206c4000 rw-p 00000000 00:00 0 
+7f08206c4000-7f08206c8000 ---p 00000000 00:00 0 
+7f08206c8000-7f08207c5000 rw-p 00000000 00:00 0 
+7f08207c5000-7f08207c9000 ---p 00000000 00:00 0 
+7f08207c9000-7f08208c6000 rw-p 00000000 00:00 0 
+7f08208c6000-7f08208ca000 ---p 00000000 00:00 0 
+7f08208ca000-7f08209c7000 rw-p 00000000 00:00 0 
+7f08209c7000-7f08209cb000 ---p 00000000 00:00 0 
+7f08209cb000-7f0820ac8000 rw-p 00000000 00:00 0 
+7f0820ac8000-7f0821038000 r--p 00000000 08:05 1179667                    /usr/lib/locale/locale-archive
+7f0821038000-7f0821039000 ---p 00000000 00:00 0 
+7f0821039000-7f0821139000 rw-p 00000000 00:00 0 
+7f0821139000-7f082113a000 ---p 00000000 00:00 0 
+7f082113a000-7f0823964000 rw-p 00000000 00:00 0 
+7f0823964000-7f082397a000 rw-p 00000000 00:00 0 
+7f082397a000-7f0823a4f000 ---p 00000000 00:00 0 
+7f0823a4f000-7f0823a7e000 rw-p 00000000 00:00 0 
+7f0823a7e000-7f0823b3a000 ---p 00000000 00:00 0 
+7f0823b3a000-7f0823b3f000 rw-p 00000000 00:00 0 
+7f0823b3f000-7f0823b46000 ---p 00000000 00:00 0 
+7f0823b46000-7f0823b52000 r--p 00000000 08:05 2628417                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+7f0823b52000-7f0823b61000 r-xp 0000c000 08:05 2628417                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+7f0823b61000-7f0823b67000 r--p 0001b000 08:05 2628417                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+7f0823b67000-7f0823b68000 r--p 00020000 08:05 2628417                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+7f0823b68000-7f0823b69000 rw-p 00021000 08:05 2628417                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjava.so
+7f0823b69000-7f0823b6a000 rw-p 00000000 00:00 0 
+7f0823b6a000-7f0823b72000 rw-s 00000000 08:05 3276849                    /tmp/hsperfdata_map/441861
+7f0823b72000-7f0823b76000 r--p 00000000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b76000-7f0823b8a000 r-xp 00004000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b8a000-7f0823b90000 r--p 00018000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b90000-7f0823b91000 ---p 0001e000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b91000-7f0823b93000 r--p 0001e000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b93000-7f0823b94000 rw-p 00020000 08:05 2628418                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjimage.so
+7f0823b94000-7f0823b98000 ---p 00000000 00:00 0 
+7f0823b98000-7f0823c95000 rw-p 00000000 00:00 0 
+7f0823c95000-7f0823ca2000 r--p 00000000 08:05 1180127                    /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7f0823ca2000-7f0823d49000 r-xp 0000d000 08:05 1180127                    /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7f0823d49000-7f0823de2000 r--p 000b4000 08:05 1180127                    /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7f0823de2000-7f0823de3000 r--p 0014c000 08:05 1180127                    /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7f0823de3000-7f0823de4000 rw-p 0014d000 08:05 1180127                    /usr/lib/x86_64-linux-gnu/libm-2.31.so
+7f0823de4000-7f0823de6000 r--p 00000000 08:05 1181873                    /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7f0823de6000-7f0823dea000 r-xp 00002000 08:05 1181873                    /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7f0823dea000-7f0823dec000 r--p 00006000 08:05 1181873                    /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7f0823dec000-7f0823ded000 r--p 00007000 08:05 1181873                    /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7f0823ded000-7f0823dee000 rw-p 00008000 08:05 1181873                    /usr/lib/x86_64-linux-gnu/librt-2.31.so
+7f0823dee000-7f08240e4000 r--p 00000000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f08240e4000-7f0825a29000 r-xp 002f6000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f0825a29000-7f0825f06000 r--p 01c3b000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f0825f06000-7f0825f07000 ---p 02118000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f0825f07000-7f0825ff7000 r--p 02118000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f0825ff7000-7f0826029000 rw-p 02208000 08:05 2628433                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/server/libjvm.so
+7f0826029000-7f08260d8000 rw-p 00000000 00:00 0 
+7f08260d8000-7f08260fa000 r--p 00000000 08:05 1180125                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f08260fa000-7f0826272000 r-xp 00022000 08:05 1180125                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f0826272000-7f08262c0000 r--p 0019a000 08:05 1180125                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f08262c0000-7f08262c4000 r--p 001e7000 08:05 1180125                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f08262c4000-7f08262c6000 rw-p 001eb000 08:05 1180125                    /usr/lib/x86_64-linux-gnu/libc-2.31.so
+7f08262c6000-7f08262ca000 rw-p 00000000 00:00 0 
+7f08262ca000-7f08262cb000 r--p 00000000 08:05 1180126                    /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7f08262cb000-7f08262cd000 r-xp 00001000 08:05 1180126                    /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7f08262cd000-7f08262ce000 r--p 00003000 08:05 1180126                    /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7f08262ce000-7f08262cf000 r--p 00003000 08:05 1180126                    /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7f08262cf000-7f08262d0000 rw-p 00004000 08:05 1180126                    /usr/lib/x86_64-linux-gnu/libdl-2.31.so
+7f08262d0000-7f08262d6000 r--p 00000000 08:05 1181865                    /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7f08262d6000-7f08262e7000 r-xp 00006000 08:05 1181865                    /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7f08262e7000-7f08262ed000 r--p 00017000 08:05 1181865                    /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7f08262ed000-7f08262ee000 r--p 0001c000 08:05 1181865                    /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7f08262ee000-7f08262ef000 rw-p 0001d000 08:05 1181865                    /usr/lib/x86_64-linux-gnu/libpthread-2.31.so
+7f08262ef000-7f08262f3000 rw-p 00000000 00:00 0 
+7f08262f3000-7f08262f5000 r--p 00000000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f08262f5000-7f08262ff000 r-xp 00002000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f08262ff000-7f0826302000 r--p 0000c000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f0826302000-7f0826303000 ---p 0000f000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f0826303000-7f0826304000 r--p 0000f000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f0826304000-7f0826305000 rw-p 00010000 08:05 2628419                    /home/map/Documents/epsilon-jdk/build/linux-x86_64-server-fastdebug/images/jdk/lib/libjli.so
+7f0826305000-7f0826307000 r--p 00000000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f0826307000-7f0826318000 r-xp 00002000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f0826318000-7f082631e000 r--p 00013000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f082631e000-7f082631f000 ---p 00019000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f082631f000-7f0826320000 r--p 00019000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f0826320000-7f0826321000 rw-p 0001a000 08:05 1196336                    /usr/lib/x86_64-linux-gnu/libz.so.1.2.11
+7f0826321000-7f0826324000 r--p 00000000 08:05 1181842                    /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7f0826324000-7f082632b000 r-xp 00003000 08:05 1181842                    /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7f082632b000-7f082632d000 r--p 0000a000 08:05 1181842                    /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7f082632d000-7f082632e000 r--p 0000b000 08:05 1181842                    /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7f082632e000-7f082632f000 rw-p 0000c000 08:05 1181842                    /usr/lib/x86_64-linux-gnu/libnss_files-2.31.so
+7f082632f000-7f0826335000 rw-p 00000000 00:00 0 
+7f0826335000-7f0826336000 ---p 00000000 00:00 0 
+7f0826336000-7f0826337000 r--p 00000000 00:00 0 
+7f0826337000-7f0826339000 rw-p 00000000 00:00 0 
+7f0826339000-7f082633a000 r--p 00000000 08:05 1179700                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f082633a000-7f082635d000 r-xp 00001000 08:05 1179700                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f082635d000-7f0826365000 r--p 00024000 08:05 1179700                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f0826365000-7f0826366000 rwxp 00000000 00:00 0 
+7f0826366000-7f0826367000 r--p 0002c000 08:05 1179700                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f0826367000-7f0826368000 rw-p 0002d000 08:05 1179700                    /usr/lib/x86_64-linux-gnu/ld-2.31.so
+7f0826368000-7f0826369000 rw-p 00000000 00:00 0 
+7ffe41e62000-7ffe41e83000 rw-p 00000000 00:00 0                          [stack]
+7ffe41e89000-7ffe41e8d000 r--p 00000000 00:00 0                          [vvar]
+7ffe41e8d000-7ffe41e8f000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+Total number of mappings: 301
+
+
+VM Arguments:
+jvm_args: -Xlog:gc -XX:+UnlockExperimentalVMOptions -XX:+UseSimpleGC 
+java_command: spring-petclinic/target/spring-petclinic-3.2.0-SNAPSHOT.jar
+java_class_path (initial): spring-petclinic/target/spring-petclinic-3.2.0-SNAPSHOT.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}     Number of compiler threads to run
+   size_t InitialHeapSize                          = 159584256                                 {product} {ergonomic}     Initial heap size (in bytes); zero means use ergonomics
+   size_t MaxHeapSize                              = 2553315328                                {product} {ergonomic}     Maximum heap size (in bytes)
+   size_t MinHeapDeltaBytes                        = 172032                                    {product} {ergonomic}     The minimum change in heap space due to GC (in bytes)
+   size_t MinHeapSize                              = 6815744                                   {product} {ergonomic}     Minimum heap size (in bytes); zero means use ergonomics
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}     Size of code heap with non-nmethods (in bytes)
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}     Size of code heap with non-profiled methods (in bytes)
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}     Size of code heap with profiled methods (in bytes)
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}     Reserved code cache size (in bytes) - maximum code cache size
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}     Use a segmented code cache
+   size_t SoftMaxHeapSize                          = 2553315328                             {manageable} {ergonomic}     Soft limit for maximum heap size (in bytes)
+     bool THPStackMitigation                       = false                                  {diagnostic} {ergonomic}     If THPs are unconditionally enabled on the system (mode "always"), the JVM will prevent THP from forming in thread stacks. When disabled, the absence of this mitigationallows THPs to form in thread stacks.
+     bool UnlockExperimentalVMOptions              = true                                 {experimental} {command line}  Enable normal processing of flags relating to experimental features
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}   Use 32-bit object references in 64-bit VM. lp64_product means flag is always constant in 32 bit VM
+     bool UseSimpleGC                              = true                                 {experimental} {command line}  Use the Simple garbage collector for study
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning,gc=info uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/openjdk-21
+PATH=/home/map/.vscode-server/cli/servers/Stable-e170252f762678dec6ca2cc69aba1570769a5d39/server/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+SHELL=/bin/bash
+LANG=en_US.UTF-8
+TERM=xterm-256color
+
+Active Locale:
+LC_ALL=en_US.UTF-8
+LC_COLLATE=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
+LC_MESSAGES=en_US.UTF-8
+LC_MONETARY=en_US.UTF-8
+LC_NUMERIC=en_US.UTF-8
+LC_TIME=en_US.UTF-8
+
+Signal Handlers:
+   SIGSEGV: crash_handler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+    SIGBUS: crash_handler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+    SIGFPE: crash_handler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGPIPE: javaSignalHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGXFSZ: javaSignalHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+    SIGILL: crash_handler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGUSR2: SR_handler in libjvm.so, mask=00000000000000000000000000000000, flags=SA_RESTART|SA_SIGINFO, unblocked
+    SIGHUP: UserHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+    SIGINT: UserHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGTERM: UserHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGQUIT: UserHandler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+   SIGTRAP: crash_handler in libjvm.so, mask=11100100010111111101111111111110, flags=SA_RESTART|SA_SIGINFO, unblocked
+
+
+Native Memory Tracking:
+
+(Omitting categories weighting less than 1KB)
+
+Total: reserved=4114931KB, committed=2784511KB
+       malloc: 107899KB #1204998
+       mmap:   reserved=4007032KB, committed=2676612KB
+
+-                 Java Heap (reserved=2493472KB, committed=2493472KB)
+                            (mmap: reserved=2493472KB, committed=2493472KB, largest_committed=2493472KB) 
+ 
+-                     Class (reserved=1050037KB, committed=13557KB)
+                            (classes #18462)
+                            (  instance classes #17163, array classes #1299)
+                            (malloc=1461KB #47683) (at peak) 
+                            (mmap: reserved=1048576KB, committed=12096KB, largest_committed=64KB) 
+                            (  Metadata:   )
+                            (    reserved=131072KB, committed=77632KB)
+                            (    used=77286KB)
+                            (    waste=346KB =0.45%)
+                            (  Class space:)
+                            (    reserved=1048576KB, committed=12096KB)
+                            (    used=11747KB)
+                            (    waste=349KB =2.88%)
+ 
+-                    Thread (reserved=30933KB, committed=3305KB)
+                            (threads #31)
+                            (stack: reserved=30832KB, committed=3204KB, largest_committed=196KB)
+                            (malloc=68KB #185) (peak=77KB #191) 
+                            (arena=33KB #58) (peak=2502KB #34)
+ 
+-                      Code (reserved=263919KB, committed=53903KB)
+                            (malloc=16231KB #442834) (at peak) 
+                            (mmap: reserved=247688KB, committed=37672KB, largest_committed=2496KB) 
+                            (arena=0KB #0) (peak=33KB #1)
+ 
+-                        GC (reserved=38985KB, committed=38985KB)
+                            (malloc=21KB #21) (at peak) 
+                            (mmap: reserved=38964KB, committed=38964KB, largest_committed=38964KB) 
+ 
+-                  Compiler (reserved=1033KB, committed=1033KB)
+                            (malloc=183KB #1039) (peak=197KB #1042) 
+                            (arena=850KB #11) (peak=61585KB #13)
+ 
+-                  Internal (reserved=27467KB, committed=27467KB)
+                            (malloc=27431KB #436428) (peak=27431KB #436429) 
+                            (mmap: reserved=36KB, committed=36KB, largest_committed=32KB) 
+ 
+-                     Other (reserved=104KB, committed=104KB)
+                            (malloc=104KB #13) (at peak) 
+ 
+-                    Symbol (reserved=30924KB, committed=30924KB)
+                            (malloc=29030KB #253891) (at peak) 
+                            (arena=1894KB #1) (at peak)
+ 
+-    Native Memory Tracking (reserved=18837KB, committed=18837KB)
+                            (malloc=9KB #88) (at peak) 
+                            (tracking overhead=18828KB)
+ 
+-        Shared class space (reserved=16384KB, committed=13528KB, readonly=0KB)
+                            (mmap: reserved=16384KB, committed=13528KB, largest_committed=8372KB) 
+ 
+-               Arena Chunk (reserved=8703KB, committed=8703KB)
+                            (malloc=8703KB #417) (peak=63463KB #1652) 
+ 
+-                    Module (reserved=322KB, committed=322KB)
+                            (malloc=322KB #4366) (at peak) 
+ 
+-                 Safepoint (reserved=8KB, committed=8KB)
+                            (mmap: reserved=8KB, committed=8KB, largest_committed=8KB) 
+ 
+-           Synchronization (reserved=2376KB, committed=2376KB)
+                            (malloc=2376KB #17867) (at peak) 
+ 
+-            Serviceability (reserved=17KB, committed=17KB)
+                            (malloc=17KB #9) (peak=17KB #13) 
+ 
+-                 Metaspace (reserved=131408KB, committed=77968KB)
+                            (malloc=336KB #132) (at peak) 
+                            (mmap: reserved=131072KB, committed=77632KB, largest_committed=64KB) 
+ 
+-      String Deduplication (reserved=1KB, committed=1KB)
+                            (malloc=1KB #8) (at peak) 
+ 
+-           Object Monitors (reserved=1KB, committed=1KB)
+                            (malloc=1KB #5) (peak=2387KB #11751) 
+ 
+Preinit state:entries: 370 (primary: 370, empties: 7821), sum bytes: 14593, longest chain length: 1
+pre-init mallocs: 409, pre-init reallocs: 2, pre-init frees: 39
+MallocLimit: unset
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=20.04
+DISTRIB_CODENAME=focal
+DISTRIB_DESCRIPTION="Ubuntu 20.04.6 LTS"
+uname: Linux map-VirtualBox 5.15.0-105-generic #115~20.04.1-Ubuntu SMP Mon Apr 15 17:33:04 UTC 2024 x86_64
+OS uptime: 0 days 7:13 hours
+libc: glibc 2.31 NPTL 2.31 
+rlimit (soft/hard): STACK 8192k/infinity , CORE 0k/infinity , NPROC 38642/38642 , NOFILE 1048576/1048576 , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK 65536k/65536k
+load average: 1.00 1.59 5.05
+
+/proc/meminfo:
+MemTotal:        9973884 kB
+MemFree:          141456 kB
+MemAvailable:    6078236 kB
+Buffers:          162552 kB
+Cached:          5648056 kB
+SwapCached:        14844 kB
+Active:          3296880 kB
+Inactive:        5819976 kB
+Active(anon):     313604 kB
+Inactive(anon):  3006852 kB
+Active(file):    2983276 kB
+Inactive(file):  2813124 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       2097148 kB
+SwapFree:        1580748 kB
+Dirty:                12 kB
+Writeback:             0 kB
+AnonPages:       3299528 kB
+Mapped:           213244 kB
+Shmem:             15164 kB
+KReclaimable:     450744 kB
+Slab:             568968 kB
+SReclaimable:     450744 kB
+SUnreclaim:       118224 kB
+KernelStack:       11728 kB
+PageTables:        31580 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     7084088 kB
+Committed_AS:   10188124 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       44248 kB
+VmallocChunk:          0 kB
+Percpu:             9408 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+FileHugePages:         0 kB
+FilePmdMapped:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      323520 kB
+DirectMap2M:     9955328 kB
+
+/sys/kernel/mm/transparent_hugepage/enabled: always [madvise] never
+/sys/kernel/mm/transparent_hugepage/defrag (defrag/compaction efforts parameter): always defer defer+madvise [madvise] never
+
+Process Memory:
+Virtual Size: 6167012K (peak: 6167012K)
+Resident Set Size: 1502984K (peak: 1502984K) (anon: 1468728K, file: 34256K, shmem: 0K)
+Swapped out: 0K
+C-Heap outstanding allocations: 133954K, retained: 47849K (may have wrapped)
+glibc malloc tunables: (default)
+
+/proc/sys/kernel/threads-max (system-wide limit on the number of threads): 77284
+/proc/sys/vm/max_map_count (maximum number of memory map areas a process may have): 65530
+/proc/sys/kernel/pid_max (system-wide limit on number of process identifiers): 4194304
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-9
+cpu_memory_nodes: 0
+active_processor_count: 10
+cpu_quota: no quota
+cpu_period: 100000
+cpu_shares: no shares
+memory_limit_in_bytes: unlimited
+memory_and_swap_limit_in_bytes: unlimited
+memory_soft_limit_in_bytes: unlimited
+memory_usage_in_bytes: 8543256 k
+memory_max_usage_in_bytes: 8707360 k
+kernel_memory_usage_in_bytes: 380508 k
+kernel_memory_max_usage_in_bytes: unlimited
+kernel_memory_limit_in_bytes: 457616 k
+maximum number of tasks: unlimited
+current number of tasks: 179
+
+KVM virtualization detected
+Steal ticks since vm start: 0
+Steal ticks percentage since vm start:  0.000
+
+CPU: total 10 (initial active 10) (10 cores per cpu, 1 threads per core) family 6 model 154 stepping 4 microcode 0xffffffff, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, aes, clmul, bmi1, bmi2, clflush, clflushopt, hv, rdtscp
+CPU Model and flags from /proc/cpuinfo:
+model name	: 12th Gen Intel(R) Core(TM) i5-1245U
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 cx16 sse4_1 sse4_2 movbe popcnt aes rdrand hypervisor lahf_lm abm 3dnowprefetch ibrs_enhanced fsgsbase bmi1 bmi2 invpcid rdseed clflushopt arat md_clear flush_l1d arch_capabilities
+
+Online cpus: 0-9
+Offline cpus: 
+cache level: 1
+cache type: Data
+cache size: 48K
+cache coherency line size: 64
+cache level: 1
+cache type: Instruction
+cache size: 32K
+cache coherency line size: 64
+cache level: 2
+cache type: Unified
+cache size: 1280K
+cache coherency line size: 64
+cache level: 3
+cache type: Unified
+cache size: 12288K
+cache coherency line size: 64
+BIOS frequency limitation: <Not Available>
+Frequency switch latency (ns): <Not Available>
+Available cpu frequencies: <Not Available>
+Maximum cpu frequency: <Not Available>
+Minimum cpu frequency: <Not Available>
+Current cpu frequency: <Not Available>
+Available governors: <Not Available>
+Current governor: <Not Available>
+Core performance/turbo boost: <Not Available>
+
+Memory: 4k page, physical 9973884k(6078236k free), swap 2097148k(1580748k free)
+Page Sizes: 4k
+
+vm_info: OpenJDK 64-Bit Server VM (fastdebug 22-internal-adhoc.map.epsilon-jdk) for linux-amd64 JRE (22-internal-adhoc.map.epsilon-jdk), built on 2024-05-02T05:10:32Z by "map" with gcc 9.4.0
+
+END.

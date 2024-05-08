@@ -1,0 +1,149 @@
+[0.030s][info][gc] Using G1
+Using scaled threading model. 10 processors detected, 10 threads used to drive the workload, in a possible range of [1,1024]
+Version: h2 2.2.220 derby 10.15.2.0
+
+Nominal statistics
+Key Score  Rank Value Description
+AOA:    3 14/18    42 nominal average object size (bytes)
+AOL:    5  9/18    64 nominal 90-percentile object size (bytes)
+AOM:    9  3/18    32 nominal median object size (bytes)
+AOS:   10  1/18    24 nominal 10-percentile object size (bytes)
+ARA:    6  8/18  3539 nominal allocation rate (bytes / usec) (6765032248/1911200.0)
+BAL:    7  7/19    68 nominal aaload per usec
+BAS:    8  4/19     8 nominal aastore per usec
+BEF:    6  8/19     7 nominal execution focus / dominance of hot code
+BGF:    6  8/19  1060 nominal getfield per usec
+BPF:    7  6/19   172 nominal putfield per usec
+BUB:    2 17/19    17 nominal thousands of unique bytecodes executed
+BUF:    3 14/19     2 nominal thousands of unique function calls
+GCA:    5 12/22    98 nominal average post-GC heap size as percent of min heap, when run at 2X min heap with G1 (670/681)
+GCC:    3 17/22   558 nominal GC count at 2X heap size (G1)
+GCM:    3 16/22    82 nominal median post-GC heap size as percent of min heap, when run at 2X min heap with G1 (564/681)
+GCP:    5 11/22     4 nominal percentage of time spent in GC pauses at 2X heap size (G1) (3171/63848)
+GLK:    5 12/22     0 nominal percent 10th iteration memory leakage (10 iterations / 1 iterations) (681/679)
+GMD:   10  1/22   681 nominal minimum heap size (MB) for default size configuration (with compressed pointers)
+GML:   10  1/18 10193 nominal minimum heap size (MB) for large size configuration (with compressed pointers)
+GMS:    8  6/22    69 nominal minimum heap size (MB) for small size configuration (with compressed pointers)
+GMU:   10  1/22   902 nominal minimum heap size (MB) for default size without compressed pointers
+GMV:   10   1/3 20609 nominal minimum heap size (MB) for vlarge size configuration (with compressed pointers)
+GSS:    4 14/22    40 nominal heap size sensitivity (slowdown with tight heap, as a percentage) (2691.3/1911.2)
+GTO:    1 17/18     9 nominal memory turnover (total alloc bytes / min heap bytes)
+PET:    4 15/22     2 nominal execution time (sec)
+PKP:    1 21/22     0 nominal percentage of time spent in kernel mode (as percentage of user plus kernel time)
+PPE:    8  6/22    24 nominal parallel efficiency (speedup as percentage of ideal speedup for 32 threads)
+PSD:    8  6/22     1 nominal standard deviation among invocations at peak performance (as percentage of performance)
+PWU:    5 13/22     2 nominal iterations to warm up to within 1.5% of best
+
+Initializing callback
+Preparing the H2 database...
+TPCC configuration: scale: 16, terminals: 10, transactions: 100000
+[0.820s][info][gc] GC(0) Pause Young (Normal) (G1 Evacuation Pause) 24M->5M(156M) 8.942ms
+[1.454s][info][gc] GC(1) Pause Young (Normal) (G1 Evacuation Pause) 94M->13M(156M) 14.407ms
+[1.681s][info][gc] GC(2) Pause Young (Normal) (G1 Evacuation Pause) 94M->19M(156M) 15.710ms
+[1.892s][info][gc] GC(3) Pause Young (Normal) (G1 Evacuation Pause) 104M->25M(156M) 13.159ms
+[2.034s][info][gc] GC(4) Pause Young (Normal) (G1 Evacuation Pause) 110M->32M(198M) 13.357ms
+[2.178s][info][gc] GC(5) Pause Young (Normal) (G1 Evacuation Pause) 130M->38M(198M) 33.233ms
+[2.334s][info][gc] GC(6) Pause Young (Normal) (G1 Evacuation Pause) 139M->46M(198M) 41.960ms
+[2.465s][info][gc] GC(7) Pause Young (Normal) (G1 Evacuation Pause) 146M->53M(198M) 15.870ms
+[2.615s][info][gc] GC(8) Pause Young (Normal) (G1 Evacuation Pause) 151M->59M(390M) 35.022ms
+[2.936s][info][gc] GC(9) Pause Young (Normal) (G1 Evacuation Pause) 218M->69M(390M) 36.511ms
+[3.257s][info][gc] GC(10) Pause Young (Normal) (G1 Evacuation Pause) 252M->82M(390M) 102.656ms
+[3.617s][info][gc] GC(11) Pause Young (Normal) (G1 Evacuation Pause) 292M->96M(390M) 149.970ms
+[3.950s][info][gc] GC(12) Pause Young (Normal) (G1 Evacuation Pause) 300M->109M(1170M) 170.096ms
+[4.733s][info][gc] GC(13) Pause Young (Normal) (G1 Evacuation Pause) 724M->146M(1170M) 113.760ms
+[5.357s][info][gc] GC(14) Pause Young (Normal) (G1 Evacuation Pause) 783M->187M(1170M) 167.685ms
+[5.992s][info][gc] GC(15) Pause Young (Normal) (G1 Evacuation Pause) 809M->230M(1170M) 99.775ms
+[6.532s][info][gc] GC(16) Pause Young (Normal) (G1 Evacuation Pause) 850M->238M(1677M) 145.209ms
+[7.403s][info][gc] GC(17) Pause Young (Normal) (G1 Evacuation Pause) 1099M->289M(1677M) 167.782ms
+[8.002s][info][gc] GC(18) Pause Young (Normal) (G1 Evacuation Pause) 1195M->351M(1677M) 201.122ms
+[8.607s][info][gc] GC(19) Pause Young (Normal) (G1 Evacuation Pause) 1243M->315M(1677M) 44.270ms
+[9.296s][info][gc] GC(20) Pause Young (Normal) (G1 Evacuation Pause) 1273M->347M(1920M) 101.882ms
+[10.594s][info][gc] GC(21) Pause Young (Normal) (G1 Evacuation Pause) 1419M->390M(1920M) 154.468ms
+[11.652s][info][gc] GC(22) Pause Young (Normal) (G1 Evacuation Pause) 1455M->488M(1920M) 209.051ms
+[12.698s][info][gc] GC(23) Pause Young (Normal) (G1 Evacuation Pause) 1496M->464M(1920M) 138.816ms
+[14.146s][info][gc] GC(24) Pause Young (Normal) (G1 Evacuation Pause) 1570M->562M(2035M) 191.403ms
+[20.892s][info][gc] GC(25) Pause Full (System.gc()) 1381M->445M(1504M) 5785.409ms
+[23.145s][info][gc] GC(26) Pause Young (Normal) (G1 Evacuation Pause) 1204M->462M(1504M) 42.238ms
+
+5%[24.213s][info][gc] GC(27) Pause Young (Normal) (G1 Evacuation Pause) 1227M->470M(1504M) 12.818ms
+
+10%[25.767s][info][gc] GC(28) Pause Young (Normal) (G1 Evacuation Pause) 1246M->477M(1504M) 34.671ms
+
+15%[26.889s][info][gc] GC(29) Pause Young (Normal) (G1 Evacuation Pause) 1258M->483M(1504M) 34.832ms
+
+20%[28.185s][info][gc] GC(30) Pause Young (Normal) (G1 Evacuation Pause) 1268M->490M(1504M) 99.784ms
+
+25%[29.273s][info][gc] GC(31) Pause Young (Normal) (G1 Evacuation Pause) 1278M->495M(1504M) 72.861ms
+[30.031s][info][gc] GC(32) Pause Young (Normal) (G1 Evacuation Pause) 1285M->503M(1504M) 53.841ms
+
+30%[30.525s][info][gc] GC(33) Pause Young (Normal) (G1 Evacuation Pause) 1289M->507M(1504M) 26.731ms
+
+35%[31.678s][info][gc] GC(34) Pause Young (Normal) (G1 Evacuation Pause) 1288M->514M(1504M) 75.649ms
+
+40%[32.949s][info][gc] GC(35) Pause Young (Normal) (G1 Evacuation Pause) 1288M->519M(1504M) 67.129ms
+
+45%[33.830s][info][gc] GC(36) Pause Young (Normal) (G1 Evacuation Pause) 1289M->524M(1504M) 41.183ms
+
+50%[34.272s][info][gc] GC(37) Pause Young (Normal) (G1 Evacuation Pause) 1288M->531M(1504M) 31.931ms
+
+55%[34.648s][info][gc] GC(38) Pause Young (Normal) (G1 Evacuation Pause) 1289M->536M(1504M) 35.531ms
+
+60%[35.411s][info][gc] GC(39) Pause Young (Normal) (G1 Evacuation Pause) 1290M->542M(1504M) 64.436ms
+[36.195s][info][gc] GC(40) Pause Young (Normal) (G1 Evacuation Pause) 1290M->548M(1504M) 36.285ms
+
+65%[36.974s][info][gc] GC(41) Pause Young (Normal) (G1 Evacuation Pause) 1290M->553M(1504M) 42.898ms
+
+70%[37.707s][info][gc] GC(42) Pause Young (Normal) (G1 Evacuation Pause) 1291M->560M(1504M) 79.844ms
+
+75%[38.430s][info][gc] GC(43) Pause Young (Normal) (G1 Evacuation Pause) 1290M->565M(1504M) 33.141ms
+
+80%[39.231s][info][gc] GC(44) Pause Young (Normal) (G1 Evacuation Pause) 1291M->571M(1504M) 62.405ms
+[39.949s][info][gc] GC(45) Pause Young (Normal) (G1 Evacuation Pause) 1289M->577M(1504M) 48.159ms
+
+85%[40.674s][info][gc] GC(46) Pause Young (Normal) (G1 Evacuation Pause) 1292M->582M(1504M) 73.116ms
+
+90%[41.469s][info][gc] GC(47) Pause Young (Normal) (G1 Evacuation Pause) 1291M->588M(1504M) 83.253ms
+
+95%[42.315s][info][gc] GC(48) Pause Young (Normal) (G1 Evacuation Pause) 1292M->593M(1566M) 73.038ms
+
+100%
+	Stock level .............   3973 ( 4.0%)
+	Order status by name ....   2361 ( 2.4%)
+	Order status by ID ......   1609 ( 1.6%)
+	Payment by name .........  25847 (25.8%)
+	Payment by ID ...........  17220 (17.2%)
+	Delivery schedule .......   4029 ( 4.0%)
+	New order ...............  44509 (44.5%)
+	New order rollback ......    452 ( 0.5%)
+Resetting database to initial state...[43.265s][info][gc] GC(49) Pause Young (Normal) (G1 Evacuation Pause) 1347M->611M(1566M) 191.779ms
+..[44.579s][info][gc] GC(50) Pause Young (Normal) (G1 Evacuation Pause) 1337M->697M(1566M) 173.970ms
+.[45.352s][info][gc] GC(51) Pause Young (Normal) (G1 Evacuation Pause) 1301M->768M(1566M) 197.337ms
+.[46.246s][info][gc] GC(52) Pause Young (Normal) (G1 Evacuation Pause) 1292M->781M(1744M) 154.963ms
+.[47.009s][info][gc] GC(53) Pause Young (Normal) (G1 Evacuation Pause) 1396M->798M(1744M) 79.930ms
+......[47.696s][info][gc] GC(54) Pause Young (Normal) (G1 Evacuation Pause) 1416M->832M(1744M) 185.867ms
+[48.149s][info][gc] GC(55) Pause Young (Normal) (G1 Evacuation Pause) 1423M->897M(1744M) 135.963ms
+.[48.832s][info][gc] GC(56) Pause Young (Concurrent Start) (G1 Evacuation Pause) 1431M->933M(1883M) 232.625ms
+[48.832s][info][gc] GC(57) Concurrent Cycle
+...[49.308s][info][gc] GC(57) Pause Remark 1177M->1003M(1883M) 25.410ms
+..
+===== DaCapo simple tail latency: 50% 315 usec, 90% 4456 usec, 99% 33667 usec, 99.9% 99106 usec, 99.99% 192851 usec, max 373178 usec, measured over 100000 events =====
+===== DaCapo metered tail latency: 50% 1475398 usec, 90% 2581591 usec, 99% 2791086 usec, 99.9% 2813631 usec, 99.99% 2843774 usec, max 2866747 usec, measured over 100000 events =====
+
+Class name: org.dacapo.harness.H2
+Configurations:
+short     An SQL relational database engine written in Java
+long      H2 executes a TPC-C like benchmark written by Apache as part of the Apache Derby database. The application models: customers, districts, warehouses, purchases and deliveries.
+author    TPC-C like workload authored by The Apache Software Foundation, and Database authored by H2
+license   Apache License, Version 2.0 covering TPC-C like workload, and Eclipse Public License Version 1.0 covering H2
+copyright Copyright (c) 2001-2002, The Apache Software Foundation and H2 Group, H2
+url       http://db.apache.org/derby/ and http://www.h2database.com
+version   h2 2.2.220 derby 10.15.2.0
+sizes     default large small vlarge
+===== DaCapo 23.11-chopin h2 starting =====
+Starting 100000 requests...
+Completed requests
+===== DaCapo 23.11-chopin h2 PASSED in 22004 msec =====
+
+runAgain
+[49.613s][info][gc] GC(57) Pause Cleanup 1032M->1032M(1883M) 0.789ms
+[49.618s][info][gc] GC(57) Concurrent Cycle 785.890ms
